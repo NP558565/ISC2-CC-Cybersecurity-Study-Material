@@ -1,0 +1,194 @@
+<h1 id="security-concepts">Security Concepts</h1>
+<table>
+<thead>
+<tr>
+<th>Security Triad</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Availability</td>
+<td>Refers to the property of being accessible and usable upon request by an authorized entity.</td>
+</tr>
+<tr>
+<td>Authenticity</td>
+<td>Refers to the property of being genuine and trustworthy. It ensures that data is not tampered with or altered.</td>
+</tr>
+<tr>
+<td>Confidentiality</td>
+<td>Refers to the property of being private and kept secret. It ensures that data is only accessible to authorized entities.</td>
+</tr>
+<tr>
+<td>Non-repudiation</td>
+<td>is a security concept that ensures that an individual or entity cannot deny having taken a particular action. In the context of digital communication, it means that the sender of a message cannot later deny having sent it, and the recipient of a message cannot deny having received it.</td>
+</tr>
+</tbody></table>
+<h2 id="authentication">Authentication</h2>
+<p>Here we have some examples of common methods of authentication:</p>
+<ul>
+<li><strong>Something you know</strong>: Password or paraphrases (The most insercurity auth method)</li>
+<li><strong>Something you have</strong>: Tokens, memory cards, smart cards;</li>
+<li><strong>Something you are</strong>: Biometrics, measurable characteristics, fingerprints, voice, iris patterns;</li>
+</ul>
+<h2 id="methods-of-authentication">Methods of Authentication</h2>
+<p>Two types of authentication methods:</p>
+<ul>
+<li><strong>Single-factor authentication (SFA)</strong>: Single-factor authentication (SFA) is a security process that requires users to provide only one type of identification method to verify their identity. </li>
+<li><strong>Multi-factor authentication (MFA)</strong>: requires users to provide multiple forms of identification to verify their identity, adding an extra layer of security to the authentication process.</li>
+</ul>
+<br>
+<hr>
+<br>
+<h1 id="security-concepts">Security Concepts CONTINUED</h1>
+<p>CIA Traid are three main goals</p>
+<h2 id="confidentiality">Confidentiality</h2>
+<ul>
+<li>Confidentiality protects information from unauthorized disclosure.</li>
+</ul>
+<h4 id="confidentiality_concerns">Confidentiality_Concerns</h4>
+<ol>
+<li>Snooping<ul>
+<li>snooping gathering information that is left out in the open.</li>
+<li>&quot;Clean desk policies&quot; protect against snooping.</li>
+</ul>
+</li>
+<li>Dumpster Diving<ul>
+<li>Dumpster diving is to dump data anywere or dustbin.</li>
+<li>&quot;Shedding&quot; protects against dumpster diving.</li>
+</ul>
+</li>
+<li>Eavesdropping<ul>
+<li>listing sensitive information</li>
+<li>&quot;Rules about sensitive conversations&quot; prevent eavesdropping</li>
+</ul>
+</li>
+<li>Wiretapping<ul>
+<li>Electronic evaesdropping - listing through wire(internet)</li>
+<li>&quot;Encryption&quot; protects against Wiretapping</li>
+</ul>
+</li>
+<li>Social Engineering<ul>
+<li>The attacker uses psychological tricks to persuade an employee to give then sensitive information or access to internal systems.</li>
+<li>Best defence is to &quot;Educating users&quot;</li>
+</ul>
+</li>
+</ol>
+<h2 id="integrity">Integrity</h2>
+<ul>
+<li>Integrity protects information from unauthorized changes.</li>
+</ul>
+<h4 id="integrity_concerns">Integrity_Concerns</h4>
+<ol>
+<li>Unauthorized modification<ul>
+<li>Attacks make changes without permission.</li>
+<li>&quot;Least priviege&quot; protects against integrity attacks</li>
+</ul>
+</li>
+<li>Impersonation<ul>
+<li>Attacks pretend to be someone else</li>
+<li>&quot;User education&quot; protects against attacks</li>
+</ul>
+</li>
+<li>Man-in-the-middle (MITM)<ul>
+<li>Attacks place the attacker in the middle of a communications session.</li>
+<li>&quot;Encryption&quot; protects against MITM attacks</li>
+</ul>
+</li>
+<li>Replay<ul>
+<li>Attacks eavesdrop on logins and reuse the captured credentials.</li>
+<li>&quot;Encryption&quot; protects against Replay attacks</li>
+</ul>
+</li>
+</ol>
+<h2 id="availability">Availability</h2>
+<ul>
+<li>Availability protects authorized access to systems and data.</li>
+</ul>
+<h4 id="availability_concerns">Availability_Concerns</h4>
+<ol>
+<li>Denial of service (DoS)<ul>
+<li>Unlimited request to a server</li>
+<li>&quot;Block unauthorized connections&quot; to protect against denial of service attacks.</li>
+</ul>
+</li>
+<li>Power outages<ul>
+<li>Naturally or Man-made</li>
+<li>&quot;Redundant power and generators&quot; protect against power outages.</li>
+</ul>
+</li>
+<li>Hardware failures<ul>
+<li>any component failures</li>
+<li>&quot;Redundant components&quot; protect against hardware failure</li>
+</ul>
+</li>
+<li>Destruction<ul>
+<li>Naturally or Man-made</li>
+<li>&quot;Backup data centers&quot; protect against destruction.</li>
+</ul>
+</li>
+<li>Service outages<ul>
+<li>Programing error and the failure of underlying equipment.</li>
+<li>building systems that are resilient in the face of errors and hardware failures.</li>
+</ul>
+</li>
+</ol>
+<h2 id="authentication-and-authorization">Authentication and authorization</h2>
+<p>The access control process consists of three steps that you must understand. These steps are identification, authentication and authorization.</p>
+<ol>
+<li>Identification incolves making a claim of identity.<ul>
+<li>Electronic identification commonly uses usernames</li>
+</ul>
+</li>
+<li>Authentication requires proving a claim of identity.<ul>
+<li>Electronic autherntication commonly uses passwords.</li>
+</ul>
+</li>
+<li>Authorization ensures that an action is allowed.<ul>
+<li>Electronic authorization commonly uses access control lists.</li>
+</ul>
+</li>
+</ol>
+<p>Authentication and authorization process, access control systems also provide &quot;Accounting&quot; functionality that allows administrators to track user activity and reconstruct that activity from logs. This may include tracking user activity on systems and even logging user web browsing history.</p>
+<h2 id="password-security">Password security</h2>
+<p>Password mechanisms
+    - Password length requirements set a minimum number of characters. 
+    - Password complexity requirements describe the types of characters that must be included.
+    - Password expiration requirements force password changes.
+    - Password requirements prevent password reuse.</p>
+<h2 id="multifactor-authentication">Multifactor authentication</h2>
+<p>Multifactor authentication combines two different authentication factors.</p>
+<p>Three different authentication factors. Something you know, something you are and something you have.</p>
+<h4 id="something-you-know">something you know</h4>
+<ul>
+<li>Passwords, PIN&#39;s, Security questions.</li>
+</ul>
+<h4 id="something-you-are">something you are</h4>
+<ul>
+<li>Biometric security mechanisms.</li>
+</ul>
+<h4 id="something-you-have">something you have</h4>
+<ul>
+<li>Software and hardware tokens.</li>
+</ul>
+<h4 id="single-sign-on-sso">single sign-On (SSO)</h4>
+<p>Shares authentiacated sessions across systems
+    - In a single sign on approach, users log on to the first SSO enabled system that they encounter. And then that login session persists across other systems until it expires. If the organization sets the expiration period to be the length of a business day, that means that users will only need to log in once a day and their single sign on is then going to last the entire day.</p>
+<h2 id="non-repudiation">Non-repudiation</h2>
+<p>Non-repudiation prevents someone from denying the truth.</p>
+<p>Solved the issue with
+    1. Signed contracts
+    2. Digital signatures
+    3. Video surveillance</p>
+<h2 id="privacy">Privacy</h2>
+<p>Privacy Concerns</p>
+<ol>
+<li>Protecting our own data.</li>
+<li>Educating our users.</li>
+<li>Protecing data collected by our organizations.</li>
+</ol>
+<p>Private information may come in many forms. Two of the most common elements of private information are &quot;Personally identifiable information&quot; and &quot;Protected health information&quot;.</p>
+<ol>
+<li>Personally identifiable information, or PII, includes all information that can be tied back to a specific individual.</li>
+<li>Protected health information, or PHI, includes healthcare records that are regulated under the Health Insurance Portability and Accountability Act. Otherwise known as HIPAA.</li>
+</ol>
+
