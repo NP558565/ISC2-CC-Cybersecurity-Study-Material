@@ -1,0 +1,1681 @@
+<h1 id="l1-security-principles">L1: Security Principles</h1>
+<h2 id="module-1-understand-the-security-concepts-of-information-assurance">Module 1 Understand the Security Concepts of Information Assurance</h2>
+<p>Domain D1.1.1, D1.1.2, D1.1.3, D1.1.4, D1.1.5, D1.1.6</p>
+<h3 id="confidentiality">Confidentiality</h3>
+<p>It relates to permitting authorized access to information, while at the same time protecting information from improper disclosure. Difficulties to achieve confidentiality are related to: <strong>many users are guests or customers</strong>, and it is not clear if the access comes from a compromised machine or vulnerable mobile application. To avoid those difficulties, security professionals must regulate access, permitting access to authorized individuals, for that protecting the data that needs protection. </p>
+<p>Data that needs protections is also known <strong>as PII or PHI</strong>. 
+<strong>PII</strong> stands for Personally Identifiable Information and it is related to the area of confidentiality and it means any data that could be used to identify an individual. 
+<strong>PHI</strong> stands for Protected Health Information and it comprehends information about one&#39;s health status, and classified or sensitive information, which includes trade secrets, research, business plans and intellectual property. </p>
+<p>Related to confidentiality is <strong>the concept sensitivity a measure of the importance assigned to information by its owner</strong>, or the purpose of denoting its need for protection. <strong>Sensitive information</strong> is information that if improperly disclosed (confidentiality) or modified (integrity) would harm an organization or individual. In many cases, sensitivity is related to the harm to external stakeholders; that is, people or organizations that may not be a part of the organization that processes or uses the information.</p>
+<p>Threat related to confidentiality are:</p>
+<ol>
+<li>Snooping involves gathering information that is left out in the open. Clean desk policies protect against snooping.</li>
+<li>Dumpster diving also looking for sensitive materials, but in the dumpster, a paper shredding protects against it.</li>
+<li>Eavesdropping occurs when someone secretly listen to a conversation, and it can be prevent with rules about sensitive conversations  </li>
+<li>Wiretapping is the electronic version of eavesdropping, the best way against that is using encryption to protect the communication. </li>
+<li>Social Engineering, the best defense is educate users to protect them against social engineering.</li>
+</ol>
+<h3 id="integrity">Integrity</h3>
+<p>It is the property of information whereby it is recorded, used and maintained in a way that ensures its completeness, accuracy, internal consistency and usefulness for a stated purpose, which can be applied <strong>to information or data</strong>, <strong>system and process for business operations</strong>, <strong>organizations</strong>, <strong>people and their actions</strong>. Furthermore, restrict to data integrity, it is an assurance that  data has not been altered in an unauthorized manner, covering data <strong>in storage</strong>, during <strong>processing</strong>, and while <strong>in transit</strong>. </p>
+<p><strong>Consistency</strong> is another concept related to integrity and requires that all instances of the data be identical in form, content and meaning. When related to system integrity, it refers to the maintenance of a known good configuration and expected operational function as the system processes the information. Ensuring integrity begins with an awareness of state, which is the current condition of the system. Specifically, this awareness concerns the ability to document and understand the state of data or a system at a certain point, <strong>creating a baseline</strong>. A baseline, which means a documented, lowest level of security configuration allowed by a standard or organization, can refer to the current state of the information—whether it is protected. </p>
+<p>To preserve that state, the information must always continue to be protected through a transaction. Going forward from that baseline, the integrity of the data or the system can always be ascertained by comparing the baseline with the current state. If the two match, then the integrity of the data or the system is intact; if the two do not match, then the integrity of the data or the system has been compromised. Integrity is a primary factor in the reliability of information and systems. The need to safeguard information and system integrity may be dictated by laws and regulations. Often, it is dictated by the needs of the organization to access and use reliable, accurate information.</p>
+<ol>
+<li>Unauthorized modification attacks make changes without permission. The best way to protect against that is the least privilege principle.</li>
+<li>Impersonation attacks pretend to be someone else. User education protects against impersonation attack.</li>
+<li>Man-In-The-Middle (MITM) attacks place the attacker in the middle of a communication session, monitoring everything that&#39;s occurring.  </li>
+<li>Replay attacks eavesdrop on logins and reuse the captured credentials.</li>
+</ol>
+<p>To both MiTM and Replay attacks the best approach is encryption.</p>
+<h3 id="availability">Availability</h3>
+<p>It means that systems and data are accessible at the time users need them. It can be defined as timely and reliable access to information and the ability to use it, and for authorized users, timely and reliable access to data and information services. 
+The core concept of availability is that data is accessible <strong>to authorized users when and where it is needed and in the form and format required</strong>. This does not mean that data or systems are available 100% of the time. Instead, the systems and data meet the requirements of the business for timely and reliable access. 
+<strong>Some systems and data are far more critical than others</strong>, so the security professional <strong>must ensure that the appropriate levels of availability are provided</strong>. This requires consultation with the involved business to ensure that critical systems are identified and available. 
+Availability is often associated with the term <strong>criticality</strong>, which means a measure of the degree to which an organization depends on the information or information system for the success of a mission or of a business function (NIST SP 800-60), because it represents the importance an organization gives to data or an information system in performing its operations or achieving its mission</p>
+<ol>
+<li>Denial of Service can be mitigated using firewalls to block unauthorized connections</li>
+<li>Power outages can be mitigated using redundant power and generators</li>
+<li>Hardware failures can be mitigated using redundant components</li>
+<li>Destruction can be mitigated using backups</li>
+<li>Service outages</li>
+</ol>
+<h3 id="three-steps-to-gain-access-known-as-triple-a-which-means-authentication-authorization-accounting">Three steps to gain access, known as triple A, which means Authentication, Authorization, Accounting</h3>
+<h4 id="identification">Identification</h4>
+<p>Consist of making a claim of identity</p>
+<h4 id="authentication">Authentication</h4>
+<p>When users have stated their identity, it is necessary <strong>to validate that they are the rightful owners of that identity</strong>. This process of verifying or proving the user’s identification is known as authentication, which means in another terms access control process validating that the identity being claimed by a user or entity is known to the system, by comparing one (single-factor or SFA) or more (multi-factor authentication or MFA) factors of authentication. Simply put, authentication is a process to prove the identity of the requestor.</p>
+<p>There are three common methods of authentication:</p>
+<ul>
+<li>Something you know: Passwords or paraphrases</li>
+<li>Something you have: Tokens (NISTIR 7711), memory cards, smart cards</li>
+<li>Something you are: Biometrics , measurable characteristics</li>
+</ul>
+<h4 id="methods-of-authentication">Methods of Authentication</h4>
+<p>There are two types of authentication. Using only one of the methods of authentication stated previously is <strong>known as single-factor authentication (SFA)</strong>. Granting users access only after successfully demonstrating or displaying two or more of these methods is <strong>known as multi-factor authentication (MFA)</strong>. </p>
+<p> <strong>Common best practice is to implement at least two of the three common techniques for authentication</strong>: </p>
+<ul>
+<li>Knowledge-based </li>
+<li>Token-based </li>
+<li>Characteristic-based</li>
+</ul>
+<p>  </p>
+<p>Knowledge-based authentication uses a passphrase or secret code to differentiate between an authorized and unauthorized user. If you have selected a personal identification number (PIN), created a password or some other secret value that only you know, then you have experienced knowledge-based authentication. The problem with using this type of authentication alone is that it is often vulnerable to a variety of attacks. For example, the help desk might receive a call to reset a user’s password. The challenge is ensuring that the password is reset only for the correct user and not someone else pretending to be that user. For better security, a second or third form of authentication that is based on a token or characteristic would be required prior to resetting the password. The combined use of a user ID and a password consists of two things that are known, and because it does not meet the requirement of using two or more of the authentication methods stated, it is not considered MFA.</p>
+<h4 id="password">Password</h4>
+<ul>
+<li>Password length requirements set a minimum number of chars</li>
+<li>Password complexity requirements describe the types of characters that must be included</li>
+<li>Password expiration requirements force password changes. Nowadays, that requirement isn&#39;t used, companies change to an approach where force password change is required when there is any evidence that the password has been compromised.</li>
+<li>Password history requirements prevent password reuse.</li>
+<li>Provide a way to change the password quickly and easily.</li>
+<li>Encourage users to not reuse the same password across multiple sites</li>
+<li>Password managers facilitate the use of strong, unique passwords</li>
+</ul>
+<h4 id="authorization">Authorization</h4>
+<p>Ensuring that an action is allowed.</p>
+<h4 id="accounting">Accounting</h4>
+<p>Its maintains logs of activity</p>
+<h3 id="non-repudiation">Non-repudiation</h3>
+<p>Non-repudiation is a legal term and is defined as the protection against an individual falsely denying having performed a particular action. It provides the capability to determine whether a given individual took a particular action, such as created information, approved information or sent or received a message.</p>
+<p>In today’s world of e-commerce and electronic transactions, <strong>there are opportunities for the impersonation of others or denial of an action, such as making a purchase online and later denying it</strong>. It is important that all participants trust online transactions. <strong>Non-repudiation methodologies ensure that people are held responsible for transactions they conducted</strong>.</p>
+<h3 id="base-concepts">Base Concepts</h3>
+<ol>
+<li>Authorization: the right or a permission that is granted to a system entity to access a system resource</li>
+<li>Integrity: the property that data has not been altered in an unauthorized manner</li>
+<li>Confidentiality: the characteristic of data or information when it is not made available or disclosed to unauthorized persons or process </li>
+<li>Privacy: the right of an individual to control the distribution of information about themselves</li>
+<li>Availability: Ensuring timely and reliable access to and use of information by authorized users</li>
+<li>Non-repudiation: The inability to deny taking an action, such as sending an email message</li>
+<li>Authentication: Access control process that compares one or more factors of identification to validate that the identity claimed by a user or entity is known to the system</li>
+</ol>
+<h3 id="privacy">Privacy</h3>
+<p>Privacy is <strong>the right of an individual to control the distribution of information about themselves</strong>. While security and privacy both focus on the protection of personal and sensitive data, there is a difference between them. With the increasing rate at which data is collected and digitally stored across all industries, the push for privacy legislation and compliance with existing policies steadily grows. In today’s global economy, privacy legislation and regulations on privacy and data protection can impact corporations and industries regardless of physical location. <strong>Global privacy is an especially crucial issue when considering requirements regarding the collection and security of personal information</strong>. There are several laws that define privacy and data protection, which periodically change. Ensuring that protective security measures are in place is not enough to meet privacy regulations or to protect a company from incurring penalties or fines from mishandling, misuse, or improper protection of personal or private information. An example of a law with multinational implications is the European Union’s General Data Protection Regulation (GDPR) which applies to all organizations, foreign or domestic, doing business in the EU or any persons in the EU. Companies operating or doing business within the United States may also fall under several state legislations that regulate the collection and use of consumer data and privacy. Likewise, member nations of the EU enact laws to put GDPR into practice and sometimes add more stringent requirements. These laws, including national- and state-level laws, dictate that any entity anywhere in the world handling the private data of people in a particular legal jurisdiction must abide by its privacy requirements. As a member of an organization&#39;s data protection team, you will not be required to interpret these laws, but you will need an understanding of how they apply to your organization.</p>
+<h2 id="module-2-understand-the-risk-management-process">Module 2 Understand the risk management process</h2>
+<p>Domain D1.2.1, D1.2.2</p>
+<p>Risks and security-related issues represent <strong>an ongoing concern</strong> of businesses as well as the field of cybersecurity. Assessing and analyzing risk should be <strong>a continuous and comprehensive</strong> exercise in any organization. As a member of an organization’s security team, you will work through <strong>risk assessment, analysis, mitigation, remediation and communication</strong>.</p>
+<p>**Risk ** is  a measure of the extent to which an entity is threatened by a <strong>potential</strong> circumstance or event. It is often expressed as a combination of:
+    the <strong>adverse impacts that would arise if the circumstance or event occurs</strong>,  and 
+    the <strong>likelihood</strong> of occurrence. </p>
+<p>Information security risk reflects the potential adverse impacts that result from the possibility of unauthorized access, use, disclosure, disruption, modification or destruction of information and/or information systems. This definition represents that <strong>risk is associated with threats, impact and likelihood</strong>, and it also indicates that IT risk is a subset of business risk. </p>
+<p>Matrix: Probability X Impact generates four possible combinations:</p>
+<ol>
+<li>low probability, low impact</li>
+<li>low probability, high impact</li>
+<li>high probability, low impact</li>
+<li>high probability, high impact</li>
+</ol>
+<h3 id="risk-management-terminology">Risk Management Terminology</h3>
+<ul>
+<li><strong>An asset</strong> is something in need of protection because it has value to the organization. It could be a tangible asset or intangible, such as information.</li>
+<li><strong>A vulnerability</strong> is a gap or weakness in an organization&#39;s protection of its valuable assets, including information. (NIST SP 800-30). A vulnerability is an inherent weakness or flaw in a system or component, which, if triggered or acted upon, could cause a risk event to occur. An organization’s security team strives to decrease its vulnerability. To do so, <strong>they view their organization with the eyes of the threat actor</strong>, asking themselves, <strong>“Why would we be an attractive target?”</strong> The answers might provide steps to take that will discourage threat actors, cause them to look elsewhere or simply make it more difficult to launch an attack successfully. <strong>Managing vulnerabilities starts with one simple step: Learn what they are</strong>.</li>
+<li><strong>A threat</strong> is something or someone that aims to exploit a vulnerability to gain unauthorized access. A threat is a person or thing that takes action to exploit (or make use of) a target organization’s system vulnerabilities, as part of achieving or furthering its goal or objectives.</li>
+<li>Likelihood, when determining an organization’s vulnerabilities, the security team will consider <strong>the probability</strong>, or likelihood , of <strong>a potential vulnerability being exploited within the construct of the organization’s threat environment</strong>. <strong>Likelihood of occurrence is a weighted factor based on a subjective analysis of the probability that a given threat or set of threats is capable of exploiting a given vulnerability or set of vulnerabilities.</strong></li>
+</ul>
+<p>Finally, the security team will consider the likely results if a threat is realized and an event occurs. Impact is the magnitude of harm that can be expected to result from the consequences of unauthorized disclosure of information, unauthorized modification of information, unauthorized destruction of information, or loss of information or information system availability.</p>
+<p>Think about the impact and the chain of reaction that can result when an event occurs by revisiting the pickpocket scenario: <strong>Risk comes from the intersection of those three concepts</strong>.</p>
+<h3 id="risk-identification">Risk Identification</h3>
+<p>In the world of cyber, <strong>identifying risks is not a one-and-done activity</strong>. It’s a recurring process of identifying different possible risks, characterizing them and then estimating their potential for disrupting the organization.  </p>
+<p>Takeaways to remember about risk identification: </p>
+<ul>
+<li>Identify risk to communicate it clearly. </li>
+<li>Employees at all levels of the organization are responsible for identifying risk.</li>
+<li>Identify risk to protect against it.</li>
+</ul>
+<p>As a security professional, you are likely to assist in risk assessment at a system level, focusing <strong>on process, control, monitoring or incident response and recovery activities</strong>. If you’re working with a smaller organization, or one that lacks any kind of risk management and mitigation plan and program, you might have the opportunity to help fill that planning void.</p>
+<h3 id="risk-assessment">Risk Assessment</h3>
+<p>Risk assessment is defined as <strong>the process of identifying</strong>, <strong>estimating and prioritizing risks to an organization’s operations</strong> (including its mission, functions, image and reputation), <strong>assets</strong>, <strong>individuals</strong>, <strong>other organizations and even the nation</strong>. Risk assessment should result in aligning (or associating) <strong>each identified risk resulting from the operation of an information system with the goals, objectives, assets or processes that the organization uses, which in turn aligns with or directly supports achieving the organization’s goals and objectives</strong>. A risk assessment can prioritize items for management to determine the method of mitigation that best suits the assets being protected. The result of the risk assessment process is <strong>often documented as a report or presentation given to management for their use in prioritizing the identified risk(s)</strong>. This report is provided to management for review and approval. In some cases, management may indicate a need for a more in-depth or detailed risk assessment performed by internal or external resources.  </p>
+<h3 id="risk-treatment">Risk Treatment</h3>
+<p>Risk treatment relates <strong>to making decisions about the best actions to take regarding the identified and prioritized risk</strong>. The decisions made are dependent on the attitude of management toward risk and the availability — and cost — of risk mitigation. The options commonly used to respond to risk are:</p>
+<ul>
+<li><p>Avoidance: <strong>It is the decision to attempt to eliminate the risk entirely</strong>. This could include ceasing operation for some or all of the activities of the organization that are exposed to a particular risk. <strong>Organization leadership may choose risk avoidance when the potential impact of a given risk is too high or if the likelihood of the risk being realized is simply too great</strong>.</p>
+</li>
+<li><p>Acceptance: Risk acceptance is taking <strong>no action to reduce the likelihood of a risk occurring</strong>. Management may opt for conducting the business function that is associated with the risk <strong>without any further action on the part of the organization</strong>, either because the impact or likelihood of occurrence is negligible, or because the benefit is more than enough to offset that risk.</p>
+</li>
+<li><p>Mitigation: Risk mitigation <strong>is the most common type of risk management and includes taking actions to prevent or reduce the possibility of a risk event or its impact</strong>. Mitigation can involve <strong>remediation measures</strong>, <strong>or controls</strong>, <strong>such as security controls, establishing policies, procedures, and standards to minimize adverse risk</strong>. Risk cannot always be mitigated, but mitigations such as safety measures should always be in place.</p>
+</li>
+<li><p>Transfer: <strong>Risk transference is the practice of passing the risk to another party</strong>, who will accept the financial impact of the harm resulting from a risk being realized in exchange for payment. Typically, this is an insurance policy.</p>
+</li>
+</ul>
+<h3 id="base-concepts-1">Base Concepts</h3>
+<ul>
+<li>Mitigation: Taking action to prevent or reduce the impact of an event</li>
+<li>Acceptance: Ignoring the risks and continuing risky activities</li>
+<li>Avoidance: Ceasing the risky activity to remove the likelihood that an event will occur</li>
+<li>Vulnerability: An inherent weakness or flaw</li>
+<li>Asset: Something of value that is owned by an organization, including physical hardware and intellectual property</li>
+<li>Threat: A person or an entity that deliberately takes actions to exploit a target</li>
+<li>Transference: Passing risk to a third party</li>
+</ul>
+<h3 id="risk-priorities">Risk Priorities</h3>
+<p>When risks have been identified, it is time to prioritize and analyze core risks through qualitative risk analysis and/or quantitative risk analysis. This is necessary to determine <strong>root cause and narrow down apparent risks and core risks</strong>. Security professionals work with their teams to conduct both qualitative and quantitative analysis. </p>
+<p>Understanding the organization’s overall mission and the functions that support the mission helps <strong>to place risks in context</strong>, <strong>determine the root causes and prioritize the assessment and analysis of these items</strong>. In most cases, management will provide direction for using the findings of the risk assessment to determine a prioritized set of risk-response actions.</p>
+<p>One effective method to prioritize risk is to use <strong>a risk matrix</strong>, which helps identify priority <strong>as the intersection of likelihood of occurrence and impact</strong>. It also gives the team a common language to use with management when determining the final priorities. For example, a low likelihood and a low impact might result in a low priority, while an incident with a high likelihood and high impact will result in a high priority. Assignment of priority may relate to business priorities, the cost of mitigating a risk or the potential for loss if an incident occurs.</p>
+<h3 id="decision-making-based-on-risk-priorities">Decision Making Based on Risk Priorities</h3>
+<p>When making decisions based on risk priorities, organizations must evaluate the likelihood and impact of the risk as well as their tolerance for different sorts of risk. <strong>A company in Hawaii is more concerned about the risk of volcanic eruptions than a company in Chicago, but the Chicago company will have to plan for blizzards</strong>. In those cases, determining risk tolerance is up to the executive management and board of directors. If a company chooses to ignore or accept risk, exposing workers to asbestos, for example, it puts the company in a position of tremendous liability. </p>
+<h3 id="risk-tolerance">Risk Tolerance</h3>
+<p>The perception management takes toward risk is often likened to the <strong>entity’s appetite for risk</strong>. <strong>How much risk are they willing to take?</strong> Does management welcome risk or want to avoid it? The level of risk tolerance varies across organizations, and even internally: Different departments may have different attitudes toward what is acceptable or unacceptable risk.</p>
+<p>Understanding the organization and senior management’s attitude toward risk is usually the starting point for getting management to take action regarding risks. Executive management and/or the Board of Directors determines what is an acceptable level of risk for the organization. Security professionals aim to maintain the levels of risk within management’s limit of risk tolerance.</p>
+<p>Often, risk tolerance is dictated by geographic location. For example, companies in Iceland plan for the risks that nearby volcanoes impose on their business. Companies that are outside the projected path of a lava flow will be at a lower risk than those directly in the path’s flow. Similarly, the likelihood of a power outage affecting the data center is a real threat in all areas of the world. In areas where thunderstorms are common, power outages may occur more than once a month, while other areas may only experience one or two power outages annually. Calculating the downtime that is likely to occur with varying lengths of downtime will help to define a company’s risk tolerance. If a company has a low tolerance of the risk of downtime, they are more likely to invest in a generator to power critical systems. A company with an even lower tolerance for downtime will invest in multiple generators with multiple fuel sources to provide a higher level of assurance that the power will not fail.</p>
+<h2 id="module-3-understand-security-control">Module 3 Understand Security Control</h2>
+<p>Domain D1.3.1, D1.3.2, D1.3.3</p>
+<h3 id="what-are-security-controls-fibs-pub-199">What are security controls? (FIBS PUB 199)</h3>
+<p>Security controls pertain to the <strong>physical</strong>, <strong>technical</strong> and <strong>administrative mechanisms</strong> that act as <strong>safeguards or countermeasures prescribed for an information system to protect the confidentiality</strong>, <strong>integrity</strong> <strong>and availability of the system and its information</strong>. The implementation of controls should <strong>reduce risk</strong>, hopefully to an acceptable level.</p>
+<ul>
+<li><p>Physical control: it addresses process-based security needs using <strong>physical hardware devices</strong>, such as <strong>badge readers</strong>, <strong>architectural features of buildings and facilities</strong>, <strong>and specific security actions to be taken by people</strong>. They typically provide ways of controlling, directing or preventing the movement of people and equipment throughout a specific physical location, such as an office suite, factory or other facility. <strong>Physical controls also provide protection and control over entry onto the land surrounding the buildings</strong>, <strong>parking lots or other areas that are within the organization’s control</strong>. In most situations, physical controls are supported by technical controls as a means of incorporating them into an overall security system.</p>
+</li>
+<li><p>Technical control: it (also called logical controls) is security controls that <strong>computer systems and networks directly implement</strong>. These controls can provide automated protection from unauthorized access or misuse, facilitate detection of security violations and support security requirements for applications and data. Technical controls can be configuration settings or parameters stored as data, managed through a software graphical user interface (GUI), or they can be hardware settings done with switches, jumper plugs or other means. However, the implementation of technical controls always requires significant operational considerations and should be consistent with the management of security within the organization. Many of these will be examined in more depth as we look at them in later sections in this chapter and in subsequent chapters.</p>
+</li>
+<li><p>Administrative control: it (also known as managerial controls) is <strong>directives</strong>, <strong>guidelines</strong> or <strong>advisories aimed at the people within the organization</strong>. They provide frameworks, constraints and standards for human behavior, and should cover the entire scope of the organization’s activities and its interactions with external parties and stakeholders. It is vitally important to realize that administrative controls <strong>can and should be powerful, effective tools for achieving information security</strong>. Even the simplest security awareness policies can be an effective control, if you can help the organization fully implement them through systematic training and practice. Many organizations are improving their overall security posture by integrating their administrative controls into the task-level activities and operational decision processes that their workforce uses throughout the day. This can be done by providing them as in-context ready reference and advisory resources, or by linking them directly into training activities. These and other techniques bring the policies to a more neutral level and away from the decision-making of only the senior executives. It also makes them immediate, useful and operational on a daily and per-task basis.</p>
+</li>
+</ul>
+<p>Some examples:
+Administrative: acceptable use policy, emergency operations procedures, employee awareness training
+Physical: Badge reader, stop sign in parking lot, door lock
+Technical: access control list</p>
+<h2 id="module-4-understand-governance-and-elements-and-process">Module 4 Understand Governance and Elements and Process</h2>
+<p>Domain D1.5.1, D1.5.2, D1.5.3, D1.5.4</p>
+<h3 id="governance-elements">Governance Elements</h3>
+<p>When leaders and management implement the systems and structures that the organization will use to achieve its goals, they are <strong>guided by laws and regulations created by governments to enact public policy</strong>. <strong>Laws and regulations guide the development of standards, which cultivate policies, which result in procedures</strong>.</p>
+<ul>
+<li><strong>Procedures</strong> are the detailed steps to complete a task that support departmental or organizational policies.</li>
+<li><strong>Policies</strong> are put in place by organizational governance, such as executive management, to provide guidance in all activities to ensure that the organization supports industry standards and regulations.</li>
+<li><strong>Standards</strong> are often used by governance teams to provide a framework to introduce policies and procedures in support of regulations.</li>
+<li><strong>Regulations</strong> are commonly issued in the form of laws, usually from government (not to be confused with governance) and typically carry financial penalties for noncompliance.</li>
+</ul>
+<p>Regulations -&gt; Standards -&gt; Policies -&gt; Procedures</p>
+<h2 id="module-5-understand-isc²-code-of-ethics">Module 5 Understand (ISC)² Code of Ethics</h2>
+<br>
+<hr>
+<br>
+<h2 id="chapter-1-security-principles--">Chapter 1: Security Principles -</h2>
+<h3 id="module-1-understand-the-security-concepts-of-information-assurance">Module 1: Understand the Security Concepts of Information Assurance</h3>
+<h4 id="domain-d111-d112-d113-d114-d115-d116">Domain D1.1.1, D1.1.2, D1.1.3, D1.1.4, D1.1.5, D1.1.6</h4>
+<h4 id="module-objective">Module Objective</h4>
+<ul>
+<li><input disabled="" type="checkbox"> L1.1.1 Recognize foundational security concepts of information assurance</li>
+</ul>
+<ul>
+<li><p><strong>CIA Triad</strong> -</p>
+<ul>
+<li>Confidentiality -<ul>
+<li><mark>Protect the data</mark> that needs protection and prevent access to
+unauthorized individuals.</li>
+</ul>
+</li>
+<li>Integrity -<ul>
+<li><mark>Ensure the data has not been altered</mark> in an unauthorized manner.</li>
+</ul>
+</li>
+<li>Availability -<ul>
+<li><mark>Ensure data is accessible</mark> to authorized users <mark>when and where it is needed</mark>, and in the form and format that is required.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Authentication -</p>
+<ul>
+<li>Process of <mark>verifying or proving the user’s identification</mark> is known as authentication</li>
+<li><strong>Three</strong> common methods of authentication:<ul>
+<li><strong>Something you know</strong> - <mark>Passwords</mark> or passphrases</li>
+<li><strong>Something you have</strong> - Tokens, memory cards, <mark>smart cards</mark></li>
+<li><strong>Something you are</strong> - <mark>Biometrics</mark>, measurable characteristics</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Non-repudiation -</p>
+<ul>
+<li>The protection against an individual falsely denying having performed a particular action.</li>
+<li>E.g. In today’s world of e-commerce and electronic transactions, there are opportunities for the impersonation of others or denial of an action, such as <mark><em>making a purchase online and later denying it.</em></mark></li>
+</ul>
+</li>
+<li><p>Privacy</p>
+<ul>
+<li>Privacy is the right of an individual to control the distribution of information about themselves.</li>
+</ul>
+</li>
+<li><p>Definitions -
+  <img src="assets/D1L1.1.1.png" alt="CC-Definitions"></p>
+</li>
+</ul>
+<hr>
+<h3 id="module-2-understand-the-risk-management-process">Module 2: Understand the Risk Management Process</h3>
+<h4 id="domain-d121-d122">Domain D1.2.1, D1.2.2</h4>
+<h4 id="module-objectives">Module Objectives</h4>
+<ul>
+<li><input disabled="" type="checkbox"> L1.2.1 Define risk management terminology and summarize the process</li>
+<li><input disabled="" type="checkbox"> L1.2.2 Relate risk management to personal or professional practices</li>
+</ul>
+<ul>
+<li><p>Risk Management -</p>
+<ul>
+<li>An <mark><strong>asset</strong> is something in need of protection</mark>.</li>
+<li>A <strong>vulnerability</strong> is <mark>a <em>gap or weakness</em> in those protection efforts</mark>.</li>
+<li>A <strong>threat</strong> is something or someone that <mark>aims to exploit a vulnerability</mark> to thwart protection efforts.</li>
+</ul>
+</li>
+<li><p>Threats -</p>
+<ul>
+<li>A <strong>threat</strong> is a person or thing that takes action to exploit (or make use of) a target organization’s system vulnerabilities, as part of achieving or furthering its goal or objectives.</li>
+<li>Threat Actors -<ul>
+<li><strong>Insiders</strong> (either deliberately, by <mark>simple human error</mark>, or by gross incompetence).</li>
+<li><strong>Outside individuals</strong> or informal groups (<mark>either planned or opportunistic</mark>, discovering vulnerability).</li>
+<li><strong>Formal entities that are nonpolitical</strong> (such as <mark>business competitors</mark> and cybercriminals).</li>
+<li><strong>Formal entities that are political</strong> (such as terrorists, nation-states, and <mark>hacktivists</mark>).</li>
+<li><strong>Intelligence or information gatherers</strong> (could be any of the above).</li>
+<li><strong>Technology</strong> (such as <mark>free-running bots</mark> and artificial intelligence , which could be part of any of the above).</li>
+</ul>
+</li>
+<li>Threat Vector - the  <mark>means by which a threat actor carries out their objectives</mark>.</li>
+</ul>
+</li>
+<li><p>Vulnerabilities -</p>
+<ul>
+<li>Vulnerability is <mark>an inherent weakness or flaw</mark> in a system or component, which, <mark>if triggered or acted upon, could cause a risk event</mark> to occur.</li>
+<li>An organization’s <mark>security team strives to decrease its vulnerability</mark>. To do so, they view their organization with the eyes of the threat actor, asking themselves, “Why would we be an attractive target?” The answers might provide steps to take that will discourage threat actors, cause them to look elsewhere or simply make it more difficult to launch an attack successfully.</li>
+</ul>
+</li>
+<li><p>Likelihood -</p>
+<ul>
+<li>When determining an organization’s vulnerabilities, the security team will consider the probability, or likelihood , of a potential vulnerability being exploited within the construct of the organization’s threat environment.</li>
+<li><strong>Impact</strong> is the <mark>magnitude of harm</mark> that can be expected to result from the consequences of unauthorized disclosure of information, unauthorized modification of information, unauthorized destruction of information, or loss of information or information system availability.</li>
+</ul>
+</li>
+<li><h2 id="risk--identification------identify-risk-to-communicate-it-clearly----employees-at-all-levels-of-the-organization-are-responsible-for-identifying-risk----identify-risk-to-protect-against-it">Risk
+* <strong>Identification</strong> -
+  * Identify risk to <mark>communicate it clearly</mark>.
+  * <mark>Employees at all levels</mark> of the organization are <mark>responsible</mark> for identifying risk.
+  * Identify risk <mark>to protect against it</mark>.</h2>
+<ul>
+<li><h2 id="assessment----process-of-identifying-estimating-and-prioritizing-risks-to-an-organizations-operations-including-its-mission-functions-image-and-reputation-assets-individuals-other-organizations-and-even-the-nation--a-common-risk-assessment-activity-identifies-the-risk-of-fire-to-a-building--the-result-of-the-risk-assessmentprocess-is-oftendocumented-as-a-report-or-presentation-given-to-management-for-their-use-inprioritizing-the-identified-risks"><strong>Assessment</strong> -
+* process of identifying, estimating and prioritizing risks to an organization’s operations (including its mission, functions, image and reputation), assets, individuals, other organizations and even the nation.
+* A common risk assessment activity identifies the <mark>risk of fire to a building</mark>.
+* The result of the risk assessment process is often documented as <mark>a report or presentation given to management</mark> for their use in prioritizing the identified risk(s).</h2>
+</li>
+<li><strong>Treatment</strong> -<ul>
+<li>relates to making decisions about the best actions to take regarding the identified and prioritized risk.</li>
+<li>The decisions made are dependent on the attitude of management toward risk and the availability and cost of risk mitigation.</li>
+<li>The commonly used options to respond to risk are -<ul>
+<li><strong>Avoidance</strong> - the decision to <mark>attempt to eliminate</mark> the risk entirely.</li>
+<li><strong>Acceptance</strong> - taking <mark>no action to reduce</mark> the likelihood of a risk occurring.</li>
+<li><strong>Mitigation</strong> - taking actions to <mark>prevent or reduce the possibility</mark> of a risk event or its impact.</li>
+<li><strong>Transfer</strong> -  the practice of <mark>passing the risk to another party</mark>, who will accept the financial impact of the harm resulting from a risk being realized in exchange for payment.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Definitions -
+  <img src="assets/D1L1.2.1.png" alt="Risk-Definitions"></p>
+</li>
+<li><p>Risk priorities -</p>
+<ul>
+<li>When risks have been identified, it is time to prioritize and analyze core risks through <strong>qualitative risk</strong> analysis and/or <strong>quantitative risk</strong> analysis. </li>
+<li>This is necessary to determine root cause and narrow down apparent risks and core risks.</li>
+<li>One effective method to prioritize risk is to use a <strong>risk matrix</strong>, which helps <mark>identify priority as the intersection of likelihood of occurrence and impact</mark>.
+<img src="assets/risk-matrix.png" alt="Risk-Matrix"></li>
+<li>Assignment of <mark>priority</mark> may relate to <mark>business priorities, the cost of mitigating a risk or the potential for loss</mark> if an incident occurs.</li>
+<li>When making decisions based on risk priorities, organizations <em>must evaluate the likelihood and impact of the risk</em> as well as their tolerance for different sorts of risk.</li>
+</ul>
+</li>
+<li><p>Risk Tolerance -</p>
+<ul>
+<li>The perception management takes toward risk is often likened to the entity’s <strong>appetite for risk</strong>.</li>
+<li><strong>Executive management and/or the Board of Directors</strong> <mark>determines what is an acceptable level of risk</mark> for the organization.</li>
+<li>Security professionals aim to maintain the levels of risk within management’s limit of risk tolerance.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="module-3-understand-security-controls">Module 3: Understand Security Controls</h3>
+<h4 id="domain-d131-d132-d133">Domain D1.3.1, D1.3.2, D1.3.3</h4>
+<h4 id="module-objectives-1">Module Objectives</h4>
+<ul>
+<li><input disabled="" type="checkbox"> L1.3.1 Classify types of security controls.</li>
+</ul>
+<ul>
+<li>Security controls -<ul>
+<li>pertain to the <strong>physical, technical and administrative mechanisms</strong> that<ul>
+<li>act as <mark>safeguards or countermeasures</mark> prescribed for an information system</li>
+<li>to <mark>protect the confidentiality, integrity and availability</mark> of the system and its information.</li>
+</ul>
+</li>
+<li>The implementation of controls should <em><strong>reduce</strong></em> risk, hopefully to an acceptable level.</li>
+<li><strong>Physical</strong> controls -<ul>
+<li>address <strong>process-based security</strong> needs using <mark>physical hardware devices, such as badge readers, architectural features of buildings and facilities</mark>, and specific security actions to be taken by people.</li>
+<li>provide protection and control over entry onto the land surrounding the buildings, parking lots or other areas that are within the organization’s control.</li>
+</ul>
+</li>
+<li><strong>Technical (<em>logical</em>)</strong> controls -<ul>
+<li>computer systems and networks directly implement.</li>
+<li>can provide <strong>automated protection from unauthorized access</strong> or misuse, <mark>facilitate detection of security violations and support security requirements</mark> for applications and data.</li>
+</ul>
+</li>
+<li><strong>Administrative (<em>managerial</em>)</strong> controls -<ul>
+<li>are <mark><strong>directives, guidelines or advisories</strong></mark> aimed at the people within the organization.</li>
+<li>provide frameworks, constraints and standards for human behavior, and should cover the entire scope of the organization’s activities and its interactions with external parties and stakeholders.</li>
+</ul>
+</li>
+<li>Security controls - <img src="assets/D1.3L1.3.1.png" alt="Security-controls"></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="module-4-understand-governance-elements-and-processes">Module 4: Understand Governance Elements and Processes</h3>
+<h4 id="domain-d151-d152-d153-d154">Domain D1.5.1, D1.5.2, D1.5.3, D1.5.4</h4>
+<h4 id="module-objectives-2">Module Objectives</h4>
+<ul>
+<li><input disabled="" type="checkbox"> L1.4.1 Distinguish between policies, procedures, standards, regulations and laws.</li>
+<li><input disabled="" type="checkbox"> L1.4.2 Demonstrate the relationship among governance elements.</li>
+</ul>
+<ul>
+<li><h2 id="governance-elements----when-leaders-and-management-implement-the-systems-and-structures----that-the-organization-will-use-to-achieve-its-goals----they-are-guided-by-laws-and-regulations-created-by-governments-to-enact-public-policy--laws-and-regulations-guide-the-development-of-standards-which-cultivate-policies-which-result-in-procedures--governance-elements---governance-elements----regulations--------commonly-issued-in-the-form-of-laws-usually-from-government-and-typically-carry-financial-penalties-for-noncompliance------the-health-insurance-portability-and-accountability-act-hipaa-of-1996-is-an-example-of-a-law-that-governs-the-use-of-protected-health-information-phi-in-the-united-states-violation-of-the-hipaa-rule-carries-the-possibility-of-fines-andor-imprisonment-for-both-individuals-and-companies">Governance elements -
+* When leaders and management implement the systems and structures
+  * that the organization will use to achieve its goals,
+  * they are guided by **laws and regulations **created by governments to enact public policy.
+* <mark><strong>Laws and regulations</strong> guide the development of standards, which cultivate policies, which result in procedures.</mark>
+* <strong>Governance elements</strong> - <img src="assets/governance.png" alt="Governance Elements">
+  * <strong>Regulations</strong> -
+    * Commonly issued in the form of laws, usually from government and typically <em><strong>carry financial penalties</strong></em> for noncompliance.
+    * The Health Insurance Portability and Accountability Act <mark>(<strong>HIPAA</strong>)</mark> of 1996 is an example of a law that <mark><strong>governs the use of protected health information (PHI)</strong></mark> in the United States. Violation of the HIPAA rule carries the possibility of fines and/or imprisonment for both individuals and companies.</h2>
+<ul>
+<li><h2 id="standards----organizationsuse-multiple-standards-as-part-of-their-information-systems-security-programs-both-as-compliance-documents-and-as-advisories-or-guidelines--standardscover-a-broad-range-of-issues-and-ideas-and-may-provide-assurance-that-an-organization-is-operating-with-policies-and-procedures-that-support-regulations-and-are-widely-accepted-best-practices--the-international-organization-for-standardization-iso-develops-and-publishes-international-standards-on-a-variety-of-technical-subjects-including-information-systems-and-information-security-as-well-as-encryption-standards--the-national-institute-of-standards-and-technology-nist-is-a-united-states-government-agency-under-the-department-of-commerce-and-publishes-a-variety-of-technical-standards-in-addition-to-information-technology-and-information-security-standards"><strong>Standards</strong> -
+* Organizations use <mark>multiple standards as part of their information systems security programs</mark>, both as compliance documents and as advisories or guidelines.
+* Standards cover a broad range of issues and ideas and may provide assurance that an organization <strong>is operating with policies and procedures that support regulations</strong> and are widely accepted best practices.
+* The International Organization for Standardization (<strong>ISO</strong>) develops and publishes international standards on a variety of technical subjects, including information systems and information security, as well as encryption standards.
+* The National Institute of Standards and Technology <mark>(<strong>NIST</strong>)</mark> is a United States government agency under the Department of Commerce and publishes a variety of technical standards in addition to information technology and information security standards.</h2>
+</li>
+</ul>
+<pre><code>* **Policies** -
+  * Policy is **informed by applicable law(s)** and &lt;mark&gt;specifies which standards and guidelines the organization will follow&lt;/mark&gt;. 
+  * Governance policies are used to moderate and control decision-making, to ensure compliance when necessary and to guide the creation and implementation of other policies.
+  * Policies are implemented, or carried out, by people; for that, someone must expand the policies from statements of intent and direction into step-by-step instructions, or procedures.
+   ---
+</code></pre>
+<ul>
+<li><strong>Procedures</strong> -<ul>
+<li>define <strong>the explicit, repeatable activities</strong> <mark>necessary to accomplish a specific task</mark> or set of tasks.</li>
+<li>They <mark><strong>provide supporting data, decision criteria</strong> or other explicit knowledge</mark> needed to perform each task.</li>
+<li>They <strong>establish the measurement criteria and methods</strong> to use to determine whether a task has been successfully completed.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id=""> </h2>
+<h3 id="module-5-understand-isc2-code-of-ethics">Module 5: Understand ISC<sup>2</sup> Code of Ethics</h3>
+<h4 id="domain-d151-d152-d153-d154-1">Domain D1.5.1, D1.5.2, D1.5.3, D1.5.4</h4>
+<h4 id="module-objectives-3">Module Objectives</h4>
+<ul>
+<li><input disabled="" type="checkbox"> L1.5.1 Analyze appropriate outcomes according to the canons of the ISC<sup>2</sup>  Code of Ethics when given examples.</li>
+</ul>
+<ul>
+<li><strong>Professional Code of Conduct</strong><ul>
+<li>Preamble -<ul>
+<li>states the purpose and intent of the ISC<sup>2</sup> Code of Ethics -<ul>
+<li>The <mark>safety and welfare of society and the common good</mark>, duty to our principals, and to each other, requires that we adhere, and be seen to adhere, to the highest ethical standards of behavior.</li>
+<li>Therefore, strict adherence to this Code is a condition of certification.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>ISC<sup>2</sup> Code of ethics canons</strong> -<ul>
+<li>represent the important beliefs held in common by the members of ISC<sup>2</sup>. Cybersecurity professionals who are members of ISC<sup>2</sup> have a duty to the following four entities in the Canons.<ul>
+<li><strong>Protect</strong> society, the common good, necessary public trust and confidence, and the infrastructure.</li>
+<li><strong>Act</strong> honorably, honestly, justly, responsibly and legally.</li>
+<li><strong>Provide</strong> diligent and competent service to principals.</li>
+<li><strong>Advance</strong> and protect the profession.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>=====================================================================================================</p>
+<p><img src="images/domain1.png" alt="Domain 1"></p>
+<h2 id="11-understanding-the-security-concepts-of-inforation-assurance">1.1 Understanding the security concepts of inforation assurance</h2>
+<p>Information Security has three major goals, know as the <em>The CIA</em> triad. </p>
+<p><img src="images/cia-triad.jpg" alt="CIA"></p>
+<h3 id="confidentiality">Confidentiality</h3>
+<p>Refers to the organizations efforts to protect information / data from unauthorized disclosure</p>
+<p>There are several threats that put data and infomation confidentiality at risk, they are:</p>
+<ul>
+<li>Snooping<ul>
+<li>Individuals wandering around office or other facility and simply looks to see what information they can gather such as papers on a desk or in a public area.</li>
+<li>Protection:<ul>
+<li>Maintain clean workspace and put away any sensitive material when you step away</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Dumpter diving<ul>
+<li>Sensitive material is found in garabge</li>
+<li>Protection:<ul>
+<li>Shred sensitive information</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Eavesdropping<ul>
+<li>Phyiscal consern in which people listen in on sensistive conversation in a public space</li>
+<li>Protection:<ul>
+<li>Don&#39;t have sensitive conversations in public</li>
+<li>Set up rules where sensitive information can only be discussed in private (office or board room)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Wiretapping<ul>
+<li>Electronic form of eavesdropping</li>
+<li>Sensistive information is intercepted over a network communication channel (Man in the Middle)</li>
+<li>Protection:<ul>
+<li>Use encyrption to protect information over the network</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Social Engineering<ul>
+<li>Known as the art of extracting sensitive information from people by using pyschology or tricking them into sharing information</li>
+<li>Also known as <em>footprinting</em></li>
+<li>Infromation typically gathered:<ul>
+<li>Credit card information</li>
+<li>Usernames and passwords</li>
+<li>Operating System information</li>
+</ul>
+</li>
+<li>Techniques:<ul>
+<li>Shoulder surfing:<ul>
+<li>Information gathered by standing behind a target when they are dealing with sensitive information</li>
+</ul>
+</li>
+<li>Phishing:<ul>
+<li>Emails sent to a target group containing messages that look legitimate</li>
+<li>User&#39;s click on links and are redirected to a fake (legit looking) website which ask for information</li>
+</ul>
+</li>
+<li>Smishing:<ul>
+<li>Alternative to phishing, less common</li>
+<li>Tricks unsuspecting victims into handing over sensitive data via fraudulant SMS messages</li>
+</ul>
+</li>
+<li>Vishing:<ul>
+<li>Attackers use pre-recorded messages to send to victims over the phone<ul>
+<li>Suspicious activity on their CC and are told to call a specific number to confirm information</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Spam<ul>
+<li>Unsolicited communication (typically email) sent in bulk.</li>
+<li>SPIM (Spam over instant messaging)</li>
+</ul>
+</li>
+<li>Pharming<ul>
+<li>Attack in which a user is forwarded to a malicious website without the user knowing (DNS spoofing)</li>
+</ul>
+</li>
+<li>Tailgating<ul>
+<li>Unauthorized person gains access to a restricted area by following an authorized person</li>
+</ul>
+</li>
+<li>Spear Phishing<ul>
+<li>Email attack to a specific target (not group)</li>
+</ul>
+</li>
+<li>Whaling<ul>
+<li>Attack targeted to a &quot;big fish&quot; (CEO, CFO, etc)</li>
+</ul>
+</li>
+<li>Identity Fraud</li>
+<li>Hoax</li>
+<li>Imperonation</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Most threats require a bit of reconnaissance or preparation before the actual attack takes place, there are two types:</p>
+<ul>
+<li>Passive<ul>
+<li>Obtaining information about the target without directly interacting with them (i.e. searching social media to obtain intel)</li>
+</ul>
+</li>
+<li>Active<ul>
+<li>Obtaining information by connecting directly with the target:<ul>
+<li>over email, phone calls / sms</li>
+<li>impersonation</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="integrity">Integrity</h3>
+<p>Refers to the organizations efforts to protect information / data from any unauthorized changes in transit and at rest.</p>
+<p>The following are the most common cybersecurity concerns that are related to the integrity of information:</p>
+<ul>
+<li>Unauthorized modification<ul>
+<li>Occurs when the attacker gains access and makes changes that violates security policies</li>
+</ul>
+</li>
+<li>Impersonation<ul>
+<li>Attacker pretends to be someone to gain access and make changes</li>
+<li>Extension of social engineering attacks</li>
+</ul>
+</li>
+<li>Man-in-the-middle (MITM)<ul>
+<li>See <a href="Domain%2004%20-%20Network%20Security.md">4.2.1 of Domain 04 - Threats</a></li>
+</ul>
+</li>
+<li>Replay<ul>
+<li>See <a href="Domain%2004%20-%20Network%20Security.md">4.2.1 of Domain 04 - Threats</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="availability">Availability</h3>
+<p>Refers to the organizations efforts to make sure data and systems are available for authorized use.</p>
+<p>There are five types of events that affect the availability to data and systems:</p>
+<ul>
+<li>Denial of Service (DoS) Attacks<ul>
+<li><ul>
+<li>See <a href="Domain%2004%20-%20Network%20Security.md">4.2.1 of Domain 04 - Threats</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Power Outages<ul>
+<li>Occurs on a local or regional scale</li>
+<li>Increased demand can overwhelm the power grid, natural disasters or other factors may cause power outages</li>
+<li>Protection: <ul>
+<li>Use redundant power sources and backup generators to systems when commerical power isnt available</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Equipment Destruction<ul>
+<li>Due to hardware failures</li>
+<li>Protection:<ul>
+<li>Build systems that have built in redundancy so that if one component fails another is ready to pick up the slack</li>
+<li>For larger scale failures, such as Data Center outages or destruction, use backup facility or the cloud as a backup solution when the primary data center is disrupted</li>
+<li>RAID for storage</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Service Outages<ul>
+<li>Due to application errors and/or underlying equipement failures</li>
+<li>Protection:<ul>
+<li>Build resilient systems in the face of errors and failures</li>
+<li>Use load balancing</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="accountability">Accountability</h3>
+<p>It is the authority of information systems to successfully scrutinize the actions of an entity and hold them accountable for the aforementioned actions.</p>
+<p>Mechanism:</p>
+<ul>
+<li>Implementation of digital signatures, </li>
+<li>Usage of asymmetric cryptography</li>
+<li>digital certificates</li>
+</ul>
+<h3 id="authentication-and-trustworthiness">Authentication and Trustworthiness</h3>
+<p>Any system in the information system tree should be able to successfully establish trust and authenticity before acting on the mutual motive of the interaction i.e. before the key purpose to be achieved, the two entities engaging in the communication should be able to trust and authenticate each other. Once this is achieved, the actual transaction can go ahead.</p>
+<p>Access Control Process also knowns as <em>IAAA</em>:</p>
+<ul>
+<li>Identification<ul>
+<li>Making a claim/assertion of identity</li>
+<li>Providing a username or user id</li>
+<li>Issue:<ul>
+<li>Could be a false claim</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Authentication<ul>
+<li>Requires proving of a claim/assertion of identity</li>
+<li>Providing a password or mulitfactor</li>
+</ul>
+</li>
+<li>Authorization<ul>
+<li>Ensures that an action is allowed</li>
+<li>Access control list that provides permissions on what a person can and cant do</li>
+</ul>
+</li>
+<li>Accountability<ul>
+<li>Audit logs that show the activities of a user</li>
+</ul>
+</li>
+</ul>
+<p>Password Security, typically found in Password Policies, contain the following:</p>
+<ul>
+<li>Password length requirements set a min number of characters, good practice to be min 8 characters</li>
+<li>Some requiring longer passwords as those a deemed stronger</li>
+<li>Use complexity requirements, force users to use different characters and upper and lower cases</li>
+<li>Password expiry policy</li>
+<li>Password history requirements where you can&#39;t reuse a previously used password</li>
+<li>Make it easy for users to change their passwords whenever</li>
+<li>Use Password managers to facilitate the use of strong, unique passwords<ul>
+<li>Secure vaults for storing passwords</li>
+<li>Automatically populates passwords for known sites</li>
+</ul>
+</li>
+</ul>
+<p>Multifactor Authentication</p>
+<ul>
+<li>Multi-step login process requiring users to enter more info other than just a password</li>
+<li>Methods<ul>
+<li>&quot;Something You Know&quot;<ul>
+<li>Knowledge Based</li>
+<li>Types:<ul>
+<li>Passwords</li>
+<li>Security PINs</li>
+<li>Security Questions</li>
+</ul>
+</li>
+<li>Drawbacks<ul>
+<li>Can be stolen</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&quot;Something You Are&quot;<ul>
+<li>Biometrics<ul>
+<li>Fingerprint</li>
+<li>Retina</li>
+<li>Facial</li>
+<li>Voice</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&quot;Something You have&quot;<ul>
+<li>Item used to prove identity</li>
+<li>Types:<ul>
+<li>Software / Hardware tokens</li>
+<li>Smart cards</li>
+</ul>
+</li>
+<li>Drawbacks:<ul>
+<li>Can be stolen</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Best practice is to combine two different methods (i.e. Passowrds and Smartcards)</li>
+</ul>
+<p>Single Sign-On (SSO)</p>
+<ul>
+<li>Shares authentication sessions across systems to avoid the burden of logging in accross systems</li>
+<li>Typical session lasts 24 hours</li>
+</ul>
+<h3 id="non-repudiation">Non-repudiation</h3>
+<p>Non-repudiations is a security goal that prevents someone from falsely denying that something is true.</p>
+<p>For example, when a friend of mine sends me an email, I can clearly verify the email address used, the originating IP and the digital signature that is specific to my friend and his email service provider. A system’s failure of not being able to provide its users with non-repudiation might lead to serious impersonation attacks.</p>
+<p>Mechanisms:</p>
+<ul>
+<li>Physical signatures are non-repudiation on contracts and other paper docs</li>
+<li>Digital signatures use encryption technology to provide non-repudiation
+Biometrics (fingerprint, retina scans) can prove that someone was in a facility or performed an action</li>
+<li>Video surveillance</li>
+</ul>
+<h3 id="privacy">Privacy</h3>
+<p>The feature that gives the ability to refrain from sharing who/what owns an asset and the associated attributes. The asset owner depending upon the implementation of the information system should be able to decide the norms on which access and work on that information is performed.</p>
+<p>Concerns</p>
+<ul>
+<li>Protecting our own data</li>
+<li>Educating our users</li>
+<li>Protecting data collected by our organizations</li>
+</ul>
+<p>Types of data that require privacy:</p>
+<ul>
+<li>Personally Identifiable Information (PII)<ul>
+<li>Information that can be tied back to an individual such as SIN, email, address, phone, DOB, etc</li>
+</ul>
+</li>
+<li>Personal Health Information (PHI)<ul>
+<li>Includes health care records regulated under the Health Insurance Portability and Accountability Act (HIPAA)</li>
+</ul>
+</li>
+</ul>
+<p>Privacy programs are based on a legal principle known as the reasonable expectation of privacy</p>
+<ul>
+<li>Examples on where you wouldn&#39;t have expectation of privacy<ul>
+<li>Posting things on public forums (Facebook, instagram, etc)</li>
+<li>Using employer equipment, there is activity monitoring software typically on these devices to monitor actions</li>
+</ul>
+</li>
+<li>Examples of where you would expect<ul>
+<li>Sending emails to a single person, or using a private message</li>
+<li>Share PII information with and org such as hospital, bank, etc</li>
+</ul>
+</li>
+</ul>
+<h2 id="12-understanding-the-risk-management-process">1.2 Understanding the risk management process</h2>
+<h3 id="risk-management-process">Risk Management Process</h3>
+<p><img src="images/risk-management-process.png" alt="Risk Management"></p>
+<p>The risk management process is broken down into 4 basic steps</p>
+<ol>
+<li><p>Ientitify the risk</p>
+<ul>
+<li>First step in the process is to identify all the events that can negatively (risk) or positive (opportunity) affective the objectives of an organization</li>
+<li>Two risk categories<ul>
+<li>Internal risk that arise within the organization<ul>
+<li>Leverage two persona control for any high</li>
+</ul>
+</li>
+<li>External risk that arise from outside of the organization<ul>
+<li>Ransom ware attack</li>
+<li>Address using mfa or security awareness training</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Assess the risk</p>
+<ul>
+<li>Once all the risks have been identified, they are then triaged based on likelihood and impact on buisness<ul>
+<li><strong>Likelihood</strong> is the probability a risk will occur</li>
+<li><strong>Impact</strong> is the amount of damage the risk may cause</li>
+</ul>
+</li>
+<li>The assement process factors in the following concepts:<ul>
+<li><strong>Threats</strong> are external or internal risks that focus on jeopardize security<ul>
+<li>Naturally occurring (hurricane or wildfires)</li>
+<li>Man made (hacking and terrorism)</li>
+</ul>
+</li>
+<li><strong>Threat vectors</strong> are methods used by an attacker<ul>
+<li>Hacker toolkit, social engineering</li>
+</ul>
+</li>
+<li><strong>Vulnerabilities</strong> are weakness in sec controls<ul>
+<li>Missing patches, firewall configs</li>
+</ul>
+</li>
+<li><strong>Risks</strong><ul>
+<li>Combinations of a threat and vulnerability</li>
+</ul>
+</li>
+<li>Assessment techniques<ul>
+<li>Qualitative Risk Assessment<ul>
+<li>Uses subjective ratios to evaluate risk likelihood and impact (i.e. Low, Medium, High)</li>
+<li><img src="images/qualitative-risk-assessment.png" alt="Qualitative"></li>
+</ul>
+</li>
+<li>Quantitative Risk Assessment<ul>
+<li>Uses objective numberical ratios to evaluate risk likelihood and impact</li>
+<li>Single Loss Expectancy (SLE) = Value of Assest ($) x Exposure Factor (*)<ul>
+<li>Ex: Let’s say you decide the e-commerce web site has a value of $200,000, and each time the web server has a hard drive failure, you lose 8 percent of the asset value. This means that your single loss expectancy is $200,000 × .08, which is $16,000. Therefore, every time the hard drive fails in the server, your business loses $16,000!</li>
+</ul>
+</li>
+<li>Annualized Loss Expectancy (ALE) = SLE x Annualized Rate Of Occurence (ARO)<ul>
+<li>ARO = how many times a year you expect the threat to occur</li>
+<li>For example, you may expect a threat to occur three times a year or to occur once every five years. The following example calculates the ALE for our hard drive failure threat if it were to occur three times a year: ALE = $16K x 3 which would equate to $48,000</li>
+</ul>
+</li>
+<li><img src="images/quantitative-risk-assessment.png" alt="Quantitative"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Treat the risk</p>
+<ul>
+<li>Once the risks have been assessed this is where we evulate and make a decision on how to handle the risk.</li>
+<li>This is based on the organizations risk profile and tolerance<ul>
+<li><strong>Risk Profile</strong><ul>
+<li><em>Inherent risk</em>:<ul>
+<li>initial level of risk</li>
+</ul>
+</li>
+<li><em>Residual risk</em>:<ul>
+<li>Level of risk after controls are applied</li>
+</ul>
+</li>
+<li><em>Control Risk</em>:<ul>
+<li>The amount of risk implace for controls, such as firewall as a risk management control, the firewall may fail</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Risk Tolerance</strong><ul>
+<li>Level of risk an organization is willing to accept</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Options:<ul>
+<li><strong>Risk Avoidance</strong><ul>
+<li>Change business practices to make risk irrelevant</li>
+</ul>
+</li>
+<li><strong>Risk Transference</strong><ul>
+<li>Shifts the impact of a risk to another organization<ul>
+<li>i.e purchase insurance</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Risk Mitigation</strong><ul>
+<li>Take action to control / reduce the risk</li>
+</ul>
+</li>
+<li><strong>Risk Acceptance</strong><ul>
+<li>Continue operations in the face of risks</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Monitor / report on the risk</p>
+<ul>
+<li>Once the solution is decided on for the risk and implemented we monitor and report on the outcomes.</li>
+</ul>
+</li>
+</ol>
+<h2 id="13-understanding-security-controls">1.3 Understanding security controls</h2>
+<p>Security Controls are procedures and processes put in place to reduce the likelihood or impact of risk and help identify issues.</p>
+<p><img src="images/Defense-in-Depth.jpg" alt="Defense-in-Depth">
+Defense-In-Depth is an information security strategy that integrates people, technology and operations capabilities to establish variable barriers across multiple layers and missions of the organization. </p>
+<ul>
+<li>Applies multiple countermeasures in a layered fashion to fulfill security objectives.</li>
+<li>Should be implemented to prevent or deter a cyberattack, but it cannot guarantee that an attack will not occur.</li>
+</ul>
+<p><img src="images/sec-controls.png" alt="Sec Controls">
+Control Purpose</p>
+<ul>
+<li>Prevent<ul>
+<li>Stop a security issue from occurring<ul>
+<li>Firewall that blocks traffic</li>
+<li>System hardening</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Detective<ul>
+<li>Identifies security issues requiring investigation<ul>
+<li>Intrusion Detection Systems (IDS)</li>
+<li>Virus Scan</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Recovery<ul>
+<li>Remediate security issues that have occurred<ul>
+<li>Restoring from backups after ransomware attack<ul>
+<li>System Hardening</li>
+<li>Virus Scans</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Control Mechanism</p>
+<ul>
+<li>Technical (Logical)<ul>
+<li>Use of technology to achieve control objectives<ul>
+<li>Firewall</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Administrative<ul>
+<li>Processes/policies to achieve control<ul>
+<li>User access reviews</li>
+<li>Log Monitoring</li>
+<li>Performing security awareness training and background checks</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Physical<ul>
+<li>Impacts the physcial world<ul>
+<li>Fences, locks, security guards, etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Secruity Roles and Responsibilities</p>
+<ul>
+<li>System Owner and Data Owner<ul>
+<li>owner (either system or data) is the person who decides how valuable the asset is and whay types of security controls should be put in place to protect the asset.</li>
+<li>decides the sensitivity classification of the information (ie. top secret, secret, etc)</li>
+<li>typicall upper-level management and holds the ultimate responsibility of securing the asset and security with the organization</li>
+</ul>
+</li>
+<li>Data Controller and Data Processor<ul>
+<li>In the EU, GDPR governs the protection and privacy of personal data</li>
+<li><em>data controller</em> is an entity that determines how and why personal data is processed</li>
+<li><em>data processor</em> is the entity that actually perfroms the processing on the personal data, as per guidelines set by the data controller</li>
+</ul>
+</li>
+<li>System Administrator<ul>
+<li>responsible for the configuration of a system or network</li>
+<li>recieves configuration goals from the designers or the security professionals within the organizationand configures the system in a manner to the meeting those goals</li>
+<li>Sec professional should be someone other than the system admin for audit purposes</li>
+</ul>
+</li>
+<li>User<ul>
+<li>anyone who accesses and uses the resources within the organization</li>
+<li>affected by security controls determined by the owner and put in place by the steward/custodian</li>
+</ul>
+</li>
+<li>Privileged User<ul>
+<li>one who has been given extra privileges to perfomr administrative tasks</li>
+<li>these users should be limited to a few</li>
+</ul>
+</li>
+<li>Executive User<ul>
+<li>high-level business executive (president, CEO)</li>
+<li>requires access to more company resources than a regular user or even management</li>
+<li>has elevated access</li>
+</ul>
+</li>
+</ul>
+<p>Data Roles and Responsibilities</p>
+<ul>
+<li>Data Owner<ul>
+<li>typically compnay owner, executive team, department head who decides which data is considered an asset and how that data should be protected</li>
+</ul>
+</li>
+<li>Data custodian/steward<ul>
+<li>custodian (aka steward) is the person who implements the security control based on the value of the asset determined by the owner.</li>
+<li>typically IT admin who performs common tasks such as backups, configuring permissions, etc</li>
+</ul>
+</li>
+<li>Data privacy officer (DPO)<ul>
+<li>chief privacy officer (CPO)</li>
+<li>responsible for developing policies that address employee personal data and customer personal data</li>
+<li>privacy policy should specify how PI is to be handled and stored with the organization</li>
+</ul>
+</li>
+</ul>
+<p>Security Officer</p>
+<ul>
+<li>liases between management (the owner) and the IT staff (custodian)</li>
+<li>responsible for making sure that policies are being followed by educating everyone on their role within the organization</li>
+</ul>
+<h2 id="14-understanding-isc2-code-of-ethics">1.4 Understanding (ISC)<sup>2</sup> Code of Ethics</h2>
+<p>(ISC)2 Code of Ethics Preamble:</p>
+<ul>
+<li>The safety and welfare of society and the common good, duty to our principals, and to each other, requires that we adhere, and be seen to adhere, to the highest ethical standards of behavior, strict adherence to this Code is a condition of certification</li>
+<li>Unethical hacking activities violates this cannon of the code</li>
+</ul>
+<p>The (ISC)2 member is expected to do the following (Canons):</p>
+<ul>
+<li>Protect society, the common good, necessary public trust and confidence, and the infrastructure.<ul>
+<li>Unethical hacking activities violates this cannon of the code</li>
+</ul>
+</li>
+<li>Act honorably, honestly, justly, responsibly and legally. <ul>
+<li>Lie or commit other dishonorable, unjust, irresponsible actions violates this cannon</li>
+</ul>
+</li>
+<li>Provide diligent and competent service to principles.</li>
+<li>Advance the information security profession<ul>
+<li>Certified individuals who provide an authorized assistance on exams, violates isc2 nda or provides false information on an endorse application violates this cannon</li>
+</ul>
+</li>
+</ul>
+<h2 id="15-understand-governance-process">1.5 Understand governance process</h2>
+<p>Security Policy Framework</p>
+<ul>
+<li>Documented process and polices around the implementation and ongoing management of information security controls</li>
+<li>Documents<ul>
+<li><strong>Policies</strong><ul>
+<li>Describes an organization&#39;s security expectations put in place by organizational governance, such as executive management, to provide guidance to all activities to ensure that the    organization supports industry</li>
+<li>Compliance is mandatory</li>
+<li>Not good examples of statements:<ul>
+<li><em>“All sensitive information must be encrypted with AES-256 encryption”</em></li>
+</ul>
+</li>
+<li>Good examples <ul>
+<li><em>“Sensitive information must be encrypted using approve technology”</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Standards</strong><ul>
+<li>Describes specific details of security controls that the organization must follow such as:<ul>
+<li>encryption algorithms used, </li>
+<li>record storage locations, </li>
+<li>configuration parameters</li>
+</ul>
+</li>
+<li>Used by governance teams to provide a framework to introduce policies and procedures in support of regulations.</li>
+<li>Provides best practices to follow</li>
+<li>Compliance is mandatory</li>
+</ul>
+</li>
+<li><strong>Guidelines</strong><ul>
+<li>Provdes best practice and advice</li>
+<li>Compliance is recommend but not mandatory</li>
+</ul>
+</li>
+<li><strong>Procedures</strong><ul>
+<li>Details the steps to complete a task that support departmental or organizational policies</li>
+<li>Compliance may be mandatory depending on the organization</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Regulations and Laws</p>
+<ul>
+<li>commonly issued in the form of laws, usually from the government (not to be confused with governance) and typically carry financial penalties for non-compliance.</li>
+<li>Govern the way we store, process, and transmit information</li>
+<li>Identify which apply to us</li>
+<li>Different jurisdictions may govern our operations<ul>
+<li>General Data Protection Regulation (GDPR)<ul>
+<li>Applies to personal information of all EU residence, wherever they may be located worldwide</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Should be aware of national, state law, or other standards that do not pertain to Law:<ul>
+<li>Payment Card Industry Data Security Standard (PCI DSS)<ul>
+<li>Self-regulatory scheme that applies to credit card transactions worldwide</li>
+<li>Compliance is enforced by the banks to the credit card systems</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>===================================================================================================</p>
+<h2 id="chapter-1-security-principles---1">Chapter 1: Security Principles -</h2>
+<h3 id="module-1-understand-the-security-concepts-of-information-assurance-1">Module 1: Understand the Security Concepts of Information Assurance</h3>
+<h4 id="domain-d111-d112-d113-d114-d115-d116-1">Domain D1.1.1, D1.1.2, D1.1.3, D1.1.4, D1.1.5, D1.1.6</h4>
+<h4 id="module-objective-1">Module Objective</h4>
+<ul>
+<li><input disabled="" type="checkbox"> L1.1.1 Recognize foundational security concepts of information assurance</li>
+</ul>
+<ul>
+<li><p><strong>CIA Triad</strong> -</p>
+<ul>
+<li>Confidentiality -<ul>
+<li><mark>Protect the data</mark> that needs protection and prevent access to
+unauthorized individuals.</li>
+</ul>
+</li>
+<li>Integrity -<ul>
+<li><mark>Ensure the data has not been altered</mark> in an unauthorized manner.</li>
+</ul>
+</li>
+<li>Availability -<ul>
+<li><mark>Ensure data is accessible</mark> to authorized users <mark>when and where it is needed</mark>, and in the form and format that is required.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Authentication -</p>
+<ul>
+<li>Process of <mark>verifying or proving the user’s identification</mark> is known as authentication</li>
+<li><strong>Three</strong> common methods of authentication:<ul>
+<li><strong>Something you know</strong> - <mark>Passwords</mark> or passphrases</li>
+<li><strong>Something you have</strong> - Tokens, memory cards, <mark>smart cards</mark></li>
+<li><strong>Something you are</strong> - <mark>Biometrics</mark>, measurable characteristics</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Non-repudiation -</p>
+<ul>
+<li>The protection against an individual falsely denying having performed a particular action.</li>
+<li>E.g. In today’s world of e-commerce and electronic transactions, there are opportunities for the impersonation of others or denial of an action, such as <mark><em>making a purchase online and later denying it.</em></mark></li>
+</ul>
+</li>
+<li><p>Privacy</p>
+<ul>
+<li>Privacy is the right of an individual to control the distribution of information about themselves.</li>
+</ul>
+</li>
+<li><p>Definitions -
+  <img src="assets/D1L1.1.1.png" alt="CC-Definitions"></p>
+</li>
+</ul>
+<hr>
+<h3 id="module-2-understand-the-risk-management-process-1">Module 2: Understand the Risk Management Process</h3>
+<h4 id="domain-d121-d122-1">Domain D1.2.1, D1.2.2</h4>
+<h4 id="module-objectives-4">Module Objectives</h4>
+<ul>
+<li><input disabled="" type="checkbox"> L1.2.1 Define risk management terminology and summarize the process</li>
+<li><input disabled="" type="checkbox"> L1.2.2 Relate risk management to personal or professional practices</li>
+</ul>
+<ul>
+<li><p>Risk Management -</p>
+<ul>
+<li>An <mark><strong>asset</strong> is something in need of protection</mark>.</li>
+<li>A <strong>vulnerability</strong> is <mark>a <em>gap or weakness</em> in those protection efforts</mark>.</li>
+<li>A <strong>threat</strong> is something or someone that <mark>aims to exploit a vulnerability</mark> to thwart protection efforts.</li>
+</ul>
+</li>
+<li><p>Threats -</p>
+<ul>
+<li>A <strong>threat</strong> is a person or thing that takes action to exploit (or make use of) a target organization’s system vulnerabilities, as part of achieving or furthering its goal or objectives.</li>
+<li>Threat Actors -<ul>
+<li><strong>Insiders</strong> (either deliberately, by <mark>simple human error</mark>, or by gross incompetence).</li>
+<li><strong>Outside individuals</strong> or informal groups (<mark>either planned or opportunistic</mark>, discovering vulnerability).</li>
+<li><strong>Formal entities that are nonpolitical</strong> (such as <mark>business competitors</mark> and cybercriminals).</li>
+<li><strong>Formal entities that are political</strong> (such as terrorists, nation-states, and <mark>hacktivists</mark>).</li>
+<li><strong>Intelligence or information gatherers</strong> (could be any of the above).</li>
+<li><strong>Technology</strong> (such as <mark>free-running bots</mark> and artificial intelligence , which could be part of any of the above).</li>
+</ul>
+</li>
+<li>Threat Vector - the  <mark>means by which a threat actor carries out their objectives</mark>.</li>
+</ul>
+</li>
+<li><p>Vulnerabilities -</p>
+<ul>
+<li>Vulnerability is <mark>an inherent weakness or flaw</mark> in a system or component, which, <mark>if triggered or acted upon, could cause a risk event</mark> to occur.</li>
+<li>An organization’s <mark>security team strives to decrease its vulnerability</mark>. To do so, they view their organization with the eyes of the threat actor, asking themselves, “Why would we be an attractive target?” The answers might provide steps to take that will discourage threat actors, cause them to look elsewhere or simply make it more difficult to launch an attack successfully.</li>
+</ul>
+</li>
+<li><p>Likelihood -</p>
+<ul>
+<li>When determining an organization’s vulnerabilities, the security team will consider the probability, or likelihood , of a potential vulnerability being exploited within the construct of the organization’s threat environment.</li>
+<li><strong>Impact</strong> is the <mark>magnitude of harm</mark> that can be expected to result from the consequences of unauthorized disclosure of information, unauthorized modification of information, unauthorized destruction of information, or loss of information or information system availability.</li>
+</ul>
+</li>
+<li><h2 id="risk--identification------identify-risk-to-communicate-it-clearly----employees-at-all-levels-of-the-organization-are-responsible-for-identifying-risk----identify-risk-to-protect-against-it-1">Risk
+* <strong>Identification</strong> -
+  * Identify risk to <mark>communicate it clearly</mark>.
+  * <mark>Employees at all levels</mark> of the organization are <mark>responsible</mark> for identifying risk.
+  * Identify risk <mark>to protect against it</mark>.</h2>
+<ul>
+<li><h2 id="assessment----process-of-identifying-estimating-and-prioritizing-risks-to-an-organizations-operations-including-its-mission-functions-image-and-reputation-assets-individuals-other-organizations-and-even-the-nation--a-common-risk-assessment-activity-identifies-the-risk-of-fire-to-a-building--the-result-of-the-risk-assessmentprocess-is-oftendocumented-as-a-report-or-presentation-given-to-management-for-their-use-inprioritizing-the-identified-risks-1"><strong>Assessment</strong> -
+* process of identifying, estimating and prioritizing risks to an organization’s operations (including its mission, functions, image and reputation), assets, individuals, other organizations and even the nation.
+* A common risk assessment activity identifies the <mark>risk of fire to a building</mark>.
+* The result of the risk assessment process is often documented as <mark>a report or presentation given to management</mark> for their use in prioritizing the identified risk(s).</h2>
+</li>
+<li><strong>Treatment</strong> -<ul>
+<li>relates to making decisions about the best actions to take regarding the identified and prioritized risk.</li>
+<li>The decisions made are dependent on the attitude of management toward risk and the availability and cost of risk mitigation.</li>
+<li>The commonly used options to respond to risk are -<ul>
+<li><strong>Avoidance</strong> - the decision to <mark>attempt to eliminate</mark> the risk entirely.</li>
+<li><strong>Acceptance</strong> - taking <mark>no action to reduce</mark> the likelihood of a risk occurring.</li>
+<li><strong>Mitigation</strong> - taking actions to <mark>prevent or reduce the possibility</mark> of a risk event or its impact.</li>
+<li><strong>Transfer</strong> -  the practice of <mark>passing the risk to another party</mark>, who will accept the financial impact of the harm resulting from a risk being realized in exchange for payment.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Definitions -
+  <img src="assets/D1L1.2.1.png" alt="Risk-Definitions"></p>
+</li>
+<li><p>Risk priorities -</p>
+<ul>
+<li>When risks have been identified, it is time to prioritize and analyze core risks through <strong>qualitative risk</strong> analysis and/or <strong>quantitative risk</strong> analysis. </li>
+<li>This is necessary to determine root cause and narrow down apparent risks and core risks.</li>
+<li>One effective method to prioritize risk is to use a <strong>risk matrix</strong>, which helps <mark>identify priority as the intersection of likelihood of occurrence and impact</mark>.
+<img src="assets/risk-matrix.png" alt="Risk-Matrix"></li>
+<li>Assignment of <mark>priority</mark> may relate to <mark>business priorities, the cost of mitigating a risk or the potential for loss</mark> if an incident occurs.</li>
+<li>When making decisions based on risk priorities, organizations <em>must evaluate the likelihood and impact of the risk</em> as well as their tolerance for different sorts of risk.</li>
+</ul>
+</li>
+<li><p>Risk Tolerance -</p>
+<ul>
+<li>The perception management takes toward risk is often likened to the entity’s <strong>appetite for risk</strong>.</li>
+<li><strong>Executive management and/or the Board of Directors</strong> <mark>determines what is an acceptable level of risk</mark> for the organization.</li>
+<li>Security professionals aim to maintain the levels of risk within management’s limit of risk tolerance.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="module-3-understand-security-controls-1">Module 3: Understand Security Controls</h3>
+<h4 id="domain-d131-d132-d133-1">Domain D1.3.1, D1.3.2, D1.3.3</h4>
+<h4 id="module-objectives-5">Module Objectives</h4>
+<ul>
+<li><input disabled="" type="checkbox"> L1.3.1 Classify types of security controls.</li>
+</ul>
+<ul>
+<li>Security controls -<ul>
+<li>pertain to the <strong>physical, technical and administrative mechanisms</strong> that<ul>
+<li>act as <mark>safeguards or countermeasures</mark> prescribed for an information system</li>
+<li>to <mark>protect the confidentiality, integrity and availability</mark> of the system and its information.</li>
+</ul>
+</li>
+<li>The implementation of controls should <em><strong>reduce</strong></em> risk, hopefully to an acceptable level.</li>
+<li><strong>Physical</strong> controls -<ul>
+<li>address <strong>process-based security</strong> needs using <mark>physical hardware devices, such as badge readers, architectural features of buildings and facilities</mark>, and specific security actions to be taken by people.</li>
+<li>provide protection and control over entry onto the land surrounding the buildings, parking lots or other areas that are within the organization’s control.</li>
+</ul>
+</li>
+<li><strong>Technical (<em>logical</em>)</strong> controls -<ul>
+<li>computer systems and networks directly implement.</li>
+<li>can provide <strong>automated protection from unauthorized access</strong> or misuse, <mark>facilitate detection of security violations and support security requirements</mark> for applications and data.</li>
+</ul>
+</li>
+<li><strong>Administrative (<em>managerial</em>)</strong> controls -<ul>
+<li>are <mark><strong>directives, guidelines or advisories</strong></mark> aimed at the people within the organization.</li>
+<li>provide frameworks, constraints and standards for human behavior, and should cover the entire scope of the organization’s activities and its interactions with external parties and stakeholders.</li>
+</ul>
+</li>
+<li>Security controls - <img src="assets/D1.3L1.3.1.png" alt="Security-controls"></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="module-4-understand-governance-elements-and-processes-1">Module 4: Understand Governance Elements and Processes</h3>
+<h4 id="domain-d151-d152-d153-d154-2">Domain D1.5.1, D1.5.2, D1.5.3, D1.5.4</h4>
+<h4 id="module-objectives-6">Module Objectives</h4>
+<ul>
+<li><input disabled="" type="checkbox"> L1.4.1 Distinguish between policies, procedures, standards, regulations and laws.</li>
+<li><input disabled="" type="checkbox"> L1.4.2 Demonstrate the relationship among governance elements.</li>
+</ul>
+<ul>
+<li><h2 id="governance-elements----when-leaders-and-management-implement-the-systems-and-structures----that-the-organization-will-use-to-achieve-its-goals----they-are-guided-by-laws-and-regulations-created-by-governments-to-enact-public-policy--laws-and-regulations-guide-the-development-of-standards-which-cultivate-policies-which-result-in-procedures--governance-elements---governance-elements----regulations--------commonly-issued-in-the-form-of-laws-usually-from-government-and-typically-carry-financial-penalties-for-noncompliance------the-health-insurance-portability-and-accountability-act-hipaa-of-1996-is-an-example-of-a-law-that-governs-the-use-of-protected-health-information-phi-in-the-united-states-violation-of-the-hipaa-rule-carries-the-possibility-of-fines-andor-imprisonment-for-both-individuals-and-companies-1">Governance elements -
+* When leaders and management implement the systems and structures
+  * that the organization will use to achieve its goals,
+  * they are guided by **laws and regulations **created by governments to enact public policy.
+* <mark><strong>Laws and regulations</strong> guide the development of standards, which cultivate policies, which result in procedures.</mark>
+* <strong>Governance elements</strong> - <img src="assets/governance.png" alt="Governance Elements">
+  * <strong>Regulations</strong> -
+    * Commonly issued in the form of laws, usually from government and typically <em><strong>carry financial penalties</strong></em> for noncompliance.
+    * The Health Insurance Portability and Accountability Act <mark>(<strong>HIPAA</strong>)</mark> of 1996 is an example of a law that <mark><strong>governs the use of protected health information (PHI)</strong></mark> in the United States. Violation of the HIPAA rule carries the possibility of fines and/or imprisonment for both individuals and companies.</h2>
+<ul>
+<li><h2 id="standards----organizationsuse-multiple-standards-as-part-of-their-information-systems-security-programs-both-as-compliance-documents-and-as-advisories-or-guidelines--standardscover-a-broad-range-of-issues-and-ideas-and-may-provide-assurance-that-an-organization-is-operating-with-policies-and-procedures-that-support-regulations-and-are-widely-accepted-best-practices--the-international-organization-for-standardization-iso-develops-and-publishes-international-standards-on-a-variety-of-technical-subjects-including-information-systems-and-information-security-as-well-as-encryption-standards--the-national-institute-of-standards-and-technology-nist-is-a-united-states-government-agency-under-the-department-of-commerce-and-publishes-a-variety-of-technical-standards-in-addition-to-information-technology-and-information-security-standards-1"><strong>Standards</strong> -
+* Organizations use <mark>multiple standards as part of their information systems security programs</mark>, both as compliance documents and as advisories or guidelines.
+* Standards cover a broad range of issues and ideas and may provide assurance that an organization <strong>is operating with policies and procedures that support regulations</strong> and are widely accepted best practices.
+* The International Organization for Standardization (<strong>ISO</strong>) develops and publishes international standards on a variety of technical subjects, including information systems and information security, as well as encryption standards.
+* The National Institute of Standards and Technology <mark>(<strong>NIST</strong>)</mark> is a United States government agency under the Department of Commerce and publishes a variety of technical standards in addition to information technology and information security standards.</h2>
+</li>
+</ul>
+<pre><code>* **Policies** -
+  * Policy is **informed by applicable law(s)** and &lt;mark&gt;specifies which standards and guidelines the organization will follow&lt;/mark&gt;. 
+  * Governance policies are used to moderate and control decision-making, to ensure compliance when necessary and to guide the creation and implementation of other policies.
+  * Policies are implemented, or carried out, by people; for that, someone must expand the policies from statements of intent and direction into step-by-step instructions, or procedures.
+   ---
+</code></pre>
+<ul>
+<li><strong>Procedures</strong> -<ul>
+<li>define <strong>the explicit, repeatable activities</strong> <mark>necessary to accomplish a specific task</mark> or set of tasks.</li>
+<li>They <mark><strong>provide supporting data, decision criteria</strong> or other explicit knowledge</mark> needed to perform each task.</li>
+<li>They <strong>establish the measurement criteria and methods</strong> to use to determine whether a task has been successfully completed.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="-1"> </h2>
+<h3 id="module-5-understand-isc2-code-of-ethics-1">Module 5: Understand ISC<sup>2</sup> Code of Ethics</h3>
+<h4 id="domain-d151-d152-d153-d154-3">Domain D1.5.1, D1.5.2, D1.5.3, D1.5.4</h4>
+<h4 id="module-objectives-7">Module Objectives</h4>
+<ul>
+<li><input disabled="" type="checkbox"> L1.5.1 Analyze appropriate outcomes according to the canons of the ISC<sup>2</sup>  Code of Ethics when given examples.</li>
+</ul>
+<ul>
+<li><strong>Professional Code of Conduct</strong><ul>
+<li>Preamble -<ul>
+<li>states the purpose and intent of the ISC<sup>2</sup> Code of Ethics -<ul>
+<li>The <mark>safety and welfare of society and the common good</mark>, duty to our principals, and to each other, requires that we adhere, and be seen to adhere, to the highest ethical standards of behavior.</li>
+<li>Therefore, strict adherence to this Code is a condition of certification.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>ISC<sup>2</sup> Code of ethics canons</strong> -<ul>
+<li>represent the important beliefs held in common by the members of ISC<sup>2</sup>. Cybersecurity professionals who are members of ISC<sup>2</sup> have a duty to the following four entities in the Canons.<ul>
+<li><strong>Protect</strong> society, the common good, necessary public trust and confidence, and the infrastructure.</li>
+<li><strong>Act</strong> honorably, honestly, justly, responsibly and legally.</li>
+<li><strong>Provide</strong> diligent and competent service to principals.</li>
+<li><strong>Advance</strong> and protect the profession.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>====================================================================================================</p>
+<h1 id="security-concepts">Security Concepts</h1>
+<p>CIA Traid are three main goals</p>
+<h2 id="confidentiality-1">Confidentiality</h2>
+<ul>
+<li>Confidentiality protects information from unauthorized disclosure.</li>
+</ul>
+<h4 id="confidentiality_concerns">Confidentiality_Concerns</h4>
+<ol>
+<li>Snooping<ul>
+<li>snooping gathering information that is left out in the open.</li>
+<li>&quot;Clean desk policies&quot; protect against snooping.</li>
+</ul>
+</li>
+<li>Dumpster Diving<ul>
+<li>Dumpster diving is to dump data anywere or dustbin.</li>
+<li>&quot;Shedding&quot; protects against dumpster diving.</li>
+</ul>
+</li>
+<li>Eavesdropping<ul>
+<li>listing sensitive information</li>
+<li>&quot;Rules about sensitive conversations&quot; prevent eavesdropping</li>
+</ul>
+</li>
+<li>Wiretapping<ul>
+<li>Electronic evaesdropping - listing through wire(internet)</li>
+<li>&quot;Encryption&quot; protects against Wiretapping</li>
+</ul>
+</li>
+<li>Social Engineering<ul>
+<li>The attacker uses psychological tricks to persuade an employee to give then sensitive information or access to internal systems.</li>
+<li>Best defence is to &quot;Educating users&quot;</li>
+</ul>
+</li>
+</ol>
+<h2 id="integrity-1">Integrity</h2>
+<ul>
+<li>Integrity protects information from unauthorized changes.</li>
+</ul>
+<h4 id="integrity_concerns">Integrity_Concerns</h4>
+<ol>
+<li>Unauthorized modification<ul>
+<li>Attacks make changes without permission.</li>
+<li>&quot;Least priviege&quot; protects against integrity attacks</li>
+</ul>
+</li>
+<li>Impersonation<ul>
+<li>Attacks pretend to be someone else</li>
+<li>&quot;User education&quot; protects against attacks</li>
+</ul>
+</li>
+<li>Man-in-the-middle (MITM)<ul>
+<li>Attacks place the attacker in the middle of a communications session.</li>
+<li>&quot;Encryption&quot; protects against MITM attacks</li>
+</ul>
+</li>
+<li>Replay<ul>
+<li>Attacks eavesdrop on logins and reuse the captured credentials.</li>
+<li>&quot;Encryption&quot; protects against Replay attacks</li>
+</ul>
+</li>
+</ol>
+<h2 id="availability-1">Availability</h2>
+<ul>
+<li>Availability protects authorized access to systems and data.</li>
+</ul>
+<h4 id="availability_concerns">Availability_Concerns</h4>
+<ol>
+<li>Denial of service (DoS)<ul>
+<li>Unlimited request to a server</li>
+<li>&quot;Block unauthorized connections&quot; to protect against denial of service attacks.</li>
+</ul>
+</li>
+<li>Power outages<ul>
+<li>Naturally or Man-made</li>
+<li>&quot;Redundant power and generators&quot; protect against power outages.</li>
+</ul>
+</li>
+<li>Hardware failures<ul>
+<li>any component failures</li>
+<li>&quot;Redundant components&quot; protect against hardware failure</li>
+</ul>
+</li>
+<li>Destruction<ul>
+<li>Naturally or Man-made</li>
+<li>&quot;Backup data centers&quot; protect against destruction.</li>
+</ul>
+</li>
+<li>Service outages<ul>
+<li>Programing error and the failure of underlying equipment.</li>
+<li>building systems that are resilient in the face of errors and hardware failures.</li>
+</ul>
+</li>
+</ol>
+<h2 id="authentication-and-authorization">Authentication and authorization</h2>
+<p>The access control process consists of three steps that you must understand. These steps are identification, authentication and authorization.</p>
+<ol>
+<li>Identification incolves making a claim of identity.<ul>
+<li>Electronic identification commonly uses usernames</li>
+</ul>
+</li>
+<li>Authentication requires proving a claim of identity.<ul>
+<li>Electronic autherntication commonly uses passwords.</li>
+</ul>
+</li>
+<li>Authorization ensures that an action is allowed.<ul>
+<li>Electronic authorization commonly uses access control lists.</li>
+</ul>
+</li>
+</ol>
+<p>Authentication and authorization process, access control systems also provide &quot;Accounting&quot; functionality that allows administrators to track user activity and reconstruct that activity from logs. This may include tracking user activity on systems and even logging user web browsing history.</p>
+<h2 id="password-security">Password security</h2>
+<p>Password mechanisms
+    - Password length requirements set a minimum number of characters. 
+    - Password complexity requirements describe the types of characters that must be included.
+    - Password expiration requirements force password changes.
+    - Password requirements prevent password reuse.</p>
+<h2 id="multifactor-authentication">Multifactor authentication</h2>
+<p>Multifactor authentication combines two different authentication factors.</p>
+<p>Three different authentication factors. Something you know, something you are and something you have.</p>
+<h4 id="something-you-know">something you know</h4>
+<ul>
+<li>Passwords, PIN&#39;s, Security questions.</li>
+</ul>
+<h4 id="something-you-are">something you are</h4>
+<ul>
+<li>Biometric security mechanisms.</li>
+</ul>
+<h4 id="something-you-have">something you have</h4>
+<ul>
+<li>Software and hardware tokens.</li>
+</ul>
+<h4 id="single-sign-on-sso">single sign-On (SSO)</h4>
+<p>Shares authentiacated sessions across systems
+    - In a single sign on approach, users log on to the first SSO enabled system that they encounter. And then that login session persists across other systems until it expires. If the organization sets the expiration period to be the length of a business day, that means that users will only need to log in once a day and their single sign on is then going to last the entire day.</p>
+<h2 id="non-repudiation-1">Non-repudiation</h2>
+<p>Non-repudiation prevents someone from denying the truth.</p>
+<p>Solved the issue with
+    1. Signed contracts
+    2. Digital signatures
+    3. Video surveillance</p>
+<h2 id="privacy-1">Privacy</h2>
+<p>Privacy Concerns</p>
+<ol>
+<li>Protecting our own data.</li>
+<li>Educating our users.</li>
+<li>Protecing data collected by our organizations.</li>
+</ol>
+<p>Private information may come in many forms. Two of the most common elements of private information are &quot;Personally identifiable information&quot; and &quot;Protected health information&quot;.</p>
+<ol>
+<li>Personally identifiable information, or PII, includes all information that can be tied back to a specific individual. </li>
+<li>Protected health information, or PHI, includes healthcare records that are regulated under the Health Insurance Portability and Accountability Act. Otherwise known as HIPAA.</li>
+</ol>
+<p>==================================================================================================</p>
+<h1 id="l1-security-principles">L1: Security Principles</h1>
+<h2 id="module-1-understand-the-security-concepts-of-information-assurance-2">Module 1 Understand the Security Concepts of Information Assurance</h2>
+<p>Domain D1.1.1, D1.1.2, D1.1.3, D1.1.4, D1.1.5, D1.1.6</p>
+<h3 id="confidentiality-2">Confidentiality</h3>
+<p>It relates to permitting authorized access to information, while at the same time protecting information from improper disclosure. Difficulties to achieve confidentiality are related to: <strong>many users are guests or customers</strong>, and it is not clear if the access comes from a compromised machine or vulnerable mobile application. To avoid those difficulties, security professionals must regulate access, permitting access to authorized individuals, for that protecting the data that needs protection. </p>
+<p>Data that needs protections is also known <strong>as PII or PHI</strong>. 
+<strong>PII</strong> stands for Personally Identifiable Information and it is related to the area of confidentiality and it means any data that could be used to identify an individual. 
+<strong>PHI</strong> stands for Protected Health Information and it comprehends information about one&#39;s health status, and classified or sensitive information, which includes trade secrets, research, business plans and intellectual property. </p>
+<p>Related to confidentiality is <strong>the concept sensitivity a measure of the importance assigned to information by its owner</strong>, or the purpose of denoting its need for protection. <strong>Sensitive information</strong> is information that if improperly disclosed (confidentiality) or modified (integrity) would harm an organization or individual. In many cases, sensitivity is related to the harm to external stakeholders; that is, people or organizations that may not be a part of the organization that processes or uses the information.</p>
+<p>Threat related to confidentiality are:</p>
+<ol>
+<li>Snooping involves gathering information that is left out in the open. Clean desk policies protect against snooping.</li>
+<li>Dumpster diving also looking for sensitive materials, but in the dumpster, a paper shredding protects against it.</li>
+<li>Eavesdropping occurs when someone secretly listen to a conversation, and it can be prevent with rules about sensitive conversations  </li>
+<li>Wiretapping is the electronic version of eavesdropping, the best way against that is using encryption to protect the communication. </li>
+<li>Social Engineering, the best defense is educate users to protect them against social engineering.</li>
+</ol>
+<h3 id="integrity-2">Integrity</h3>
+<p>It is the property of information whereby it is recorded, used and maintained in a way that ensures its completeness, accuracy, internal consistency and usefulness for a stated purpose, which can be applied <strong>to information or data</strong>, <strong>system and process for business operations</strong>, <strong>organizations</strong>, <strong>people and their actions</strong>. Furthermore, restrict to data integrity, it is an assurance that  data has not been altered in an unauthorized manner, covering data <strong>in storage</strong>, during <strong>processing</strong>, and while <strong>in transit</strong>. </p>
+<p><strong>Consistency</strong> is another concept related to integrity and requires that all instances of the data be identical in form, content and meaning. When related to system integrity, it refers to the maintenance of a known good configuration and expected operational function as the system processes the information. Ensuring integrity begins with an awareness of state, which is the current condition of the system. Specifically, this awareness concerns the ability to document and understand the state of data or a system at a certain point, <strong>creating a baseline</strong>. A baseline, which means a documented, lowest level of security configuration allowed by a standard or organization, can refer to the current state of the information—whether it is protected. </p>
+<p>To preserve that state, the information must always continue to be protected through a transaction. Going forward from that baseline, the integrity of the data or the system can always be ascertained by comparing the baseline with the current state. If the two match, then the integrity of the data or the system is intact; if the two do not match, then the integrity of the data or the system has been compromised. Integrity is a primary factor in the reliability of information and systems. The need to safeguard information and system integrity may be dictated by laws and regulations. Often, it is dictated by the needs of the organization to access and use reliable, accurate information.</p>
+<ol>
+<li>Unauthorized modification attacks make changes without permission. The best way to protect against that is the least privilege principle.</li>
+<li>Impersonation attacks pretend to be someone else. User education protects against impersonation attack.</li>
+<li>Man-In-The-Middle (MITM) attacks place the attacker in the middle of a communication session, monitoring everything that&#39;s occurring.  </li>
+<li>Replay attacks eavesdrop on logins and reuse the captured credentials.</li>
+</ol>
+<p>To both MiTM and Replay attacks the best approach is encryption.</p>
+<h3 id="availability-2">Availability</h3>
+<p>It means that systems and data are accessible at the time users need them. It can be defined as timely and reliable access to information and the ability to use it, and for authorized users, timely and reliable access to data and information services. 
+The core concept of availability is that data is accessible <strong>to authorized users when and where it is needed and in the form and format required</strong>. This does not mean that data or systems are available 100% of the time. Instead, the systems and data meet the requirements of the business for timely and reliable access. 
+<strong>Some systems and data are far more critical than others</strong>, so the security professional <strong>must ensure that the appropriate levels of availability are provided</strong>. This requires consultation with the involved business to ensure that critical systems are identified and available. 
+Availability is often associated with the term <strong>criticality</strong>, which means a measure of the degree to which an organization depends on the information or information system for the success of a mission or of a business function (NIST SP 800-60), because it represents the importance an organization gives to data or an information system in performing its operations or achieving its mission</p>
+<ol>
+<li>Denial of Service can be mitigated using firewalls to block unauthorized connections</li>
+<li>Power outages can be mitigated using redundant power and generators</li>
+<li>Hardware failures can be mitigated using redundant components</li>
+<li>Destruction can be mitigated using backups</li>
+<li>Service outages</li>
+</ol>
+<h3 id="three-steps-to-gain-access-known-as-triple-a-which-means-authentication-authorization-accounting">Three steps to gain access, known as triple A, which means Authentication, Authorization, Accounting</h3>
+<h4 id="identification">Identification</h4>
+<p>Consist of making a claim of identity</p>
+<h4 id="authentication">Authentication</h4>
+<p>When users have stated their identity, it is necessary <strong>to validate that they are the rightful owners of that identity</strong>. This process of verifying or proving the user’s identification is known as authentication, which means in another terms access control process validating that the identity being claimed by a user or entity is known to the system, by comparing one (single-factor or SFA) or more (multi-factor authentication or MFA) factors of authentication. Simply put, authentication is a process to prove the identity of the requestor.</p>
+<p>There are three common methods of authentication:</p>
+<ul>
+<li>Something you know: Passwords or paraphrases</li>
+<li>Something you have: Tokens (NISTIR 7711), memory cards, smart cards</li>
+<li>Something you are: Biometrics , measurable characteristics</li>
+</ul>
+<h4 id="methods-of-authentication">Methods of Authentication</h4>
+<p>There are two types of authentication. Using only one of the methods of authentication stated previously is <strong>known as single-factor authentication (SFA)</strong>. Granting users access only after successfully demonstrating or displaying two or more of these methods is <strong>known as multi-factor authentication (MFA)</strong>. </p>
+<p> <strong>Common best practice is to implement at least two of the three common techniques for authentication</strong>: </p>
+<ul>
+<li>Knowledge-based </li>
+<li>Token-based </li>
+<li>Characteristic-based</li>
+</ul>
+<p>  </p>
+<p>Knowledge-based authentication uses a passphrase or secret code to differentiate between an authorized and unauthorized user. If you have selected a personal identification number (PIN), created a password or some other secret value that only you know, then you have experienced knowledge-based authentication. The problem with using this type of authentication alone is that it is often vulnerable to a variety of attacks. For example, the help desk might receive a call to reset a user’s password. The challenge is ensuring that the password is reset only for the correct user and not someone else pretending to be that user. For better security, a second or third form of authentication that is based on a token or characteristic would be required prior to resetting the password. The combined use of a user ID and a password consists of two things that are known, and because it does not meet the requirement of using two or more of the authentication methods stated, it is not considered MFA.</p>
+<h4 id="password">Password</h4>
+<ul>
+<li>Password length requirements set a minimum number of chars</li>
+<li>Password complexity requirements describe the types of characters that must be included</li>
+<li>Password expiration requirements force password changes. Nowadays, that requirement isn&#39;t used, companies change to an approach where force password change is required when there is any evidence that the password has been compromised.</li>
+<li>Password history requirements prevent password reuse.</li>
+<li>Provide a way to change the password quickly and easily.</li>
+<li>Encourage users to not reuse the same password across multiple sites</li>
+<li>Password managers facilitate the use of strong, unique passwords</li>
+</ul>
+<h4 id="authorization">Authorization</h4>
+<p>Ensuring that an action is allowed.</p>
+<h4 id="accounting">Accounting</h4>
+<p>Its maintains logs of activity</p>
+<h3 id="non-repudiation-2">Non-repudiation</h3>
+<p>Non-repudiation is a legal term and is defined as the protection against an individual falsely denying having performed a particular action. It provides the capability to determine whether a given individual took a particular action, such as created information, approved information or sent or received a message.</p>
+<p>In today’s world of e-commerce and electronic transactions, <strong>there are opportunities for the impersonation of others or denial of an action, such as making a purchase online and later denying it</strong>. It is important that all participants trust online transactions. <strong>Non-repudiation methodologies ensure that people are held responsible for transactions they conducted</strong>.</p>
+<h3 id="base-concepts">Base Concepts</h3>
+<ol>
+<li>Authorization: the right or a permission that is granted to a system entity to access a system resource</li>
+<li>Integrity: the property that data has not been altered in an unauthorized manner</li>
+<li>Confidentiality: the characteristic of data or information when it is not made available or disclosed to unauthorized persons or process </li>
+<li>Privacy: the right of an individual to control the distribution of information about themselves</li>
+<li>Availability: Ensuring timely and reliable access to and use of information by authorized users</li>
+<li>Non-repudiation: The inability to deny taking an action, such as sending an email message</li>
+<li>Authentication: Access control process that compares one or more factors of identification to validate that the identity claimed by a user or entity is known to the system</li>
+</ol>
+<h3 id="privacy-2">Privacy</h3>
+<p>Privacy is <strong>the right of an individual to control the distribution of information about themselves</strong>. While security and privacy both focus on the protection of personal and sensitive data, there is a difference between them. With the increasing rate at which data is collected and digitally stored across all industries, the push for privacy legislation and compliance with existing policies steadily grows. In today’s global economy, privacy legislation and regulations on privacy and data protection can impact corporations and industries regardless of physical location. <strong>Global privacy is an especially crucial issue when considering requirements regarding the collection and security of personal information</strong>. There are several laws that define privacy and data protection, which periodically change. Ensuring that protective security measures are in place is not enough to meet privacy regulations or to protect a company from incurring penalties or fines from mishandling, misuse, or improper protection of personal or private information. An example of a law with multinational implications is the European Union’s General Data Protection Regulation (GDPR) which applies to all organizations, foreign or domestic, doing business in the EU or any persons in the EU. Companies operating or doing business within the United States may also fall under several state legislations that regulate the collection and use of consumer data and privacy. Likewise, member nations of the EU enact laws to put GDPR into practice and sometimes add more stringent requirements. These laws, including national- and state-level laws, dictate that any entity anywhere in the world handling the private data of people in a particular legal jurisdiction must abide by its privacy requirements. As a member of an organization&#39;s data protection team, you will not be required to interpret these laws, but you will need an understanding of how they apply to your organization.</p>
+<h2 id="module-2-understand-the-risk-management-process-2">Module 2 Understand the risk management process</h2>
+<p>Domain D1.2.1, D1.2.2</p>
+<p>Risks and security-related issues represent <strong>an ongoing concern</strong> of businesses as well as the field of cybersecurity. Assessing and analyzing risk should be <strong>a continuous and comprehensive</strong> exercise in any organization. As a member of an organization’s security team, you will work through <strong>risk assessment, analysis, mitigation, remediation and communication</strong>.</p>
+<p>**Risk ** is  a measure of the extent to which an entity is threatened by a <strong>potential</strong> circumstance or event. It is often expressed as a combination of:
+    the <strong>adverse impacts that would arise if the circumstance or event occurs</strong>,  and 
+    the <strong>likelihood</strong> of occurrence. </p>
+<p>Information security risk reflects the potential adverse impacts that result from the possibility of unauthorized access, use, disclosure, disruption, modification or destruction of information and/or information systems. This definition represents that <strong>risk is associated with threats, impact and likelihood</strong>, and it also indicates that IT risk is a subset of business risk. </p>
+<p>Matrix: Probability X Impact generates four possible combinations:</p>
+<ol>
+<li>low probability, low impact</li>
+<li>low probability, high impact</li>
+<li>high probability, low impact</li>
+<li>high probability, high impact</li>
+</ol>
+<h3 id="risk-management-terminology">Risk Management Terminology</h3>
+<ul>
+<li><strong>An asset</strong> is something in need of protection because it has value to the organization. It could be a tangible asset or intangible, such as information.</li>
+<li><strong>A vulnerability</strong> is a gap or weakness in an organization&#39;s protection of its valuable assets, including information. (NIST SP 800-30). A vulnerability is an inherent weakness or flaw in a system or component, which, if triggered or acted upon, could cause a risk event to occur. An organization’s security team strives to decrease its vulnerability. To do so, <strong>they view their organization with the eyes of the threat actor</strong>, asking themselves, <strong>“Why would we be an attractive target?”</strong> The answers might provide steps to take that will discourage threat actors, cause them to look elsewhere or simply make it more difficult to launch an attack successfully. <strong>Managing vulnerabilities starts with one simple step: Learn what they are</strong>.</li>
+<li><strong>A threat</strong> is something or someone that aims to exploit a vulnerability to gain unauthorized access. A threat is a person or thing that takes action to exploit (or make use of) a target organization’s system vulnerabilities, as part of achieving or furthering its goal or objectives.</li>
+<li>Likelihood, when determining an organization’s vulnerabilities, the security team will consider <strong>the probability</strong>, or likelihood , of <strong>a potential vulnerability being exploited within the construct of the organization’s threat environment</strong>. <strong>Likelihood of occurrence is a weighted factor based on a subjective analysis of the probability that a given threat or set of threats is capable of exploiting a given vulnerability or set of vulnerabilities.</strong></li>
+</ul>
+<p>Finally, the security team will consider the likely results if a threat is realized and an event occurs. Impact is the magnitude of harm that can be expected to result from the consequences of unauthorized disclosure of information, unauthorized modification of information, unauthorized destruction of information, or loss of information or information system availability.</p>
+<p>Think about the impact and the chain of reaction that can result when an event occurs by revisiting the pickpocket scenario: <strong>Risk comes from the intersection of those three concepts</strong>.</p>
+<h3 id="risk-identification">Risk Identification</h3>
+<p>In the world of cyber, <strong>identifying risks is not a one-and-done activity</strong>. It’s a recurring process of identifying different possible risks, characterizing them and then estimating their potential for disrupting the organization.  </p>
+<p>Takeaways to remember about risk identification: </p>
+<ul>
+<li>Identify risk to communicate it clearly. </li>
+<li>Employees at all levels of the organization are responsible for identifying risk.</li>
+<li>Identify risk to protect against it.</li>
+</ul>
+<p>As a security professional, you are likely to assist in risk assessment at a system level, focusing <strong>on process, control, monitoring or incident response and recovery activities</strong>. If you’re working with a smaller organization, or one that lacks any kind of risk management and mitigation plan and program, you might have the opportunity to help fill that planning void.</p>
+<h3 id="risk-assessment">Risk Assessment</h3>
+<p>Risk assessment is defined as <strong>the process of identifying</strong>, <strong>estimating and prioritizing risks to an organization’s operations</strong> (including its mission, functions, image and reputation), <strong>assets</strong>, <strong>individuals</strong>, <strong>other organizations and even the nation</strong>. Risk assessment should result in aligning (or associating) <strong>each identified risk resulting from the operation of an information system with the goals, objectives, assets or processes that the organization uses, which in turn aligns with or directly supports achieving the organization’s goals and objectives</strong>. A risk assessment can prioritize items for management to determine the method of mitigation that best suits the assets being protected. The result of the risk assessment process is <strong>often documented as a report or presentation given to management for their use in prioritizing the identified risk(s)</strong>. This report is provided to management for review and approval. In some cases, management may indicate a need for a more in-depth or detailed risk assessment performed by internal or external resources.  </p>
+<h3 id="risk-treatment">Risk Treatment</h3>
+<p>Risk treatment relates <strong>to making decisions about the best actions to take regarding the identified and prioritized risk</strong>. The decisions made are dependent on the attitude of management toward risk and the availability — and cost — of risk mitigation. The options commonly used to respond to risk are:</p>
+<ul>
+<li><p>Avoidance: <strong>It is the decision to attempt to eliminate the risk entirely</strong>. This could include ceasing operation for some or all of the activities of the organization that are exposed to a particular risk. <strong>Organization leadership may choose risk avoidance when the potential impact of a given risk is too high or if the likelihood of the risk being realized is simply too great</strong>.</p>
+</li>
+<li><p>Acceptance: Risk acceptance is taking <strong>no action to reduce the likelihood of a risk occurring</strong>. Management may opt for conducting the business function that is associated with the risk <strong>without any further action on the part of the organization</strong>, either because the impact or likelihood of occurrence is negligible, or because the benefit is more than enough to offset that risk.</p>
+</li>
+<li><p>Mitigation: Risk mitigation <strong>is the most common type of risk management and includes taking actions to prevent or reduce the possibility of a risk event or its impact</strong>. Mitigation can involve <strong>remediation measures</strong>, <strong>or controls</strong>, <strong>such as security controls, establishing policies, procedures, and standards to minimize adverse risk</strong>. Risk cannot always be mitigated, but mitigations such as safety measures should always be in place.</p>
+</li>
+<li><p>Transfer: <strong>Risk transference is the practice of passing the risk to another party</strong>, who will accept the financial impact of the harm resulting from a risk being realized in exchange for payment. Typically, this is an insurance policy.</p>
+</li>
+</ul>
+<h3 id="base-concepts-1">Base Concepts</h3>
+<ul>
+<li>Mitigation: Taking action to prevent or reduce the impact of an event</li>
+<li>Acceptance: Ignoring the risks and continuing risky activities</li>
+<li>Avoidance: Ceasing the risky activity to remove the likelihood that an event will occur</li>
+<li>Vulnerability: An inherent weakness or flaw</li>
+<li>Asset: Something of value that is owned by an organization, including physical hardware and intellectual property</li>
+<li>Threat: A person or an entity that deliberately takes actions to exploit a target</li>
+<li>Transference: Passing risk to a third party</li>
+</ul>
+<h3 id="risk-priorities">Risk Priorities</h3>
+<p>When risks have been identified, it is time to prioritize and analyze core risks through qualitative risk analysis and/or quantitative risk analysis. This is necessary to determine <strong>root cause and narrow down apparent risks and core risks</strong>. Security professionals work with their teams to conduct both qualitative and quantitative analysis. </p>
+<p>Understanding the organization’s overall mission and the functions that support the mission helps <strong>to place risks in context</strong>, <strong>determine the root causes and prioritize the assessment and analysis of these items</strong>. In most cases, management will provide direction for using the findings of the risk assessment to determine a prioritized set of risk-response actions.</p>
+<p>One effective method to prioritize risk is to use <strong>a risk matrix</strong>, which helps identify priority <strong>as the intersection of likelihood of occurrence and impact</strong>. It also gives the team a common language to use with management when determining the final priorities. For example, a low likelihood and a low impact might result in a low priority, while an incident with a high likelihood and high impact will result in a high priority. Assignment of priority may relate to business priorities, the cost of mitigating a risk or the potential for loss if an incident occurs.</p>
+<h3 id="decision-making-based-on-risk-priorities">Decision Making Based on Risk Priorities</h3>
+<p>When making decisions based on risk priorities, organizations must evaluate the likelihood and impact of the risk as well as their tolerance for different sorts of risk. <strong>A company in Hawaii is more concerned about the risk of volcanic eruptions than a company in Chicago, but the Chicago company will have to plan for blizzards</strong>. In those cases, determining risk tolerance is up to the executive management and board of directors. If a company chooses to ignore or accept risk, exposing workers to asbestos, for example, it puts the company in a position of tremendous liability. </p>
+<h3 id="risk-tolerance">Risk Tolerance</h3>
+<p>The perception management takes toward risk is often likened to the <strong>entity’s appetite for risk</strong>. <strong>How much risk are they willing to take?</strong> Does management welcome risk or want to avoid it? The level of risk tolerance varies across organizations, and even internally: Different departments may have different attitudes toward what is acceptable or unacceptable risk.</p>
+<p>Understanding the organization and senior management’s attitude toward risk is usually the starting point for getting management to take action regarding risks. Executive management and/or the Board of Directors determines what is an acceptable level of risk for the organization. Security professionals aim to maintain the levels of risk within management’s limit of risk tolerance.</p>
+<p>Often, risk tolerance is dictated by geographic location. For example, companies in Iceland plan for the risks that nearby volcanoes impose on their business. Companies that are outside the projected path of a lava flow will be at a lower risk than those directly in the path’s flow. Similarly, the likelihood of a power outage affecting the data center is a real threat in all areas of the world. In areas where thunderstorms are common, power outages may occur more than once a month, while other areas may only experience one or two power outages annually. Calculating the downtime that is likely to occur with varying lengths of downtime will help to define a company’s risk tolerance. If a company has a low tolerance of the risk of downtime, they are more likely to invest in a generator to power critical systems. A company with an even lower tolerance for downtime will invest in multiple generators with multiple fuel sources to provide a higher level of assurance that the power will not fail.</p>
+<h2 id="module-3-understand-security-control">Module 3 Understand Security Control</h2>
+<p>Domain D1.3.1, D1.3.2, D1.3.3</p>
+<h3 id="what-are-security-controls-fibs-pub-199">What are security controls? (FIBS PUB 199)</h3>
+<p>Security controls pertain to the <strong>physical</strong>, <strong>technical</strong> and <strong>administrative mechanisms</strong> that act as <strong>safeguards or countermeasures prescribed for an information system to protect the confidentiality</strong>, <strong>integrity</strong> <strong>and availability of the system and its information</strong>. The implementation of controls should <strong>reduce risk</strong>, hopefully to an acceptable level.</p>
+<ul>
+<li><p>Physical control: it addresses process-based security needs using <strong>physical hardware devices</strong>, such as <strong>badge readers</strong>, <strong>architectural features of buildings and facilities</strong>, <strong>and specific security actions to be taken by people</strong>. They typically provide ways of controlling, directing or preventing the movement of people and equipment throughout a specific physical location, such as an office suite, factory or other facility. <strong>Physical controls also provide protection and control over entry onto the land surrounding the buildings</strong>, <strong>parking lots or other areas that are within the organization’s control</strong>. In most situations, physical controls are supported by technical controls as a means of incorporating them into an overall security system.</p>
+</li>
+<li><p>Technical control: it (also called logical controls) is security controls that <strong>computer systems and networks directly implement</strong>. These controls can provide automated protection from unauthorized access or misuse, facilitate detection of security violations and support security requirements for applications and data. Technical controls can be configuration settings or parameters stored as data, managed through a software graphical user interface (GUI), or they can be hardware settings done with switches, jumper plugs or other means. However, the implementation of technical controls always requires significant operational considerations and should be consistent with the management of security within the organization. Many of these will be examined in more depth as we look at them in later sections in this chapter and in subsequent chapters.</p>
+</li>
+<li><p>Administrative control: it (also known as managerial controls) is <strong>directives</strong>, <strong>guidelines</strong> or <strong>advisories aimed at the people within the organization</strong>. They provide frameworks, constraints and standards for human behavior, and should cover the entire scope of the organization’s activities and its interactions with external parties and stakeholders. It is vitally important to realize that administrative controls <strong>can and should be powerful, effective tools for achieving information security</strong>. Even the simplest security awareness policies can be an effective control, if you can help the organization fully implement them through systematic training and practice. Many organizations are improving their overall security posture by integrating their administrative controls into the task-level activities and operational decision processes that their workforce uses throughout the day. This can be done by providing them as in-context ready reference and advisory resources, or by linking them directly into training activities. These and other techniques bring the policies to a more neutral level and away from the decision-making of only the senior executives. It also makes them immediate, useful and operational on a daily and per-task basis.</p>
+</li>
+</ul>
+<p>Some examples:
+Administrative: acceptable use policy, emergency operations procedures, employee awareness training
+Physical: Badge reader, stop sign in parking lot, door lock
+Technical: access control list</p>
+<h2 id="module-4-understand-governance-and-elements-and-process">Module 4 Understand Governance and Elements and Process</h2>
+<p>Domain D1.5.1, D1.5.2, D1.5.3, D1.5.4</p>
+<h3 id="governance-elements">Governance Elements</h3>
+<p>When leaders and management implement the systems and structures that the organization will use to achieve its goals, they are <strong>guided by laws and regulations created by governments to enact public policy</strong>. <strong>Laws and regulations guide the development of standards, which cultivate policies, which result in procedures</strong>.</p>
+<ul>
+<li><strong>Procedures</strong> are the detailed steps to complete a task that support departmental or organizational policies.</li>
+<li><strong>Policies</strong> are put in place by organizational governance, such as executive management, to provide guidance in all activities to ensure that the organization supports industry standards and regulations.</li>
+<li><strong>Standards</strong> are often used by governance teams to provide a framework to introduce policies and procedures in support of regulations.</li>
+<li><strong>Regulations</strong> are commonly issued in the form of laws, usually from government (not to be confused with governance) and typically carry financial penalties for noncompliance.</li>
+</ul>
+<p>Regulations -&gt; Standards -&gt; Policies -&gt; Procedures</p>
+<h2 id="module-5-understand-isc²-code-of-ethics">Module 5 Understand (ISC)² Code of Ethics</h2>
+
