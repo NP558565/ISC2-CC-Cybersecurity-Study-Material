@@ -1,0 +1,759 @@
+<h1 id="l2-incident-response-business-continuity-and-disaster-recovery-concepts">L2 Incident Response, Business Continuity and Disaster Recovery Concepts</h1>
+<h2 id="introduction">Introduction</h2>
+<p>When we&#39;re talking about IR, BC and DR, we&#39;re focus on availability, which is accomplished through those concepts.</p>
+<ul>
+<li><strong>Incident Response</strong> (IR) plan responds to unexpected changes in operating conditions to keep the business operating; </li>
+<li><strong>Business Continuity</strong> (BC) plan enables the business to continue operating throughout the crisis; </li>
+<li><strong>Disaster Recovery</strong> (DR) plan is activated to help the business to return to normal operations as quickly as possible, if Incident Response and Business Continuity plans fail.</li>
+</ul>
+<h2 id="module-1-understand-incident-response">Module 1: Understand Incident Response</h2>
+<p>Domain D2.3.1, D2.3.2, D2.3.3</p>
+<h3 id="incident-terminology">Incident Terminology</h3>
+<ul>
+<li><p><strong>Breach</strong> (NIST SP 800-53 Rev. 5): The <strong>loss of</strong> control, compromise, unauthorized disclosure, unauthorized acquisition, or <strong>any similar occurrence</strong> where: <strong>a person other than an authorized user accesses or potentially accesses personally identifiable information</strong>; or an authorized user accesses personally identifiable information for other than an authorized purpose.</p>
+</li>
+<li><p><strong>Event</strong> (NIST SP 800-61 Rev 2): <strong>Any observable occurrence</strong> in a network or system.</p>
+</li>
+<li><p><strong>Exploit</strong>: <strong>A particular attack</strong>. It is named this way because <strong>these attacks exploit system vulnerabilities</strong>.</p>
+</li>
+<li><p><strong>Incident</strong>: <strong>An event that actually or potentially jeopardizes</strong> the confidentiality, integrity or availability of an information system or the information the system processes, stores or transmits.</p>
+</li>
+<li><p><strong>Intrusion</strong> (IETF RFC 4949 Ver 2): A security event, or combination of events, that constitutes a deliberate security incident in which an intruder gains, or attempts to gain, access to a system or system resource without authorization.</p>
+</li>
+<li><p><strong>Threat</strong> (NIST SP 800-30 Rev 1): <strong>Any circumstance or event with the potential to adversely impact organizational operations</strong> (including mission, functions, image or reputation), organizational assets, individuals, other organizations or the nation through an information system via unauthorized access, destruction, disclosure, modification of information and/or denial of service.</p>
+</li>
+<li><p><strong>Vulnerability</strong> (NIST SP 800-30 Rev 1): <strong>Weakness</strong> in an information system, system security procedures, internal controls or implementation that could be exploited by a threat source. </p>
+</li>
+<li><p><strong>Zero Day</strong>: <strong>A previously unknown system vulnerability with the potential of exploitation without risk of detection or prevention because it does not</strong>, in general, fit recognized patterns, signatures or methods.</p>
+</li>
+</ul>
+<h3 id="the-goal-of-incident-response">The Goal of Incident Response</h3>
+<p>The priority of any incident response is to protect life, health and safety. When any decision related to priorities is to be made, <strong>always choose safety first</strong>. <strong>The primary goal of incident management is to be prepared</strong>. Preparation requires having a policy and a response plan that will <strong>lead the organization through the crisis</strong>. Some organizations use the term “crisis management” to describe this process, so you might hear this term as well. An event is any measurable occurrence, and most events are harmless. However, if the event has the potential to disrupt the business’s mission, then it is called an incident. <strong>Every organization must have an incident response plan that will help preserve business viability and survival.</strong> The incident response process is aimed at reducing the impact of an incident so the organization can resume the interrupted operations as soon as possible. Note that incident response planning is a subset of the greater discipline of business continuity management (BCM).</p>
+<h3 id="components-of-the-incident-response-plan">Components of the Incident Response Plan</h3>
+<p>The incident response policy should reference <strong>an incident response plan</strong> that all employees will follow, depending on their role in the process. <strong>The plan may contain several procedures and standards related to incident response</strong>. It is a living representation of an organization’s incident response policy. The organization’s vision, strategy and mission should shape the incident response process. Procedures to implement the plan should define the technical processes, techniques, checklists and other tools that teams will use when responding to an incident.</p>
+<ul>
+<li><p>Preparation: Develop a policy approved by management; <strong>Identify critical data and systems</strong>, <strong>single points of failure</strong>; <strong>Train staff on incident response</strong>; Implement an incident response team. (covered in subsequent topic); Practice Incident Identification. (First Response); Identify Roles and Responsibilities; Plan the coordination of communication between stakeholders; <strong>Consider the possibility that a primary method of communication may not be available.</strong></p>
+</li>
+<li><p>Detection and Analysis: Monitor all possible attack vectors; Analyze incident using known data and threat intelligence; Prioritize incident response; Standardize incident documentation;</p>
+</li>
+<li><p>Containment, eradication and recovery: Gather evidence; Choose an appropriate containment strategy;
+Identify the attacker; Isolate the attack.</p>
+</li>
+<li><p>Post-incident activity: Identify evidence that may need to be retained. Document lessons learned. Retrospective, Preparation, Detection and Analysis, Containment, Eradication and Recovery Post-incident Activity.</p>
+</li>
+</ul>
+<h3 id="incident-response-team">Incident Response Team</h3>
+<p>Along with the organizational need to establish a <strong>Security Operations Center (SOC)</strong> is the need to create a suitable <strong>incident response team</strong>. A typical incident response team is a cross-functional group of individuals who represent the management, technical and functional areas of responsibility most directly impacted by a security incident. Potential team members include the following:</p>
+<ul>
+<li>Representative(s) of senior management</li>
+<li>Information security professionals</li>
+<li>Legal representatives</li>
+<li>Public affairs/communications representatives</li>
+<li>Engineering representatives (system and network)</li>
+</ul>
+<p>Team members should have training on incident response and the organization’s incident response plan. Typically, team members assist with <strong>investigating the incident</strong>, <strong>assessing the damage</strong>, <strong>collecting evidence</strong>, <strong>reporting the incident and initiating recovery procedures</strong>. They would also participate in the remediation and lessons learned stages and help with root cause analysis.</p>
+<p>Many organizations now have a dedicated team responsible for investigating any computer security incidents that take place. These teams are commonly known as computer incident response teams (CIRTs) or computer security incident response teams (CSIRTs). When an incident occurs, the response team has four primary responsibilities:</p>
+<ul>
+<li>Determine the amount and scope of damage caused by the incident.</li>
+<li>Determine whether any confidential information was compromised during the incident.</li>
+<li>Implement any necessary recovery procedures to restore security and recover from incident-related damage.</li>
+<li>Supervise the implementation of any additional security measures necessary to improve security and prevent recurrence of the incident.</li>
+</ul>
+<h2 id="module-2-understand-business-continuity-bc">Module 2 Understand Business Continuity (BC)</h2>
+<p>Domain D2.1.1, D2.1.2, D2.1.3</p>
+<h3 id="the-importance-of-business-continuity">The Importance of Business Continuity</h3>
+<p>The intent of a <strong>business continuity plan</strong> is <strong>to sustain business operations while recovering from a significant disruption</strong>. A key part of the plan is <strong>communication</strong>, including multiple contact methodologies and backup numbers in case of a disruption of power or communications. Many organizations will establish a phone tree, so that if one person is not available, they know who else to call.  </p>
+<p><strong>Management must be included</strong>, because sometimes priorities may change depending on the situation. Individuals with proper authority must be there to execute operations, for instance, <strong>if there are critical areas that need to be shut down</strong>. <strong>We need to have at hand the critical contact numbers for the supply chain</strong>, as well as law enforcement and other sites outside of the facility. For example, a hospital may suffer a severe cyberattack that affects communications from the pharmacy, the internet or phone lines. In the United States, in case of this type of cyberattack that knocks out communications, specific numbers in specific networks can bypass the normal cell phone services and use military-grade networks. Those will be assigned to authorized individuals for hospitals or other critical infrastructures in case of a major disruption or cyberattack, so they can still maintain essential activity.</p>
+<h3 id="components-of-a-business-continuity-plan">Components of a Business Continuity Plan</h3>
+<p><strong>Business continuity planning (BCP)</strong> is the <strong>proactive development of procedures to restore business operations after a disaster or other significant disruption to the organization</strong>. Members from across the organization should participate in creating the BCP to ensure all systems, processes and operations are accounted for in the plan. <strong>In order to safeguard the confidentiality, integrity and availability of information, the technology must align with the business needs</strong>.</p>
+<ul>
+<li>List of the BCP team members, including multiple contact methods and backup members</li>
+<li>Immediate response procedures and checklists (security and safety procedures, fire suppression procedures, notification of appropriate emergency-response agencies, etc.)</li>
+<li>Notification systems and call trees for alerting personnel that the BCP is being enacted</li>
+<li>Guidance for management, including designation of authority for specific managers</li>
+<li>How/when to enact the plan. It&#39;s important to include when and how the plan will be used.</li>
+<li>Contact numbers for critical members of the supply chain (vendors, customers, possible external emergency providers, third-party partners)</li>
+</ul>
+<h3 id="how-often-should-an-organization-test-its-business-continuity-plan-bcp">How often should an organization test its business continuity plan (BCP)?</h3>
+<p>Routinely. Each individual organization must determine how often to test its BCP, but it should be tested at predefined intervals as well as when significant changes happen within the business environment. </p>
+<h2 id="module-3-understand-disaster-recovery-dr">Module 3: Understand Disaster Recovery (DR)</h2>
+<p>Domain D2.2, D2.2.1, D2.2.2, D2.2.3</p>
+<h3 id="the-goal-of-disaster-recovery">The Goal of Disaster Recovery</h3>
+<p>Disaster recovery planning <strong>steps in where BC leaves off</strong>. When a disaster strikes or an interruption of business activities occurs, the Disaster recovery plan (DRP) guides the actions of emergency response personnel <strong>until the end goal is reached—which is to see the business restored to full last-known reliable operations.</strong> Disaster recovery refers specifically to <strong>restoring the information technology and communications services and systems needed by an organization</strong>, <strong>both during the period of disruption caused by any event and during restoration of normal services</strong>. The recovery of a business function may be done independently of the recovery of IT and communications services; however, the recovery of IT is often crucial to the recovery and sustainment of business operations. Whereas business continuity planning is about maintaining critical business functions, disaster recovery planning is about restoring IT and communications back to full operations after a disruption.</p>
+<h3 id="components-of-a-disaster-recovery-plan">Components of a Disaster Recovery Plan</h3>
+<ul>
+<li>Executive summary providing a high-level overview of the plan</li>
+<li>Department-specific plans</li>
+<li>Technical guides for IT personnel responsible for implementing and maintaining critical backup systems</li>
+<li>Full copies of the plan for critical disaster recovery team members</li>
+<li>Checklists for certain individuals:<ul>
+<li>Critical disaster recovery team members will have checklists to help guide their actions amid the chaotic atmosphere of a disaster.</li>
+<li>IT personnel will have technical guides helping them get the alternate sites up and running. </li>
+<li>Managers and public relations personnel will have simple-to-follow, high-level documents to help them communicate the issue accurately without requiring input from team members who are busy working on the recovery.</li>
+</ul>
+</li>
+<li>Executive management should approve the plan and should be provided with a high-level summary of the plan.</li>
+<li>Public Relations should be a member of the disaster recovery plan to handle communications to all stakeholders.</li>
+<li>IT Personnel are primarily responsible for the disaster recovery team.</li>
+</ul>
+<br>
+<hr>
+<br>
+<h1 id="business-continuity-bc">Business Continuity (BC)</h1>
+<p>The intent of a business continuity plan is to sustain business operations while recovering from a significant disruption. </p>
+<h2 id="components-of-a-business-continuity-plan-bcp">Components of a Business Continuity Plan (BCP)</h2>
+<ul>
+<li>Firts, BCP is the proactive development of procedures to restore business operations after a disaster or other significant disruption to the organization.</li>
+<li>List of the BCP team members, including multiple contact methods and backup members</li>
+<li>Immediate response procedures and checklists (security and safety procedures, fire suppression procedures, - notification of appropriate emergency-response agencies, etc.)</li>
+<li>Notification systems and call trees for alerting personnel that the BCP is being enacted</li>
+<li>Guidance for management, including designation of authority for specific managers</li>
+<li><strong>How/when to enact the plan</strong></li>
+<li>Contact numbers for critical members of the supply chain (vendors, customers, possible external emergency providers, third-party partners)</li>
+</ul>
+<p><strong>Importante:</strong> <strong>The BCP should be tested</strong> at predefined intervals (<strong>Routinely</strong>) as well as when significant changes happen within the business environment.</p>
+<br>
+<hr>
+<br>
+<p><img src="images/domain2.png" alt="Domain 2"></p>
+<h2 id="21-understanding-business-continuity-bc">2.1 Understanding business continuity (BC)</h2>
+<p>Purpose:</p>
+<ul>
+<li>Guideline, procedures, and policies designed to keep a business up and running in the face of of adversity (disaster, or small scale incident)</li>
+<li>Core security concept CIA triad (Availability)</li>
+<li>Sometimes referred to as Continuity of Operations planning (COOP)</li>
+<li>Carefully define scope<ul>
+<li>What <strong>business activities</strong> will the plan cover?</li>
+<li>What <strong>systems</strong> will it cover?</li>
+<li>What <strong>controls</strong> will it consider?</li>
+</ul>
+</li>
+</ul>
+<p>Importance:</p>
+<ul>
+<li>Leverage <em>Business Impact Assessment (BIA)</em><ul>
+<li>Identifies and prioritizes risks</li>
+<li>Uses Quantitative or Qualitative approach</li>
+<li>Contains Annualized Loss Expectancy ($) associated to the risk</li>
+<li>Requires collab between cloud service providers and customers in a cloud environment</li>
+<li>Determines the allowable downtime of functions</li>
+<li>Determines the maximum tolerable downtown (MTD)<ul>
+<li>Examples:<ul>
+<li>Nonessentail services = 30 days</li>
+<li>Normal priority services = 7 days</li>
+<li>Important functions to the business = 72 hours</li>
+<li>Urgent functions = 24 hours</li>
+<li>Critical functions = within 3 hours</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Redundancy<ul>
+<li>Protects against the failure of a single component</li>
+</ul>
+</li>
+<li>Single Point of Failure (SPOF) Analysis<ul>
+<li>Identifies and removes SPOF</li>
+<li>Continues until the cost of addressing risks outweighs the benefit</li>
+<li>Clustering severs and redundant firewalls addressing SPOF issues</li>
+</ul>
+</li>
+<li>High Availability (HA)<ul>
+<li>Uses multiple systems to protect against service/system failure</li>
+<li>Cluster of Web Servers</li>
+<li>Pair of firewalls (active/passive)</li>
+</ul>
+</li>
+<li>Fault Tolerence (FT)<ul>
+<li>Making a single system resislent against technical issues</li>
+</ul>
+</li>
+<li>Load Balancing<ul>
+<li>Spread demand across systems</li>
+<li>Provides scalalbility</li>
+<li>Part and parcel with HA</li>
+</ul>
+</li>
+<li>IT Contingency Scenerio Examples:<ul>
+<li>Sudden bankruptcy of a key vendor</li>
+<li>Insufficient storage or compute capacity</li>
+<li>Failure of utility service</li>
+<li>Lack of staff succession plan</li>
+</ul>
+</li>
+<li>Mean time to repair/recovey (MTTR)<ul>
+<li>Is the average time for a system or device to recover from a failure</li>
+</ul>
+</li>
+<li>Mean time between failures (MTBF)<ul>
+<li>Is the amount of time between failures of a system/device</li>
+</ul>
+</li>
+<li>Mean time to failure (MTTF)<ul>
+<li>Is the amount of time a device is expected to last in production before it fails.</li>
+<li>Usually a value reported by hardware manufactures which helps during hardware selection process</li>
+</ul>
+</li>
+<li>Common Points of Failure within a Computer system:<ul>
+<li>Power Supply<ul>
+<li>Contains moving parts</li>
+<li>High-failure rates</li>
+<li>May use multiple power sources</li>
+<li>Uninterruptible Power Supply (UPS)</li>
+<li>Managed Power Distribution Units (PDUs)<ul>
+<li>Provide power cleaning and management for a rack</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Storage Media<ul>
+<li>Use Redundant Array of Inexpensive Disks (RAID) to make storage fault tolerant<ul>
+<li><a href="https://www.prepressure.com/library/technology/raid">https://www.prepressure.com/library/technology/raid</a></li>
+<li>Technology:<ul>
+<li>RAID 0 - Stripe set/Striped Volume<ul>
+<li><img src="images/RAID-0.png" alt="RAID 0"></li>
+<li>Splits data evenly across two or more disks without parity info, redundancy, or fault tolerance</li>
+<li>Failure of one drive will fail the entire array </li>
+<li>Ideal use for non-critical storage that has to be read/written at high speeds, such as image retouching and/or video editing</li>
+</ul>
+</li>
+<li>RAID 1 - Mirroring<ul>
+<li><img src="images/raid-level-1-mirroring.svg" alt="RAID 1"></li>
+<li>Server contains two disks with identical contents when the system writes data to disk</li>
+<li>Automatically synchronizes the disks on every change</li>
+<li>If primary fails the system automatically switch over to the backup</li>
+<li>Ideal for mission critical storage, for instance accounting systems. </li>
+<li>Also suitable for small servers in which only two drives will be used</li>
+</ul>
+</li>
+<li>RAID 2<ul>
+<li><img src="images/raid-2-level.png" alt="RAID 2"></li>
+<li>Rarely used in practice</li>
+<li>Stripes data at the bit (rather than block) level and uses a <a href="https://en.wikipedia.org/wiki/Hamming_code">Hammering Code</a> for error correction</li>
+<li>Disks are synchronized by the control to spin at the same angular orientation to reach index at the same time</li>
+<li>Cannot service multiple requests simultaneously</li>
+</ul>
+</li>
+<li>RAID 3<ul>
+<li><img src="images/raid-3-raid.webp" alt="RAID 3"></li>
+<li>Rarely used</li>
+<li>Byte-level striping with a dedicated parity disk</li>
+<li>Like RAID2 cannot service multiple requests simultaneously</li>
+<li>I/O operations requires activty on every disck and usually requries synchronized spindles</li>
+</ul>
+</li>
+<li>RAID 4<ul>
+<li><img src="images/raid-4-level.png" alt="RAID 4"></li>
+<li>block-level striping with a dedicated parity disk</li>
+<li>Provides good performance of random reads, random writes is low due to the need to write all parity data to a single disk</li>
+<li>In the diagrame a read request for block A1 would be served by disk 0, a simultaneous read for B1 would wait, but a read for B2 would be serviced concurrently by disk 1</li>
+</ul>
+</li>
+<li>RAID 5 - Disk Striping with Parity<ul>
+<li><img src="images/raid-5.avif" alt="RAID 5"></li>
+<li>Replaces RAID 3 and RAID 4</li>
+<li>Requires <strong>at least 3</strong> disk drives and can work with up to <strong>16</strong></li>
+<li>Uses three or more disks to store data and parity information spread across the disks</li>
+<li>If one  disk fails the system can regenerate that disk content using the parity information</li>
+</ul>
+</li>
+<li>RAID 6<ul>
+<li><img src="images/raid6.webp" alt="RAID 6"></li>
+<li>Extension of RAID 5 by adding another parity block, thus uses block-level striping with two parity blocks distributed across all member disks</li>
+</ul>
+</li>
+<li>RAID 10 (Combines RAID 1 and RAID 0)<ul>
+<li><img src="images/RAID_10.png" alt="RAID 10"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>RAID is a fault tolerant stragtegy that is designed to protect against a single disk failure but IS NOT a backup strategy</li>
+</ul>
+</li>
+<li>Networks<ul>
+<li>Use redundancy at different points<ul>
+<li>Multiple internet serverice providers entering a facility</li>
+<li>NIC teaming (dual nics)</li>
+<li>Multipath Networking</li>
+</ul>
+</li>
+<li>Use diveristy<ul>
+<li>Technologies from different venders</li>
+<li>Cryptography and security controls</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Components</p>
+<ul>
+<li>List of the BCP team members, including multiple contact methods and backup members</li>
+<li>Immediate response procedures and checklists (security and safety procedures, fire suppression procedures, notification of appropriate emergency response agences, etc)</li>
+<li>Notification systems and call trees for alerting personnel that the BCP is being enacted</li>
+<li>Guidance for management, including designation of authority for specific managers</li>
+<li>How/when to enact the plan</li>
+<li>Conteact numbers for critical members of the supply chain (vendors, customers, possible external emergency providers, third-party partners)</li>
+<li>In the cloud BCP requires collaboration between service providers and customers</li>
+</ul>
+<h2 id="22-understand-disaster-recovery-dr">2.2 Understand disaster recovery (DR)</h2>
+<p>Five possible components to include in a Disaster Recovery (DR) plan:</p>
+<ol>
+<li>Executive summary providing a high-level overview of the plan</li>
+<li>Department specific plans</li>
+<li>Technical guides for IT personnel responsible for implementing and maintaing critical backup systems</li>
+<li>Full copies of the plan for critical disaster recovery team members</li>
+<li>Checklists for certain individuals</li>
+</ol>
+<p>Purpose:</p>
+<ul>
+<li>Subset of BC used to restore business to operations as quickly as possible<ul>
+<li>Steps in when BC fails</li>
+</ul>
+</li>
+<li>Triggered by environmental, cyber attack, DC failure or power outage</li>
+</ul>
+<p>Importance:</p>
+<ul>
+<li>Goals:<ul>
+<li>Contain the damage</li>
+<li>Recover normal operations</li>
+</ul>
+</li>
+<li>During a DR Effort<ul>
+<li>Business shifts from normal operations to concentrated effort to restore operations as quickly as possible</li>
+</ul>
+</li>
+<li>Communication is important<ul>
+<li>Initial report</li>
+<li>Status update</li>
+<li>Adhoc Messaging</li>
+</ul>
+</li>
+</ul>
+<p>Components:</p>
+<ul>
+<li>Initial response<ul>
+<li>Activate an alternate process facility, <strong>if necessary depending on type of disaster</strong></li>
+<li>Contain physical damange</li>
+<li>Call contractors to begin emergency response</li>
+</ul>
+</li>
+<li>Assessment mode<ul>
+<li>Triage the damage to the organization and implement functional recovery plans to restore operations on a permanent basisi</li>
+</ul>
+</li>
+<li>Recovery Time Objective (RTO)<ul>
+<li>Target amount of time to restore to normal operations</li>
+</ul>
+</li>
+<li>Recovery Point Objective (RPO)<ul>
+<li>Max time period for which data may be lost</li>
+</ul>
+</li>
+<li>Recovery Service Level (RSL)<ul>
+<li>Percentage of a service that <strong>must</strong> be available during a disaster</li>
+</ul>
+</li>
+<li>Tain personnel on the BC/DR plan</li>
+<li>Backups<ul>
+<li>Most important component and crucial</li>
+<li>Types:<ul>
+<li>Copy files</li>
+<li>Write to tape drives<ul>
+<li>Unwiedly to manage</li>
+</ul>
+</li>
+<li>Disk-to-Disk backups in different sites<ul>
+<li>Network attached storage</li>
+</ul>
+</li>
+<li>Cloud Backups<ul>
+<li>AWS, Azure, GCP</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Forms<ul>
+<li>Full<ul>
+<li>Eveything</li>
+<li>Snapshots and images</li>
+</ul>
+</li>
+<li>Differential<ul>
+<li>Supplemental to full</li>
+<li>Only data that has changed since the last full backup</li>
+</ul>
+</li>
+<li>Incremental<ul>
+<li>Similar to differential but with a twist</li>
+<li>Data modified since last full or recent incremental</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Scenerios:<ul>
+<li>Joe performs <strong>full</strong> backups every Sunday evening and <strong>differential</strong> backups every weekday evening. His system fails on Friday morning. What backups does he restore?<ul>
+<li>Answer:<ol>
+<li>Sunday&#39;s full backup</li>
+<li>Thursday&#39;s differential backup</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Joe performs <strong>full</strong> backups every Sunday evening and <strong>incremental</strong> backups every weekday evening. His system fails on Friday morning. What backups does he restore?<ul>
+<li>Answer:<ol>
+<li>Sunday&#39;s full backup</li>
+<li>Monday, Tuesday, Wednesday, and Thursday&#39;s incremental backup</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Disaster Recovery Sites<ul>
+<li>Alternative processing facilities that are specifically desgined for shifting computing functions from the primary DC when it goes down</li>
+<li>Three main types:<ul>
+<li>Hot Sites<ul>
+<li>Fully operational data centers</li>
+<li>Stocked with equipment and data requied to handle operations</li>
+<li>Ready to run at a moments notice</li>
+<li>Unparalleled level of redundancy</li>
+<li>Active / Active</li>
+<li>Very expensive to keep up, doubling data center costs</li>
+</ul>
+</li>
+<li>Cold Sites<ul>
+<li>Empty data centers</li>
+<li>Stocked with core equipement, network, and environmental controls</li>
+<li>No servers or data to restor operations</li>
+<li>Relatively inexpensive</li>
+<li>Operational in weeks or months</li>
+<li>Requires planning to make operational</li>
+</ul>
+</li>
+<li>Warm Sites<ul>
+<li>Stocked with all necessary equipement, data, software to support the company&#39;s operations</li>
+<li>Not maintained in a parallel fashion</li>
+<li>Similar in expense as hot site</li>
+<li>Available in hours or days</li>
+<li>Active / Passive</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Offline Storage<ul>
+<li>Geographically distant</li>
+<li>Site resiliency</li>
+<li>Manual transfer or site replication through SAN or VM</li>
+<li>Online or offline backups</li>
+</ul>
+</li>
+<li>Consider integrating alternate business processes into your DR plan</li>
+</ul>
+</li>
+<li>Test BC/DR Plans<ul>
+<li>Goals<ul>
+<li>Validate that the plan functions correctly</li>
+<li>Identify necessary plan updates</li>
+</ul>
+</li>
+<li>Testing Types:<ul>
+<li>Read-through<ul>
+<li>Ask each member to review their fole in the DR process and provide feedback</li>
+</ul>
+</li>
+<li>Walk-though<ul>
+<li>Table-top exercies</li>
+<li>Team gathers together for a formal review of the DR plan</li>
+</ul>
+</li>
+<li>Simulation<ul>
+<li>Use a practice scenerio to test the DR plan</li>
+</ul>
+</li>
+<li>Parallel Test<ul>
+<li>Activate the DR environment but do not switch operations there</li>
+</ul>
+</li>
+<li>Full interuption test<ul>
+<li>Tests switching primary operations to the alternate environment and can be very disruptive to business</li>
+<li>Rarely used</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Testing strategies often combine multiple tests types</li>
+</ul>
+</li>
+</ul>
+<h2 id="23-understand-incident-response-ir">2.3 Understand incident response (IR)</h2>
+<p><img src="images/IR-components.png" alt="IR Components"></p>
+<p>Purpose</p>
+<ul>
+<li>Describes policies and procedures governing cybersecurity incidents which help to protect systems and information from threats</li>
+</ul>
+<p>IR Lifecyle
+<img src="images/ir-lifecycle.png" alt="IR Lifecycle"></p>
+<ul>
+<li>Steps<ul>
+<li>Preparation<ul>
+<li>First step</li>
+<li>assembly a Computer Incident Response Team (CIRT)</li>
+<li>creating IR response procedures</li>
+</ul>
+</li>
+<li>Identification/Detection<ul>
+<li>Second steps</li>
+<li>Detection and analysis of potential threats/incidents using tools or notification by an internal or external source</li>
+<li>CIRT team should be notified</li>
+<li>classification of incident</li>
+<li>Notification that are required by law or contract are done at this stage</li>
+</ul>
+</li>
+<li>Containment<ul>
+<li>Triage phase where the affect system is identified/isolated/mitigated</li>
+<li>Includes sub procedures for seizure and evidence handling, escalation and communications</li>
+</ul>
+</li>
+<li>Investigation<ul>
+<li>ISO personnel determines the priority, scope, risk, and root casue of the incident</li>
+</ul>
+</li>
+<li>Remediation<ul>
+<li>Post-inicident repair of affected systems, communications, and instructions to affected parties, and analysis that confirms the threat has been addressed</li>
+</ul>
+</li>
+<li>Recovery<ul>
+<li>CIRT recovers the system back to normal state before the incident took place</li>
+<li>Performs Lessons learned<ul>
+<li>CIRT documents what happend, why and how to not have this type of incident occur again</li>
+</ul>
+</li>
+<li>Updates Standard Operating procedures (SOP) for furture responses</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Importance</p>
+<ul>
+<li>Standard incident response process endorsed by the National Institute for Standards and Technology (NIST)<ul>
+<li><a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf">NIST Special Publication (SP) 800-61</a><ul>
+<li>Computer Security Incident Handling Guide</li>
+<li>Practical guidance on responding to cyber incidents</li>
+<li>Assists organizations in mitigating the potential business impact of infosec incidents</li>
+</ul>
+</li>
+<li>Widely used throughout the cybersecurity field</li>
+</ul>
+</li>
+<li>Every organization should define a Incident Response (IR) Plan, to provide structure during a cyber incident</li>
+<li>IR Plan Elements<ul>
+<li>Statment of purpose<ul>
+<li>What are the reasons that the org is creating an IR plan?</li>
+<li>What is the scope of the plan?</li>
+<li>What types of incidents does the plan cover?</li>
+</ul>
+</li>
+<li>Strategies and goals for the plan<ul>
+<li>What are the highest priorites for the first responders and for those handling an incident at a more strategic level?</li>
+</ul>
+</li>
+<li>Approach to incident response</li>
+<li>Communication with other groups</li>
+<li>Senior Leadership approval is required</li>
+</ul>
+</li>
+<li>Consult the NIST-SP 800-61 while developing the IR plan</li>
+<li>Sample IR Plan: <a href="https://www.cmu.edu/iso/governance/procedures/incidentresponseplanv1.6.pdf">Carnegie Mellon IR Plan</a></li>
+<li>IR Team<ul>
+<li>Must have personnel available 24/7 with back ups</li>
+<li>Consists of:<ul>
+<li>Management</li>
+<li>Information Security</li>
+<li>Subject Matter Experts<ul>
+<li>DE, INFRA, App Dev</li>
+</ul>
+</li>
+<li>Legal Counsel</li>
+<li>Public Affairs</li>
+<li>Human Resources</li>
+<li>Physical Security</li>
+<li>Privacy Personnel</li>
+</ul>
+</li>
+<li>Work with team regularly<ul>
+<li>Training and run throughs reguarly</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Use incident response service providers if needed<ul>
+<li>Work out the contract details in adavance!!!</li>
+</ul>
+</li>
+<li>IR Communication Plan<ul>
+<li>Ensures that all participants have timely, accurate information</li>
+<li>Limit exteranl communications to trusted parties</li>
+<li>Purpose<ul>
+<li>Should describe who and how it be communicated over secure channels</li>
+</ul>
+</li>
+<li>Internal<ul>
+<li>Legal teams should be involved</li>
+</ul>
+</li>
+<li>Exteranl<ul>
+<li>Law enforcement is optional, details of incident could become public<ul>
+<li>If there is a threat to public safety than this needs to occur</li>
+</ul>
+</li>
+<li>3rd parties should be trusted and vetted to avoid exposing the details of the incident</li>
+</ul>
+</li>
+<li>Breaches are typically know from people or groups</li>
+<li>First Responders need to isolate affected systems and contain damage<ul>
+<li>Highest priority, beyond health and safety, is to contain damage and isolate systems from infecting other systems</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Components</p>
+<ul>
+<li>Perpetual Monitoring<ul>
+<li>Once a plan and team is in place and prepared, the IR plan goes into a state of continuous monitoring<ul>
+<li>Using and mointoring data/logs from sources such as<ul>
+<li>Instrusion Detection System (IDS)</li>
+<li>Instrusion Prevention System (IPS)</li>
+<li>Firewalls</li>
+<li>Authentication Systems</li>
+<li>Integrity Monitors</li>
+<li>Vulnerability Scanners</li>
+<li>System event logs</li>
+<li>Netflow connections records</li>
+<li>Antimalware packages</li>
+</ul>
+</li>
+<li>Collection and analysis using a Security Incident and Event Management (SIEM) tool<ul>
+<li>Centralized place to view and monitor incidents</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Reporting of an incident from external sources<ul>
+<li>When monitoring fails to detect an incident and we hear about a breach from employees, customers, or external organizations whom see signs of a breach</li>
+<li>CIRT team should have a consisten method of recieving, recording, and evaluating exteranl reports</li>
+</ul>
+</li>
+</ul>
+<p>=====================================================================================================</p>
+<h1 id="l2-incident-response-business-continuity-and-disaster-recovery-concepts">L2 Incident Response, Business Continuity and Disaster Recovery Concepts</h1>
+<h2 id="introduction">Introduction</h2>
+<p>When we&#39;re talking about IR, BC and DR, we&#39;re focus on availability, which is accomplished through those concepts.</p>
+<ul>
+<li><strong>Incident Response</strong> (IR) plan responds to unexpected changes in operating conditions to keep the business operating; </li>
+<li><strong>Business Continuity</strong> (BC) plan enables the business to continue operating throughout the crisis; </li>
+<li><strong>Disaster Recovery</strong> (DR) plan is activated to help the business to return to normal operations as quickly as possible, if Incident Response and Business Continuity plans fail.</li>
+</ul>
+<h2 id="module-1-understand-incident-response">Module 1: Understand Incident Response</h2>
+<p>Domain D2.3.1, D2.3.2, D2.3.3</p>
+<h3 id="incident-terminology">Incident Terminology</h3>
+<ul>
+<li><p><strong>Breach</strong> (NIST SP 800-53 Rev. 5): The <strong>loss of</strong> control, compromise, unauthorized disclosure, unauthorized acquisition, or <strong>any similar occurrence</strong> where: <strong>a person other than an authorized user accesses or potentially accesses personally identifiable information</strong>; or an authorized user accesses personally identifiable information for other than an authorized purpose.</p>
+</li>
+<li><p><strong>Event</strong> (NIST SP 800-61 Rev 2): <strong>Any observable occurrence</strong> in a network or system.</p>
+</li>
+<li><p><strong>Exploit</strong>: <strong>A particular attack</strong>. It is named this way because <strong>these attacks exploit system vulnerabilities</strong>.</p>
+</li>
+<li><p><strong>Incident</strong>: <strong>An event that actually or potentially jeopardizes</strong> the confidentiality, integrity or availability of an information system or the information the system processes, stores or transmits.</p>
+</li>
+<li><p><strong>Intrusion</strong> (IETF RFC 4949 Ver 2): A security event, or combination of events, that constitutes a deliberate security incident in which an intruder gains, or attempts to gain, access to a system or system resource without authorization.</p>
+</li>
+<li><p><strong>Threat</strong> (NIST SP 800-30 Rev 1): <strong>Any circumstance or event with the potential to adversely impact organizational operations</strong> (including mission, functions, image or reputation), organizational assets, individuals, other organizations or the nation through an information system via unauthorized access, destruction, disclosure, modification of information and/or denial of service.</p>
+</li>
+<li><p><strong>Vulnerability</strong> (NIST SP 800-30 Rev 1): <strong>Weakness</strong> in an information system, system security procedures, internal controls or implementation that could be exploited by a threat source. </p>
+</li>
+<li><p><strong>Zero Day</strong>: <strong>A previously unknown system vulnerability with the potential of exploitation without risk of detection or prevention because it does not</strong>, in general, fit recognized patterns, signatures or methods.</p>
+</li>
+</ul>
+<h3 id="the-goal-of-incident-response">The Goal of Incident Response</h3>
+<p>The priority of any incident response is to protect life, health and safety. When any decision related to priorities is to be made, <strong>always choose safety first</strong>. <strong>The primary goal of incident management is to be prepared</strong>. Preparation requires having a policy and a response plan that will <strong>lead the organization through the crisis</strong>. Some organizations use the term “crisis management” to describe this process, so you might hear this term as well. An event is any measurable occurrence, and most events are harmless. However, if the event has the potential to disrupt the business’s mission, then it is called an incident. <strong>Every organization must have an incident response plan that will help preserve business viability and survival.</strong> The incident response process is aimed at reducing the impact of an incident so the organization can resume the interrupted operations as soon as possible. Note that incident response planning is a subset of the greater discipline of business continuity management (BCM).</p>
+<h3 id="components-of-the-incident-response-plan">Components of the Incident Response Plan</h3>
+<p>The incident response policy should reference <strong>an incident response plan</strong> that all employees will follow, depending on their role in the process. <strong>The plan may contain several procedures and standards related to incident response</strong>. It is a living representation of an organization’s incident response policy. The organization’s vision, strategy and mission should shape the incident response process. Procedures to implement the plan should define the technical processes, techniques, checklists and other tools that teams will use when responding to an incident.</p>
+<ul>
+<li><p>Preparation: Develop a policy approved by management; <strong>Identify critical data and systems</strong>, <strong>single points of failure</strong>; <strong>Train staff on incident response</strong>; Implement an incident response team. (covered in subsequent topic); Practice Incident Identification. (First Response); Identify Roles and Responsibilities; Plan the coordination of communication between stakeholders; <strong>Consider the possibility that a primary method of communication may not be available.</strong></p>
+</li>
+<li><p>Detection and Analysis: Monitor all possible attack vectors; Analyze incident using known data and threat intelligence; Prioritize incident response; Standardize incident documentation;</p>
+</li>
+<li><p>Containment, eradication and recovery: Gather evidence; Choose an appropriate containment strategy;
+Identify the attacker; Isolate the attack.</p>
+</li>
+<li><p>Post-incident activity: Identify evidence that may need to be retained. Document lessons learned. Retrospective, Preparation, Detection and Analysis, Containment, Eradication and Recovery Post-incident Activity.</p>
+</li>
+</ul>
+<h3 id="incident-response-team">Incident Response Team</h3>
+<p>Along with the organizational need to establish a <strong>Security Operations Center (SOC)</strong> is the need to create a suitable <strong>incident response team</strong>. A typical incident response team is a cross-functional group of individuals who represent the management, technical and functional areas of responsibility most directly impacted by a security incident. Potential team members include the following:</p>
+<ul>
+<li>Representative(s) of senior management</li>
+<li>Information security professionals</li>
+<li>Legal representatives</li>
+<li>Public affairs/communications representatives</li>
+<li>Engineering representatives (system and network)</li>
+</ul>
+<p>Team members should have training on incident response and the organization’s incident response plan. Typically, team members assist with <strong>investigating the incident</strong>, <strong>assessing the damage</strong>, <strong>collecting evidence</strong>, <strong>reporting the incident and initiating recovery procedures</strong>. They would also participate in the remediation and lessons learned stages and help with root cause analysis.</p>
+<p>Many organizations now have a dedicated team responsible for investigating any computer security incidents that take place. These teams are commonly known as computer incident response teams (CIRTs) or computer security incident response teams (CSIRTs). When an incident occurs, the response team has four primary responsibilities:</p>
+<ul>
+<li>Determine the amount and scope of damage caused by the incident.</li>
+<li>Determine whether any confidential information was compromised during the incident.</li>
+<li>Implement any necessary recovery procedures to restore security and recover from incident-related damage.</li>
+<li>Supervise the implementation of any additional security measures necessary to improve security and prevent recurrence of the incident.</li>
+</ul>
+<h2 id="module-2-understand-business-continuity-bc">Module 2 Understand Business Continuity (BC)</h2>
+<p>Domain D2.1.1, D2.1.2, D2.1.3</p>
+<h3 id="the-importance-of-business-continuity">The Importance of Business Continuity</h3>
+<p>The intent of a <strong>business continuity plan</strong> is <strong>to sustain business operations while recovering from a significant disruption</strong>. A key part of the plan is <strong>communication</strong>, including multiple contact methodologies and backup numbers in case of a disruption of power or communications. Many organizations will establish a phone tree, so that if one person is not available, they know who else to call.  </p>
+<p><strong>Management must be included</strong>, because sometimes priorities may change depending on the situation. Individuals with proper authority must be there to execute operations, for instance, <strong>if there are critical areas that need to be shut down</strong>. <strong>We need to have at hand the critical contact numbers for the supply chain</strong>, as well as law enforcement and other sites outside of the facility. For example, a hospital may suffer a severe cyberattack that affects communications from the pharmacy, the internet or phone lines. In the United States, in case of this type of cyberattack that knocks out communications, specific numbers in specific networks can bypass the normal cell phone services and use military-grade networks. Those will be assigned to authorized individuals for hospitals or other critical infrastructures in case of a major disruption or cyberattack, so they can still maintain essential activity.</p>
+<h3 id="components-of-a-business-continuity-plan">Components of a Business Continuity Plan</h3>
+<p><strong>Business continuity planning (BCP)</strong> is the <strong>proactive development of procedures to restore business operations after a disaster or other significant disruption to the organization</strong>. Members from across the organization should participate in creating the BCP to ensure all systems, processes and operations are accounted for in the plan. <strong>In order to safeguard the confidentiality, integrity and availability of information, the technology must align with the business needs</strong>.</p>
+<ul>
+<li>List of the BCP team members, including multiple contact methods and backup members</li>
+<li>Immediate response procedures and checklists (security and safety procedures, fire suppression procedures, notification of appropriate emergency-response agencies, etc.)</li>
+<li>Notification systems and call trees for alerting personnel that the BCP is being enacted</li>
+<li>Guidance for management, including designation of authority for specific managers</li>
+<li>How/when to enact the plan. It&#39;s important to include when and how the plan will be used.</li>
+<li>Contact numbers for critical members of the supply chain (vendors, customers, possible external emergency providers, third-party partners)</li>
+</ul>
+<h3 id="how-often-should-an-organization-test-its-business-continuity-plan-bcp">How often should an organization test its business continuity plan (BCP)?</h3>
+<p>Routinely. Each individual organization must determine how often to test its BCP, but it should be tested at predefined intervals as well as when significant changes happen within the business environment. </p>
+<h2 id="module-3-understand-disaster-recovery-dr">Module 3: Understand Disaster Recovery (DR)</h2>
+<p>Domain D2.2, D2.2.1, D2.2.2, D2.2.3</p>
+<h3 id="the-goal-of-disaster-recovery">The Goal of Disaster Recovery</h3>
+<p>Disaster recovery planning <strong>steps in where BC leaves off</strong>. When a disaster strikes or an interruption of business activities occurs, the Disaster recovery plan (DRP) guides the actions of emergency response personnel <strong>until the end goal is reached—which is to see the business restored to full last-known reliable operations.</strong> Disaster recovery refers specifically to <strong>restoring the information technology and communications services and systems needed by an organization</strong>, <strong>both during the period of disruption caused by any event and during restoration of normal services</strong>. The recovery of a business function may be done independently of the recovery of IT and communications services; however, the recovery of IT is often crucial to the recovery and sustainment of business operations. Whereas business continuity planning is about maintaining critical business functions, disaster recovery planning is about restoring IT and communications back to full operations after a disruption.</p>
+<h3 id="components-of-a-disaster-recovery-plan">Components of a Disaster Recovery Plan</h3>
+<ul>
+<li>Executive summary providing a high-level overview of the plan</li>
+<li>Department-specific plans</li>
+<li>Technical guides for IT personnel responsible for implementing and maintaining critical backup systems</li>
+<li>Full copies of the plan for critical disaster recovery team members</li>
+<li>Checklists for certain individuals:<ul>
+<li>Critical disaster recovery team members will have checklists to help guide their actions amid the chaotic atmosphere of a disaster.</li>
+<li>IT personnel will have technical guides helping them get the alternate sites up and running. </li>
+<li>Managers and public relations personnel will have simple-to-follow, high-level documents to help them communicate the issue accurately without requiring input from team members who are busy working on the recovery.</li>
+</ul>
+</li>
+<li>Executive management should approve the plan and should be provided with a high-level summary of the plan.</li>
+<li>Public Relations should be a member of the disaster recovery plan to handle communications to all stakeholders.</li>
+<li>IT Personnel are primarily responsible for the disaster recovery team.</li>
+</ul>
