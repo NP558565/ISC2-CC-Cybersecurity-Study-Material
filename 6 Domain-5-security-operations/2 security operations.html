@@ -1,0 +1,779 @@
+<p><img src="images/domain5.png" alt="Domain 5"></p>
+<h2 id="51-understand-data">5.1 Understand data</h2>
+<p>Encryption</p>
+<ul>
+<li>Transforms plaintext into ciphertext using an encryption algorithm (key)</li>
+<li>Ciphertext is unreadable until its decrypted using the decryption algorithm(key) </li>
+<li>Protects Data at Rest and Data In Transit</li>
+<li>Categories<ul>
+<li><a href="https://en.wikipedia.org/wiki/Symmetric-key_algorithm">Symmetric</a><ul>
+<li>Shared secret key for both encryption and decryption</li>
+<li><img src="images/symmetric-encryption.png" alt="symmetric"></li>
+<li>Most commonly uses <a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard">Advanced Encryption Standard (AES)</a> algorithm</li>
+<li>Common symmetric encryption algorithms:<ul>
+<li>Data Encryption Standard (DES)<ul>
+<li>Block cipher that was selected as an American government standard in the 1970s</li>
+<li>Used a 56-bit encryption algorithm</li>
+<li>No longer secure</li>
+</ul>
+</li>
+<li>Blowfish<ul>
+<li>block cipher algorithm created by Bruce Schneider to replace DES</li>
+<li>offers variable rates of encryption 1-448 bit</li>
+</ul>
+</li>
+<li>Twofish<ul>
+<li>also written by Bruce Shneider</li>
+<li>created after Blowfish</li>
+<li>128-bit encryption</li>
+</ul>
+</li>
+<li>Triple DES (3DES)<ul>
+<li>improvement on DES that runs the information through three mathematical operations using three different 56-but keys to create 168-bit encyption</li>
+<li>block cipher</li>
+</ul>
+</li>
+<li>Rivest Cipher (RC4/RC5)<ul>
+<li>block cipher created by Ronal Rivest</li>
+<li>3 different verisons</li>
+<li>RC4 which is a stream cipher used in SSL and WEP (for wireless security)</li>
+</ul>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard">Advanced Encryption Standard (AES)</a><ul>
+<li>replaced 3DES as new standard for symmetric algorithms</li>
+<li>block cipher</li>
+<li>supports 128-bit, 192-bit, and 256-bit encryption</li>
+<li>AES256<ul>
+<li>if AES is used to encrypt data with 256-bit encryption, its referred to as AES256, or AES-256, instead of just AES</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Formula to calculate the number of symmetric keys required for a group to communicate<ul>
+<li>(N * (N-1))/2 or (N<sup>2</sup>-N)/2<ul>
+<li>N == number of participants in the group</li>
+<li>Table
+  <img src="images/number-of-symmetric-keys.png" alt="num of symmetric keys"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Public-key_cryptography">Asymmetric</a><ul>
+<li>Slower than symmetric but solves the issues of having large number of keys for large groups</li>
+<li>Use different keys for encryption and decryption</li>
+<li>Public Key Encryption / Key-Pair<ul>
+<li>public that can be shared</li>
+<li>Private that is kept secret</li>
+</ul>
+</li>
+<li>Sender sends data encrypted using recipients public key, which intern is decrypted using their private key</li>
+<li><img src="images/asymmetric.png" alt="asymmetric"></li>
+<li>Common asymmetric algorithms<ul>
+<li><a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)">Rivest-Shamir-Adleman (RSA)</a><ul>
+<li>first asymmetric algorithm that implemented signining and encryption. </li>
+<li>gets is name from its three creators</li>
+</ul>
+</li>
+<li>Diffie-Hellman<ul>
+<li>named after its creator</li>
+<li>key-exchange protocol that deals with exchanging keys in a secure fashion</li>
+</ul>
+</li>
+<li>Elliptic curve<ul>
+<li>new asymmetric algorithm based on Diffie-Hellman for key exchange and digital signature algorithm (DSA) for signing messages.</li>
+<li>also referred to as <em>elliptic curve cryptography</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Cryptographic_hash_function">Hash Functions</a><ul>
+<li>One-way functions that transforms a variable length input into a unique, fixed-length output and can&#39;t be reversed</li>
+<li>The output of a hash function will always be the same length, regardless of the input size</li>
+<li>Message digest is another term for hash</li>
+<li>May fail<ul>
+<li>if they are reversible</li>
+<li>If they are not collision-resilient</li>
+</ul>
+</li>
+<li>Common hash functions<ul>
+<li>Message Digest 5 (MD5)<ul>
+<li>Created by Ron Rivest in 1991</li>
+<li>Fifth in a series of hash functions</li>
+<li>Replaced md4 after is was deemed insecure</li>
+<li>Produces 128-bit hash</li>
+<li>No longer secure as of 2013, however still in use</li>
+</ul>
+</li>
+<li>SHA family<ul>
+<li>Created by NIST as a government standard</li>
+<li>SHA-1<ul>
+<li>Produces a 160-bit hash value</li>
+<li>Contains security flaws and is no longer secure</li>
+</ul>
+</li>
+<li>SHA-2 <ul>
+<li>Family of six hash functions</li>
+<li>Replaces SHA-1</li>
+<li>Produces outputs of either 224, 256, 384, and 512 bits</li>
+<li>Mathematically similar to SHA-1 and MD5 and susceptible to same sec flaws and deemed insecure</li>
+<li>Still widely used</li>
+</ul>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/SHA-3">SHA-3</a><ul>
+<li>Replaces SHA-2 in 2015</li>
+<li>NIST selected the Keccak algorithim which produce hash values of any desired lenght<ul>
+<li>Length is set by the person computing the hash</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/RIPEMD#:~:text=RIPEMD%20(RIPE%20Message%20Digest)%20is,160%20is%20the%20most%20common">Race Integrity Primitives Evaluation Message Digest (RIPEMD)</a><ul>
+<li>Created by a group of Belgian researches as alternative to  to SHA due to its origins within the US gov especially the involvement of the National Security Agency (NSA)</li>
+<li>Four variants that produce hashes of 128,160,256 and 320 bits<ul>
+<li>128-bit version is no longer secure</li>
+<li>160 bit version is widely used including in supporting Bitcoin transactions</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Uses of Hashes<ul>
+<li>Hash-Based Message Authentication Code (HMAC)<ul>
+<li>Combines symmetric cryptography and hashing</li>
+<li>Provides authentication and integrity for messages</li>
+<li>Create and verify message authentication code by using secret key in conjunction with a hash function</li>
+</ul>
+</li>
+<li>Used with asymmetric cryptography for digital signatures and digital certificates</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Data Security</p>
+<ul>
+<li>Data Security Lifecycle<ul>
+<li><img src="images/data-sec-lifecylt.png" alt="Data Sec Lifecyle"></li>
+<li><a href="https://csrc.nist.gov/publications/detail/sp/800-88/rev-1/final">NIST-SP 800-88</a><ul>
+<li>Guidelines for secure media sanitization<ul>
+<li>Includes three different activities</li>
+<li>Simply writing new data to the device</li>
+<li>Clearing is effective against most types of causal analysis</li>
+<li>Purging wiping</li>
+<li>Destroying media is the ultimate protection</li>
+</ul>
+</li>
+<li><img src="images/data-sanitization-flow.png" alt="Data Sanitization Flow"></li>
+</ul>
+</li>
+<li>Destroy paper records at end-of-life (EoL)<ul>
+<li>Shredding</li>
+<li>Pulping (using chemical process to remove ink from paper)</li>
+<li>Burning</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Data Classification Policies<ul>
+<li>Assign information into categories, know as classifications, that determine storage, handling, and access requirements</li>
+<li>Assign classifications based on<ul>
+<li>Sensitivity of information</li>
+<li>Criticality of information</li>
+</ul>
+</li>
+<li>Classification levels<ul>
+<li>Military Classifications<ul>
+<li>Top Secret</li>
+<li>Secret</li>
+<li>Confidential</li>
+<li>Unclassified</li>
+</ul>
+</li>
+<li>Business Classifications<ul>
+<li>Highly Sensitive</li>
+<li>Sensitive</li>
+<li>Internal</li>
+<li>Public</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Guides other security decisions</li>
+<li>Labeling Requirements<ul>
+<li>Identify sensitive information</li>
+</ul>
+</li>
+<li>Secure disposal of sensitive data<ul>
+<li>Darik’s Boot and Nuke (DBAN)<ul>
+<li>Software based storage disposal</li>
+</ul>
+</li>
+<li>Magnetic degaussers and device shredders</li>
+</ul>
+</li>
+<li>Three different types (External Classification Requirements)<ul>
+<li>Personally Identifiable Information (PII)<ul>
+<li>Traceable to a specific person</li>
+</ul>
+</li>
+<li>Protected Health Information (PHI)<ul>
+<li>Covered by HIPAA</li>
+</ul>
+</li>
+<li>Payment Card Information (PCI)<ul>
+<li>Covered by PCI DSS</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Guidelines and other security decisions<ul>
+<li>Use of strong encryption to protect sensitive and highly sensitive at rest and in motion</li>
+<li>Use of standard labeling practices</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Logging and monitoring security events</p>
+<ul>
+<li>Logs determine<ul>
+<li>Accountability<ul>
+<li>Who caused the event? (identity attribution)</li>
+<li>Specific person, IP address or geolocation</li>
+</ul>
+</li>
+<li>Traceability<ul>
+<li>Uncover all other related events</li>
+</ul>
+</li>
+<li>Auditability<ul>
+<li>Provide clear documentation of the events</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>AI can help solve security data analysis</li>
+<li>Security Information and Event Management (SIEM)<ul>
+<li>Central, secure collection point for logs<ul>
+<li>All systems send log entries</li>
+</ul>
+</li>
+<li>Source of AI<ul>
+<li>to detect patterns and anomalies that other systems might miss</li>
+</ul>
+</li>
+<li>Has access to all logs across the org<ul>
+<li>Network Engs → firewall logs</li>
+<li>System Engs → os and system logs</li>
+<li>Application Engs → application logs</li>
+</ul>
+</li>
+<li>Provdies Log Correlation</li>
+<li>Tuning and configuring<ul>
+<li>Point all systems to log repo</li>
+<li>Write once, Read Many (WORM)<ul>
+<li>Prevents log tampering</li>
+<li>Does event deduplication</li>
+</ul>
+</li>
+<li>Syncs System Clocks for consistent analysis<ul>
+<li>Use Network Time Protocol (NTP) (use national atomic clock servers as a time source)</li>
+</ul>
+</li>
+<li>Modify rules to prevent false positive alerts</li>
+<li>Block trivial and irrelevant SIEM alerts</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Security Orchestration, Automation, and Response (SOAR)<ul>
+<li><img src="images/soar.png" alt="SOAR"></li>
+<li>Set of software solutions and tools that help optimize security operations in three important areas:<ul>
+<li>Threat and vulnerability management</li>
+<li>Incident response</li>
+<li>Security operations automation</li>
+</ul>
+</li>
+<li>Enables orgs to collect inputs that are monitored by the sec ops team</li>
+</ul>
+</li>
+<li>Continous Monitoring<ul>
+<li>NIST Definition<ul>
+<li><em>Maintaining ongoing awareness of information security, vulnerabilities, and threats to support organizational risk and management decisions</em></li>
+</ul>
+</li>
+<li><img src="images/continuous-monitoring.png" alt="Continuous Monitoring"></li>
+<li>Three Core Principles<ul>
+<li>Maps to risk tolerence</li>
+<li>Adapts to ongoing needs</li>
+<li>Actively involves management</li>
+</ul>
+</li>
+<li>Process:<ul>
+<li>Define<ul>
+<li>Continuous monitoring strategy is defined based up risk tolerance that maintains clear visibility into assets, vulnerabilities, threats and business impacts</li>
+</ul>
+</li>
+<li>Establish<ul>
+<li>Program is established by defining metrics and monitoring an assessment frequencies</li>
+</ul>
+</li>
+<li>Implment<ul>
+<li>Collecting the metrics and performing assessments and building reports in an automated way</li>
+</ul>
+</li>
+<li>Analyze/Report<ul>
+<li>Analyze and build reports from collected data</li>
+</ul>
+</li>
+<li>Respond<ul>
+<li>Respond to findings</li>
+</ul>
+</li>
+<li>Review/Update<ul>
+<li>Review the program and adjust the strategy</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://csrc.nist.gov/publications/detail/sp/800-137/final">NIST SP 800-137</a><ul>
+<li>Guidelines set to assist orgnizations in the development of a continuous monitoring strategy and impmentation of a contiuous monitoring program</li>
+</ul>
+</li>
+<li>Anomaly Analysis<ul>
+<li>Detects outlier data points</li>
+<li>Also known as Heuristic Analysis</li>
+</ul>
+</li>
+<li>Trend Analysis<ul>
+<li>Detects changes over time</li>
+</ul>
+</li>
+<li>Behavioral Analysis<ul>
+<li>Detects unusual user activity</li>
+</ul>
+</li>
+<li>Availability Analysis<ul>
+<li>Provides uptime information</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="52-understand-system-hardening">5.2 Understand System Hardening</h2>
+<p>Systems hardening</p>
+<ul>
+<li>a collection of tools, techniques, and best practices to reduce vulnerability in technology applications, systems, infrastructure, firmware, and other areas. </li>
+<li>goal of systems hardening is to reduce security risk by eliminating potential attack vectors and condensing the system&#39;s attack surface.</li>
+</ul>
+<p>Configuration management (e.g., baselines, updates, patches)</p>
+<ul>
+<li><p>Tracks the way that specific devices are set up</p>
+</li>
+<li><p>Create artifacts to help how things are configured</p>
+</li>
+<li><p>Identification</p>
+<ul>
+<li>breakdown the project and create referencing system for each item.</li>
+</ul>
+</li>
+<li><p>Control</p>
+<ul>
+<li>includes the evaluation of all change-requests and change-proposals, and their subsequent approval or disapproval. It covers the process of controlling modifications to the system&#39;s design, hardware, firmware, software, and documentation.</li>
+</ul>
+</li>
+<li><p>Status Accounting</p>
+<ul>
+<li>recording or reporting config item descriptions</li>
+</ul>
+</li>
+<li><p>Baselining is part of this process</p>
+<ul>
+<li>Snapshot of a system at a given time</li>
+<li>Use to compare changes</li>
+<li>Versioning<ul>
+<li>Assigned numbers to each version</li>
+<li>Major.Minor.Build</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Verifcation and Audit</p>
+<ul>
+<li>independant review to make sure the configuration follows compliance and performance requirements</li>
+</ul>
+</li>
+<li><p>Standards</p>
+<ul>
+<li>Naming conventions</li>
+<li>IP addressing schema</li>
+</ul>
+</li>
+<li><p>Change Management</p>
+<ul>
+<li><img src="images/Change-Mangement-Process.webp" alt="CM"></li>
+<li>Structured process for reviewing proposed IT system or service changes</li>
+<li>Control risk of change</li>
+</ul>
+</li>
+</ul>
+<h2 id="53-understand-best-practices-security-policies">5.3 Understand best practices security policies</h2>
+<p>Data handling policy</p>
+<ul>
+<li>Describe how to protect sensitive information</li>
+<li>Define the types of information that is considered sensitive</li>
+<li>How employees must safeguard digital and/or paper records that are sensitive</li>
+</ul>
+<p>Password policy</p>
+<ul>
+<li>Describes the protection and use of passwords<ul>
+<li>Password length requirements set a min number of characters, good practice to be min 8 characters</li>
+<li>Some requiring longer passwords as those a deemed stronger</li>
+<li>Also use complexity requirements, force users to use different characters and upper and lower cases</li>
+<li>Password expiry policy</li>
+<li>Password history requirements where you can&#39;t reuse a previously used password</li>
+<li>Use Password managers to facilitate the use of strong, unique passwords<ul>
+<li>Secure vaults for storing passwords</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Acceptable Use Policy (AUP)</p>
+<ul>
+<li>Describe authorized use of technology</li>
+<li>Addresses whether personal use of computers and systems is permitted or not</li>
+<li>How personal use is considered acceptable</li>
+</ul>
+<p>Bring your own device (BYOD) policy</p>
+<ul>
+<li>Describe the use of personal devices with company information</li>
+<li>Security controls that must be in place, the type of information that may be processed</li>
+</ul>
+<p>Change management policy</p>
+<ul>
+<li>Describes the documentation, approval, and rollback of technology changes</li>
+</ul>
+<p>Privacy policy</p>
+<ul>
+<li>Describes the use of personally identifiable information</li>
+<li>Posted on company website</li>
+<li>May be enforced by national, state, and local authorities</li>
+</ul>
+<h2 id="understand-security-awareness-training">Understand security awareness training</h2>
+<p>Social Engineering </p>
+<ul>
+<li>is a human threat that presents serious cybersecurity risks and are the hardest to defend against.</li>
+<li>Manipulate people into divulging information or performing an action that undermines security</li>
+<li>Six main reasons that social engineering attacks are successful:<ul>
+<li>Authority<ul>
+<li>People defer to authority and trust</li>
+<li><a href="https://www.amazon.ca/Art-Intrusion-Exploits-Intruders-Deceivers/dp/0471782661">Art of intrusion book</a></li>
+</ul>
+</li>
+<li>Intimidation<ul>
+<li>Scare / threaten people</li>
+</ul>
+</li>
+<li>Consensus/Social Proof<ul>
+<li>Herd mentality</li>
+<li>Riots</li>
+</ul>
+</li>
+<li>Scarcity<ul>
+<li>Getting the last one</li>
+<li>Fear of missing out (FOMO)</li>
+</ul>
+</li>
+<li>Urgency<ul>
+<li>Time is running out</li>
+<li>People need to act quickly</li>
+</ul>
+</li>
+<li>Familiarity/Liking<ul>
+<li>People want to say yes to someone they like</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Prevention is education!!</li>
+<li>Impersonation Attacks<ul>
+<li>Spam<ul>
+<li>Unsolicited commercial email</li>
+<li>Illegal under <a href="https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business">Can-Spam act</a></li>
+</ul>
+</li>
+<li>Phishing<ul>
+<li>Stealing credentials</li>
+<li>Recon phase of a larger attack</li>
+<li>Credential harvesting and reuse</li>
+</ul>
+</li>
+<li>Spear Phishing<ul>
+<li>Targeted attack</li>
+<li>Higher success rate than generic phishing</li>
+<li>Invoice scams are common form of spear phishing</li>
+</ul>
+</li>
+<li>Whaling<ul>
+<li>Target attacks on executives</li>
+<li>Sub-set of spear phishing</li>
+<li>Ex: Send fake court documents in link</li>
+</ul>
+</li>
+<li>Pharming<ul>
+<li>Using links to fake websites to gain access</li>
+<li>Typosquatting to make URL seem very similar to the real site</li>
+<li>Could use DNS poisoning</li>
+</ul>
+</li>
+<li>Vishing<ul>
+<li>Voice phishing</li>
+<li>Pose as help desk user</li>
+</ul>
+</li>
+<li>Smishing and SPIM<ul>
+<li>SMS and IM spam</li>
+<li>Use spoofing<ul>
+<li>Faking the identity of a sender</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Techniques:<ul>
+<li>Baiting</li>
+<li>Phone phishing or vishing</li>
+<li>Pretexting</li>
+<li>Quid pro quo</li>
+<li>Tailgating</li>
+<li>False flag or false front operations</li>
+</ul>
+</li>
+</ul>
+<p>Security Education Programs:</p>
+<ul>
+<li>Security Training:<ul>
+<li>Provides users with the knowledge they need to protect the organization’s security</li>
+</ul>
+</li>
+<li>Security Awareness:<ul>
+<li>Keeps the lessons learned during security training top of mind for employees</li>
+</ul>
+</li>
+<li>Training Methods:<ul>
+<li>Instruction in on-site classes</li>
+<li>Integration with orientation</li>
+<li>Education through online computer-based training providers</li>
+<li>Participation in vendor-provided classroom training</li>
+</ul>
+</li>
+<li>Other training methods<ul>
+<li>Gamification</li>
+<li>Capture the flag → trains employees on attack techniques</li>
+<li>Phishing simulators</li>
+</ul>
+</li>
+<li>Should be custom to the individual role</li>
+<li>Frequency<ul>
+<li>Initial training with new employees </li>
+<li>Updated with employee change role</li>
+<li>Awareness throughout the year </li>
+<li>And Annual refresher</li>
+</ul>
+</li>
+<li>Examples<ul>
+<li><a href="https://www.sans.org/security-awareness-training/?_ga=2.116998982.1325987726.1680173616-1034878085.1680173615&_gac=1.194571871.1680173616.CjwKCAjw5pShBhB_EiwAvmnNVxM1ns7d8ipLISv0mlCOp1xphQKJpgT1nw3FuTy00tZ58-l6MfDS_BoCiLsQAvD_BwE">SANS Security Awareness</a></li>
+<li><a href="https://cofense.com/why-cofense/security-awareness-training/">COFENSE PhishMe</a></li>
+</ul>
+</li>
+</ul>
+<p><a href="./Domain%2004%20-%20Network%20Security.md">Back</a>  | <a href="/README.md">Home</a></p>
+<br>
+<hr>
+<br>
+<h1 id="l5-security-operations">L5 Security Operations</h1>
+<h2 id="module-1-understand-data-security">Module 1: Understand Data Security</h2>
+<p>Domain D5.0, D5.1.1, D5.1.2, D5.1.3</p>
+<p><strong>Hardening</strong> is the process of applying secure configurations (to reduce the attack surface) and locking down various hardware, communications systems and software, including the operating system, web server, application server and applications, etc. This module introduces configuration management practices that will ensure systems are installed and maintained according to industry and organizational security standards. </p>
+<h3 id="data-handling">Data Handling</h3>
+<p>Data itself goes through <strong>its own life cycle as users create</strong>, <strong>use</strong>, <strong>share and modify it</strong>. The data security life cycle model is useful because <strong>it can align easily with the different roles that people and organizations perform during the evolution of data from creation to destruction (or disposal)</strong>. It also helps put the different <strong>data states of in use, at rest and in motion, into context</strong>. </p>
+<p>All ideas, data, information or knowledge can be thought of as going through six major sets of activities throughout its lifetime. Conceptually, these involve:</p>
+<ol>
+<li>Creating the knowledge, which is usually tacit knowledge at this point.</li>
+<li>Storing or recording it in some fashion (which makes it explicit).</li>
+<li>Using the knowledge, which may cause the information to be modified, supplemented or partially deleted.</li>
+<li>Sharing the data with other users, whether as a copy or by moving the data from one location to another.</li>
+<li>Archiving the data when it is temporarily not needed.</li>
+<li>Destroying the data when it is no longer needed.</li>
+</ol>
+<h3 id="data-handling-practices">Data Handling Practices</h3>
+<ul>
+<li><p><strong>Classification</strong>: classifications dictate <strong>rules and restrictions about how that information can be used</strong>, <strong>stored</strong> or <strong>shared with others</strong>. All of this is done to keep the temporary value and importance of that information from leaking away. Classification of data, which asks the question “Is it secret?” determines the labeling, handling and use of all data. <strong>Classification is the process of recognizing the organizational impacts if the information suffers any security compromises related to its characteristics of confidentiality</strong>, <strong>integrity</strong> and <strong>availability</strong>. <strong>Information is then labeled and handled accordingly</strong>. Classifications are derived from laws, regulations, contract-specified standards or other business expectations. One classification might indicate “minor, may disrupt some processes” while a more extreme one might be “grave, could lead to loss of life or threaten ongoing existence of the organization.” These descriptions should reflect the ways in which the organization has chosen (or been mandated) to characterize and manage risks. The immediate benefit of classification is that it can lead to more efficient design and implementation of security processes, if we can treat the protection needs for all similarly classified information with the same controls strategy. </p>
+</li>
+<li><p><strong>Labeling</strong>: <strong>security labels are part of implementing controls to protect classified information</strong>. It is reasonable to want a simple way of assigning a level of sensitivity to a data asset, such that the higher the level, the greater the presumed harm to the organization, and thus the greater security protection the data asset requires. This spectrum of needs is useful, but it should not be taken to mean that clear and precise boundaries exist between the use of “low sensitivity” and “moderate sensitivity” labeling, for example. </p>
+<ul>
+<li><strong>Data Sensitivity Levels and Labels</strong>: unless otherwise mandated, organizations are free to create classification systems that best meet their own needs. In professional practice, it is typically best if the organization has enough classifications to distinguish between sets of assets with differing sensitivity/value, but not so many classifications that the distinction between them is confusing to individuals. Typically, two or three classifications are manageable, and more than four tend to be difficult.</li>
+</ul>
+<p>  <strong>Highly restricted</strong>: Compromise of data with this sensitivity label could possibly put the organization’s future existence at risk. Compromise could lead to substantial loss of life, injury or property damage, and the litigation and claims that would follow.
+  <strong>Moderately restricted</strong>: Compromise of data with this sensitivity label could lead to loss of temporary competitive advantage, loss of revenue or disruption of planned investments or activities.
+  <strong>Low sensitivity (sometimes called “internal use only”)</strong>: Compromise of data with this sensitivity label could cause minor disruptions, delays or impacts.
+  Unrestricted public data: As this data is already published, no harm can come from further dissemination or disclosure.  </p>
+</li>
+<li><p><strong>Retention</strong>: <strong>Information and data should be kept only for as long as it is beneficial, no more and no less</strong>. Certain industry standards, laws and regulations define retention periods, when such external requirements are not set, it is an organization’s responsibility to define and implement its own data retention policy. <strong>Data retention policies are applicable both for hard copies and for electronic data</strong>, and no data should be kept beyond its required or useful life. <strong>Security professionals should ensure that data destruction is being performed when an asset has reached its retention limit</strong>. For the security professional to succeed in this assignment, an accurate inventory must be maintained, including the asset location, retention period requirement, and destruction requirements. Organizations should conduct a periodic review of retained records in order to reduce the volume of information stored and to ensure that only necessary information is preserved.</p>
+</li>
+</ul>
+<p>Records retention policies indicate how long an organization is required to maintain information and assets. Policies should guarantee that: 
+    * Personnel understand the various retention requirements for data of different types throughout the organization. 
+    * The organization appropriately documents the retention requirements for each type of information.
+    * The systems, processes and individuals of the organization retain information in accordance with the required schedule but no longer. 
+    * A common mistake in records retention is applying the longest retention period to all types of information in an organization. This not only wastes storage but also increases risk of data exposure and adds unnecessary “noise” when searching or processing information in search of relevant records. It may also be in violation of externally mandated requirements such as legislation, regulations or contracts (which may result in fines or other judgments). Records and information no longer mandated to be retained should be destroyed in accordance with the policies of the enterprise and any appropriate legal requirements that may need to be considered. </p>
+<ul>
+<li><p>Destruction: Data that might be left on media after deleting is known as remanence and may be a significant security concern. Steps must be taken to reduce the risk that data remanence could compromise sensitive information to an acceptable level. This can be done by one of several means:  </p>
+<ul>
+<li>Clearing the device or system, which usually involves <strong>writing multiple patterns of random values throughout all storage media</strong>. This is sometimes <strong>called “overwriting” or “zeroizing” the system</strong>, although writing zeros has the risk that a missed block or storage extent may still contain recoverable, sensitive information after the process is completed.</li>
+<li>Purging the device or system, which eliminates (or greatly reduces) the chance that residual physical effects from the writing of the original data values may still be recovered, even after the system is cleared. Some magnetic disk storage technologies, for example, can still have residual “ghosts” of data on their surfaces even after being overwritten multiple times. Magnetic media, for example, can often be altered sufficiently to meet security requirements; in more stringent cases, degaussing may not be sufficient. </li>
+<li>Physical destruction of the device or system is the ultimate remedy to data remanence. Magnetic or optical disks and some flash drive technologies may require being mechanically shredded, chopped or broken up, etched in acid or burned; their remains may be buried in protected landfills, in some cases.</li>
+<li>In many routine operational environments, security considerations may accept that clearing a system is sufficient. But when systems elements are to be removed and replaced, either as part of maintenance upgrades or for disposal, purging or destruction may be required to protect sensitive information from being compromised by an attacker.</li>
+</ul>
+</li>
+</ul>
+<h3 id="logging-and-monitoring-security-events">Logging and Monitoring Security Events</h3>
+<p>Logging is the primary form of instrumentation that attempts to capture signals generated by events. Events are any actions that take place within the systems environment and cause measurable or observable change in one or more elements or resources within the system. <strong>Logging imposes a computational cost but is invaluable when determining accountability</strong>. Proper design of logging environments and regular log reviews remain best practices regardless of the type of computer system. </p>
+<p>Major controls frameworks emphasize the importance of organizational logging practices. Information that may be relevant to being recorded and reviewed include (but is not limited to): user IDs, system activities, dates/times of key events (e.g., logon and logoff), device and location identity, successful and rejected system and resource access attempts, system configuration changes and system protection activation and deactivation events. </p>
+<p><strong>Logging and monitoring the health of the information environment is essential to identifying inefficient or improperly performing systems</strong>, detecting compromises and providing a record of how systems are used. <strong>Robust logging practices provide tools to effectively correlate information from diverse systems to fully understand the relationship between one activity and another</strong>. </p>
+<p>Log reviews are an essential function not only for security assessment and testing but also <strong>for identifying security incidents, policy violations, fraudulent activities and operational problems near the time of occurrence</strong>. Log reviews support audits – forensic analysis related to internal and external investigations – and provide support for organizational security baselines. Review of historic audit logs can determine if a vulnerability identified in a system has been previously exploited. </p>
+<p>It is helpful for an organization to create components of a log management infrastructure and determine how these components interact. This aids in preserving the integrity of log data from accidental or intentional modification or deletion and in maintaining the confidentiality of log data. </p>
+<p>Controls are implemented to protect against unauthorized changes to log information. Operational problems with the logging facility are often related to alterations to the messages that are recorded, log files being edited or deleted, and storage capacity of log file media being exceeded. Organizations must maintain adherence to retention policy for logs as prescribed by law, regulations and corporate governance. Since attackers want to hide the evidence of their attack, the organization’s policies and procedures should also address the preservation of original logs. Additionally, the logs contain valuable and sensitive information about the organization.  Appropriate measures must be taken to protect the log data from malicious use. </p>
+<h3 id="event-logging-best-practices">Event Logging Best Practices</h3>
+<p>Different tools are used depending on whether the risk from the attack is from traffic coming into or leaving the infrastructure. </p>
+<p><strong>Ingress monitoring refers to surveillance and assessment of all inbound communications traffic and access attempts.</strong> Devices and tools that offer logging and alerting opportunities for ingress monitoring include: Firewalls, Gateways, Remote authentication servers, IDS/IPS tools, SIEM solutions, 
+Anti-malware solutions. </p>
+<p><strong>Egress monitoring is used to regulate data leaving the organization’s IT environment.</strong> The term currently used in conjunction with this effort is <strong>data loss prevention (DLP)</strong> or <strong>data leak protection</strong>. The DLP solution should be deployed so that it can inspect all forms of data leaving the organization, including: Email (content and attachments), Copy to portable media, File Transfer Protocol (FTP), Posting to web pages/websites, Applications/application programming interfaces (APIs). </p>
+<h3 id="encryption-overview">Encryption Overview</h3>
+<p>Almost every action we take in our modern digital world involves cryptography. Encryption protects our personal and business transactions; digitally signed software updates verify their creator’s or supplier’s claim to authenticity. Digitally signed contracts, binding on all parties, are routinely exchanged via email without fear of being repudiated later by the sender. </p>
+<p>Cryptography is used to protect information by keeping its meaning or content secret and making it unintelligible to someone who does not have a way to decrypt (unlock) that protected information. The objective of every encryption system is to transform an original set of data, called the plaintext, into an otherwise unintelligible encrypted form, called the ciphertext. </p>
+<p><strong>Properly used</strong>, singly or in combination, <strong>cryptographic solutions provide a range of services that can help achieve required systems security postures in many ways</strong>: </p>
+<pre><code>**confidentiality**: Cryptography provides confidentiality by hiding or obscuring a message so that it cannot be understood by anyone except the intended recipient. Confidentiality keeps information secret from those who are not authorized to have it. 
+**integrity**: hash functions and digital signatures can provide integrity services that allow a recipient to verify that a message has not been altered by malice or error. These include simple message integrity controls. Any changes, deliberate or accidental, will result in the two results (by sender and by recipient) being different.
+</code></pre>
+<h2 id="module-2-understand-system-hardening">Module 2: Understand System Hardening</h2>
+<p>Domain D5.2.1</p>
+<h3 id="configuration-management-overview">Configuration Management Overview</h3>
+<p><strong>Configuration management</strong> is a process and discipline used <strong>to ensure that the only changes made to a system are those that have been authorized and validated</strong>. It is both a decision-making process and a set of control processes. If we look closer at this definition, the basic configuration management process includes components such as <strong>identification</strong>, <strong>baselines</strong>, <strong>updates</strong> and <strong>patches</strong>.</p>
+<ul>
+<li>Configuration Management<ol>
+<li><strong>Identification</strong>: baseline identification of a system and all its components, interfaces and documentation.</li>
+<li><strong>Baseline</strong>: a security baseline is a minimum level of protection that can be used as a reference point. Baselines provide a way to ensure that updates to technology and architectures are subjected to the minimum understood and acceptable level of security requirements.</li>
+<li><strong>Change Control</strong>: An update process for requesting changes to a baseline, by means of making changes to one or more components in that baseline. A review and approval process for all changes. This includes updates and patches.</li>
+<li><strong>Verification &amp; Audit</strong>: A regression and validation process, which may involve testing and analysis, to verify that nothing in the system was broken by a newly applied set of changes. An audit process can validate that the currently in-use baseline matches the sum total of its initial baseline plus all approved changes applied in sequence.</li>
+</ol>
+</li>
+</ul>
+<p><strong>Effective use of configuration management gives</strong> systems owners, operators, support teams and security professionals another important set of tools they can use to monitor and oversee the configuration of the devices, networks, applications and projects of the organization.An organization may mandate the configuration of equipment <strong>through standards and baselines</strong>. The use of <strong>standards and baselines can ensure that network devices, software, hardware and endpoint devices are configured in a consistent way and that all such devices are compliant with the security baseline established for the organization</strong>. If a device is found that is not compliant with the security baseline, it may be <strong>disabled or isolated into a quarantine area</strong> until it can be <strong>checked and updated</strong>.</p>
+<ul>
+<li><p><strong>Inventory</strong>: Making an inventory, catalog or registry of all the information assets <strong>is the first step in any asset management process</strong>. <strong>You can’t protect what you don’t know you have</strong>.</p>
+</li>
+<li><p><strong>Baselines</strong>: The baseline <strong>is a total inventory of all the system’s components, hardware, software, data, administrative controls, documentation and user instructions</strong>. <strong>All further comparisons and development are measured against the baselines.</strong> <strong>When protecting assets, baselines can be particularly helpful in achieving a minimal protection level of those assets based on value.</strong> If classifications such as high, medium and low are being used, baselines could be developed for each of our classifications and provide that minimum level of security required for each.</p>
+</li>
+<li><p>Updates: Such modifications <strong>must be acceptance tested to verify that newly installed (or repaired) functionality works as required</strong>. They must also be <strong>regression tested to verify that the modifications did not introduce other erroneous or unexpected behaviors</strong> in the system. <strong>Ongoing security assessment and evaluation testing evaluates whether the same system that passed acceptance testing is still secure</strong>.</p>
+</li>
+<li><p>Patches: <strong>The challenge for the security professional is maintaining all patches</strong>. <strong>Some patches are critical and should be deployed quickly, while others may not be as critical but should still be deployed because subsequent patches may be dependent on them</strong>. Standards such as the <strong>PCI DSS require organizations to deploy security patches within a certain time frame</strong>. <strong>An organization should test the patch before rolling it out across the organization</strong>. If the patch does not work or has unacceptable effects, it might be necessary to <strong>roll back to a previous (pre-patch) state</strong>. Typically, <strong>the criteria for rollback are previously documented and would automatically be performed when the rollback criteria were met</strong>. The risk of using unattended patching should be weighed against the risk of having unpatched systems in the organization’s network. Unattended (or automated) patching might result in unscheduled outages as production systems are taken offline or rebooted as part of the patch process.</p>
+</li>
+</ul>
+<h2 id="module-3-understand-best-practice-security-policies">Module 3: Understand Best Practice Security Policies</h2>
+<p>Domain D5.3, D5.3.1, D5.3.2, D5.3.3, D5.3.4, D5.3.5, D5.3.6</p>
+<p>An organization’s security policies define what “security” means to that organization, which in almost all cases reflects the tradeoff between security, operability, affordability and potential risk impacts. Security policies express or impose behavioral or other constraints on the system and its use. Well-designed systems operating within these constraints should reduce the potential of security breaches to an acceptable level. </p>
+<p>Security governance that does not align properly with organizational goals can lead to implementation of security policies and decisions that unnecessarily inhibit productivity, impose undue costs and hinder strategic intent.</p>
+<h3 id="common-security-policies">Common Security Policies</h3>
+<p>All policies must support any regulatory and contractual obligations of the organization.  Sometimes it can be challenging to ensure the policy encompasses all requirements while remaining simple enough for users to understand. </p>
+<p>Here are six common security-related policies that exist in most organizations.</p>
+<ul>
+<li><p>Data Handling Policy: Appropriate use of data: This aspect of the policy defines whether data is for use within the company, is restricted for use by only certain roles or can be made public to anyone outside the organization. In addition, some data has associated legal usage definitions. The organization’s policy should spell out any such restrictions or refer to the legal definitions as required. Proper data classification also helps the organization comply with pertinent laws and regulations. For example, classifying credit card data as confidential can help ensure compliance with the PCI DSS. One of the requirements of this standard is to encrypt credit card information. Data owners who correctly defined the encryption aspect of their organization’s data classification policy will require that the data be encrypted according to the specifications defined in this standard. </p>
+</li>
+<li><p>Password Policy: Every organization should have a password policy in place that defines expectations of systems and users. The password policy should describe senior leadership&#39;s commitment to ensuring secure access to data, outline any standards that the organization has selected for password formulation, and identify who is designated to enforce and validate the policy. </p>
+</li>
+<li><p>Acceptable Use Policy (AUP): The acceptable use policy (AUP) defines acceptable use of the organization’s network and computer systems and can help protect the organization from legal action. It should detail the appropriate and approved usage of the organization’s assets, including the IT environment, devices and data. Each employee (or anyone having access to the organization’s assets) should be required to sign a copy of the AUP, preferably in the presence of another employee of the organization, and both parties should keep a copy of the signed AUP.</p>
+</li>
+</ul>
+<p>Policy aspects commonly included in AUPs: Data access, System access, Data disclosure, Passwords, Data retention, Internet usage, Company device usage</p>
+<ul>
+<li>Bring Your Own Device (BYOD): An organization may allow workers to acquire equipment of their choosing and use personally owned equipment for business (and personal) use. This is sometimes called bring your own device (BYOD). Another option is to present the teleworker or employee with a list of approved equipment and require the employee to select one of the products on the trusted list.</li>
+</ul>
+<p>Letting employees choose the device that is most comfortable for them may be good for employee morale, but it presents additional challenges for the security professional because it means the organization loses some control over standardization and privacy. If employees are allowed to use their phones and laptops for both personal and business use, this can pose a challenge if, for example, the device has to be examined for a forensic audit. It can be hard to ensure that the device is configured securely and does not have any backdoors or other vulnerabilities that could be used to access organizational data or systems. </p>
+<p>All employees must read and agree to adhere to this policy before any access to the systems, network and/or data is allowed. If and when the workforce grows, so too will the problems with BYOD. Certainly, the appropriate tools are going to be necessary to manage the use of and security around BYOD devices and usage. The organization needs to establish clear user expectations and set the appropriate business rules. </p>
+<ul>
+<li>Privacy Policy: Often, personnel have access to personally identifiable information (PII) (also referred to as electronic protected health information [ePHI] in the health industry). It is imperative that the organization documents that the personnel understand and acknowledge the organization’s policies and procedures for handling of that type of information and are made aware of the legal repercussions of handling such sensitive data. This type of documentation is similar to the AUP but is specific to privacy-related data.</li>
+</ul>
+<p>The organization’s privacy policy should stipulate which information is considered PII/ePHI, the appropriate handling procedures and mechanisms used by the organization, how the user is expected to perform in accordance with the stated policy and procedures, any enforcement mechanisms and punitive measures for failure to comply as well as references to applicable regulations and legislation to which the organization is subject. This can include national and international laws, such as the GDPR in the EU and Personal Information Protection and Electronic Documents Act (PIPEDA) in Canada; laws for specific industries in certain countries such as HIPAA and Gramm–Leach–Bliley Act (GLBA); or local laws in which the organization operates. </p>
+<p>The organization should also create a public document that explains how private information is used, both internally and externally. For example, it may be required that a medical provider present patients with a description of how the provider will protect their information (or a reference to where they can find this description, such as the provider’s website). </p>
+<ul>
+<li>Change Management Policy: Change management is the discipline of transitioning from the current state to a future state. It consists of three major activities: deciding to change, making the change, and confirming that the change has been correctly accomplished. Change management focuses on making the decision to change and results in the approvals to systems support teams, developers and end users to start making the directed alterations.</li>
+</ul>
+<p>Throughout the system life cycle, changes made to the system, its individual components and its operating environment all have the capability to introduce new vulnerabilities and thus undermine the security of the enterprise. Change management requires a process to implement the necessary changes so they do not adversely affect business operations. </p>
+<h3 id="common-security-policies-deeper-dive">Common Security Policies Deeper Dive</h3>
+<p>Policies will be set according to the needs of the organization and its vision and mission. Each of these policies should have a penalty or a consequence attached in case of noncompliance. The first time may be a warning; the next might be a forced leave of absence or suspension without pay, and a critical violation could even result in an employee’s termination. All of this should be outlined clearly during onboarding, particularly for information security personnel. It should be made clear who is responsible for enforcing these policies, and the employee must sign off on them and have documentation saying they have done so. This process could even include a few questions in a survey or quiz to confirm that the employees truly understand the policy. These policies are part of the baseline security posture of any organization. Any security or data handling procedures should be backed up by the appropriate policies. </p>
+<h3 id="change-management-components">Change Management Components</h3>
+<p>The change management process includes the following components.</p>
+<p>Documentation: All of the major change management practices address a common set of core activities that start with a request for change (RFC) and move through various development and test stages until the change is released to the end users. From first to last, each step is subject to some form of formalized management and decision-making; each step produces accounting or log entries to document its results. </p>
+<p>Approval: These processes typically include: Evaluating the RFCs for completeness, Assignment to the proper change authorization process based on risk and organizational practices, Stakeholder reviews, resource identification and allocation, Appropriate approvals or rejections, and Documentation of approval or rejection.</p>
+<p>Rollback: Depending upon the nature of the change, a variety of activities may need to be completed. These generally include: Scheduling the change, Testing the change, Verifying the rollback procedures, Implementing the change, Evaluating the change for proper and effective operation, and Documenting the change in the production environment. Rollback authority would generally be defined in the rollback plan, which might be immediate or scheduled as a subsequent change if monitoring of the change suggests inadequate performance.</p>
+<h2 id="module-4-understand-security-awareness-training">Module 4: Understand Security Awareness Training</h2>
+<p>Domain D5.4, D5.4.1, D5.4.2, D5.3.2 </p>
+<p><strong>To reduce the effectiveness of certain types of attacks</strong> (such as social engineering), it is crucial that the organization informs its <strong>employees and staff</strong> <strong>how to recognize security problems and how to operate in a secure manner</strong>. While the specifics of secure operation differ in each organization, there are some general concepts that are applicable to all such programs. </p>
+<h3 id="purpose">Purpose</h3>
+<p>The purpose of awareness training is to make sure everyone knows what is expected of them, based on responsibilities and accountabilities, and to find out if there is any carelessness or complacency that may pose a risk to the organization. We will be able to align the information security goals with the organization’s missions and vision and have a better sense of what the environment is. </p>
+<h3 id="what-is-security-awareness-training">What is Security Awareness Training?</h3>
+<p>Let’s start with a clear understanding of the <strong>three different types of learning activities that organizations use</strong>, whether for information security or for any other purpose:</p>
+<ul>
+<li><p><strong>Education</strong>: The overall goal of education is to help learners <strong>improve their understanding of these ideas and their ability to relate them to their own experiences and apply that learning in useful ways</strong>.</p>
+</li>
+<li><p><strong>Training</strong>: Focuses on <strong>building proficiency in a specific set of skills or actions</strong>, including sharpening the perception and judgment needed to make decisions as to which skill to use, when to use it and how to apply it. <strong>Training can focus on low-level skills, an entire task or complex workflows consisting of many tasks</strong>.</p>
+</li>
+<li><p><strong>Awareness</strong>: These are activities that attract and engage the learner’s attention by acquainting them with aspects of an issue, concern, problem or need.</p>
+</li>
+</ul>
+<p>You’ll notice that none of these have an expressed or implied degree of formality, location or target audience. (Think of a newly hired senior executive with little or no exposure to the specific compliance needs your organization faces; first, someone has to get their attention and make them aware of the need to understand. The rest can follow.)</p>
+<h3 id="security-awareness-training-examples">Security Awareness Training Examples</h3>
+<p>Let’s look at an example of security awareness training by using an organization’s strategy to improve fire safety in the workplace: </p>
+<p>Education may help workers in a secure server room understand the interaction of the various fire and smoke detectors, suppression systems, alarms and their interactions with electrical power, lighting and ventilation systems. 
+Training would provide those workers with task-specific, detailed learning about the proper actions each should take in the event of an alarm, a suppression system going off without an alarm, a ventilation system failure or other contingency. This training would build on the learning acquired via the educational activities. 
+Awareness activities would include not only posting the appropriate signage, floor or doorway markings, but also other indicators to help workers detect an anomaly, respond to an alarm and take appropriate action. In this case, awareness is a constantly available reminder of what to do when the alarms go off. </p>
+<p>Translating that into an anti-phishing campaign might be done by: </p>
+<p>Education may be used to help select groups of users better understand the ways in which social engineering attacks are conducted and engage those users in creating and testing their own strategies for improving their defensive techniques. 
+Training will help users increase their proficiency in recognizing a potential phishing or similar attempt, while also helping them practice the correct responses to such events. Training may include simulated phishing emails sent to users on a network to test their ability to identify a phishing email.
+Raising users’ overall awareness of the threat posed by phishing, vishing, SMS phishing (also called “smishing) and other social engineering tactics. Awareness techniques can also alert selected users to new or novel approaches that such attacks might be taking. 
+Let’s look at some common risks and why it’s important to include them in your security awareness training programs. </p>
+<h4 id="phishing">Phishing</h4>
+<p>The use of phishing attacks to target individuals, entire departments and even companies is a significant threat that the security professional needs to be aware of and be prepared to defend against. Countless variations on the basic phishing attack have been developed in recent years, leading to a variety of attacks that are deployed relentlessly against individuals and networks in a never-ending stream of emails, phone calls, spam, instant messages, videos, file attachments and many other delivery mechanisms.</p>
+<p>Phishing attacks that attempt to trick highly placed officials or private individuals with sizable assets into authorizing large fund wire transfers to previously unknown entities are known as whaling attacks .</p>
+<h4 id="social-engineering">Social Engineering</h4>
+<p>Social engineering is an important part of any security awareness training program for one very simple reason: bad actors know that it works. For the cyberattackers, social engineering is an inexpensive investment with a potentially very high payoff. Social engineering, applied over time, can extract significant insider knowledge about almost any organization or individual.</p>
+<p>One of the most important messages to deliver in a security awareness program is an understanding of the threat of social engineering. People need to be reminded of the threat and types of social engineering so that they can recognize and resist a social engineering attack.</p>
+<p>Most social engineering techniques are not new. Many have even been taught as basic fieldcraft for espionage agencies and are part of the repertoire of investigative techniques used by real and fictional police detectives. A short list of the tactics that we see across cyberspace currently includes:</p>
+<p>Phone phishing or vishing: Using a rogue interactive voice response (IVR) system to re-create a legitimate-sounding copy of a bank or other institution’s IVR system. The victim is prompted through a phishing email to call in to the “bank” via a provided phone number to verify information such as account numbers, account access codes or a PIN and to confirm answers to security questions, contact information and addresses. A typical vishing system will reject logins continually, ensuring the victim enters PINs or passwords multiple times, often disclosing several different passwords. More advanced systems may be used to transfer the victim to a human posing as a customer service agent for further questioning.</p>
+<p>Pretexting: The human equivalent of phishing, where someone impersonates an authority figure or a trusted individual in an attempt to gain access to your login information. The pretexter may claim to be an IT support worker who is supposed to do maintenance or an investigator performing a company audit. Or they might impersonate a coworker, the police, a tax authority or some other seemingly legitimate person. The goal is to gain access to your computer and information.
+Quid pro quo: A request for your password or login credentials in exchange for some compensation, such as a “free gift,” a monetary payment or access to an online game or service. If it sounds too good to be true, it probably is.
+Tailgating: The practice of following an authorized user into a restricted area or system. The low-tech version of tailgating would occur when a stranger asks you to hold the door open behind you because they forgot their company RFID card. In a more sophisticated version, someone may ask to borrow your phone or laptop to perform a simple action when he or she is actually installing malicious software onto your device.
+Social engineering works because it plays on human tendencies. Education, training and awareness work best to counter or defend against social engineering because they help people realize that every person in the organization plays a role in information security.</p>
+<h4 id="password-protection">Password Protection</h4>
+<p>We use many different passwords and systems. Many password managers will store a user’s passwords for them so the user does not have to remember all their passwords for multiple systems. The greatest disadvantage of these solutions is the risk of compromise of the password manager.</p>
+<p>These password managers may be protected by a weak password or passphrase chosen by the user and easily compromised. There have been many cases where a person’s private data was stored by a cloud provider but easily accessed by unauthorized persons through password compromise.</p>
+<p>Organizations should encourage the use of different passwords for different systems and should provide a recommended password management solution for its users.</p>
+<p>Examples of poor password protection that should be avoided are:</p>
+<p>Reusing passwords for multiple systems, especially using the same password for business and personal use.
+Writing down passwords and leaving them in unsecured areas.
+Sharing a password with tech support or a co-worker.</p>
+
