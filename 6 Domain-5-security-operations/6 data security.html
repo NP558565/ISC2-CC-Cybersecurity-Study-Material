@@ -1,0 +1,120 @@
+<h1 id="data-handling">Data Handling</h1>
+<ul>
+<li>Here we will summarize the data Life Cycle</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Lifecycle</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Create</td>
+<td>Creating the knowledge, which is usually tacit knowledge at this point.</td>
+</tr>
+<tr>
+<td>Store</td>
+<td>Storing or recording it in some fashion (which makes it explicit).</td>
+</tr>
+<tr>
+<td>Use</td>
+<td>Using the knowledge, which may cause the information to be modified, supplemented or partially deleted.</td>
+</tr>
+<tr>
+<td>Share</td>
+<td>Sharing the data with other users, whether as a copy or by moving the data from one location to another.</td>
+</tr>
+<tr>
+<td>Archive</td>
+<td>Archiving the data when it is temporarily not needed.</td>
+</tr>
+<tr>
+<td>Destroy</td>
+<td>Destroying the data when it is no longer needed.</td>
+</tr>
+</tbody></table>
+<h2 id="practices">Practices</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Classification</td>
+<td>Businesses recognize that information has value and others might steal their advantage if the information is not kept confidential, so they classify it.</td>
+</tr>
+<tr>
+<td>Labeling</td>
+<td>Security labels are part of implementing controls to protect classified information. It is reasonable to want a simple way of assigning a level of sensitivity to a data asset, such that the higher the level, the greater the presumed harm to the organization, and thus the greater security protection the data asset requires.</td>
+</tr>
+<tr>
+<td>Retention</td>
+<td>Information and data should be kept only for as long as it is beneficial, no more and no less.</td>
+</tr>
+<tr>
+<td>Destruction</td>
+<td>Data that might be left on media after deleting is known as remanence and may be a significant security concern.</td>
+</tr>
+</tbody></table>
+<h1 id="logging-and-monitoring-security-events">Logging and Monitoring Security Events</h1>
+<p><strong>Ingress monitoring</strong> refers to surveillance and assessment of all inbound communications traffic and access attempts. <strong>Some tools include</strong>:</p>
+<ul>
+<li>Firewalls</li>
+<li>Gateways</li>
+<li>Remote Authentication Servers</li>
+<li>IDS/IPS Tools</li>
+<li>SIEM solutions</li>
+<li>Anti-malware solutions</li>
+</ul>
+<p><strong>Egress monitoring</strong> is used to regulate data leaving the organization’s IT environment. The term currently used in conjunction with this effort is data loss prevention (DLP) or data leak protection. The <strong>DLP solution should be deployed so that it can inspect</strong> all forms of data leaving the organization, including: </p>
+<ul>
+<li>Email</li>
+<li>Copy to portable media</li>
+<li>File transfer protocol (FTP)</li>
+<li>Posting to web pages/websites</li>
+<li>Applications/application programming interfaces (APIs)</li>
+</ul>
+<h1 id="encryption--cryptography">Encryption &amp; Cryptography</h1>
+<ul>
+<li><strong>Encryption</strong> protects our personal and business transactions; digitally signed software updates verify their creator’s or supplier’s claim to <strong>authenticity</strong>. </li>
+<li><strong>Cryptography</strong> is used to protect information by keeping its meaning or content secret and making it unintelligible to someone who does not have a way to decrypt (unlock) that protected information.</li>
+</ul>
+<p>Let associate the security principles to this concepts:</p>
+<ul>
+<li><strong>Encryption:</strong> Authenticity</li>
+<li><strong>Cryptography:</strong> Confidentiality and Integrity</li>
+</ul>
+<h2 id="symmetric-encryption--assymetric">Symmetric Encryption &amp; Assymetric</h2>
+<table>
+<thead>
+<tr>
+<th>Cryptography Type</th>
+<th>Definition</th>
+<th>Simple real example</th>
+<th>Use Cases</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Symmetric Encryption</td>
+<td>A type of encryption in which the same key is used for both encrypting and decrypting the data.</td>
+<td>A lock that uses the same key to lock and unlock a door.</td>
+<td>Encrypting bulk data (backups, hard drives, portable media), Encrypting messages traversing communications channels (IPsec, TLS), Streaming large-scale, time-sensitive data (audio/video materials, gaming, etc.)</td>
+</tr>
+<tr>
+<td>Asymmetric Encryption</td>
+<td>A type of encryption that uses a distinct pair of keys, one public and one private, for encrypting and decrypting the data.</td>
+<td>A mailbox in which anyone can put a letter (public key) in it, but only the owner of the mailbox can open (using their private key) and read the letters that have been left there.</td>
+<td>VPNs, Certificates SSL/TLS, SFTP.</td>
+</tr>
+</tbody></table>
+<h2 id="configuration-management">Configuration Management</h2>
+<p>Is a process and discipline used to ensure that the only changes made to a system are those that have been authorized and validated.</p>
+<ul>
+<li>Identification: Baseline identification of a system and all its components, interfaces and documentation.</li>
+<li>Baseline: A security baseline is a minimum level of protection that can be used as a reference point. Baselines provide a way to ensure that updates to technology and architectures are subjected to the minimum understood and acceptable level of security requirements. A set of security controls or system settings used to ensure uniformity of configuration throughout the IT environment.</li>
+<li>Change Control: An update process for requesting changes to a baseline, by means of making changes to one or more components in that baseline. A review and approval process for all changes. This includes updates and patches. </li>
+<li>Verification and Audit: A regression and validation process, which may involve testing and analysis, to verify that nothing in the system was broken by a newly applied set of changes. An audit process can validate that the currently in-use baseline matches the sum total of its initial baseline plus all approved changes applied in sequence.</li>
+</ul>
