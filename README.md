@@ -170,21 +170,26 @@ There are five domains covered on the exam.
 ----------------------------------------------------------------------------------------------------
 
 ### Certified in Cybersecurity
-* [Free Entry-level Cybersecurity Training + Certification Exam](https://www.isc2.org/landing/1mcc)
+* [One Million Certified in Cybersecurity program](https://www.isc2.org/landing/1mcc): closed to new enrollments on 20 May 2026. Unexpired codes from it must be used to schedule and take the exam by 31 December 2026.
 * [ISC CPE Opportunities](https://www.isc2.org/members/cpe-opportunities)
 
 ### Exam Blueprint
 
-* Chapter 1 - Security Principles (~26%)
-* Chapter 2 - Incident Response, Business Continuity and Disaster Recovery Concepts (~10%)
-* Chapter 3 - Concepts of Access Control (~22%)
-* Chapter 4 - Network Security (~24%)
-* Chapter 5 - Security Operations (~18%)
+From 1 September 2026 the CC exam follows a new outline ([ISC2 CC exam outline](https://www.isc2.org/certifications/cc/cc-certification-exam-outline)). It is adaptive (CAT): 100-125 items in 2 hours.
+
+* Domain 1 - Security Principles (24%)
+* Domain 2 - Security Governance (17.3%)
+* Domain 3 - Identity and Access Management (IAM) Concepts (20%)
+* Domain 4 - Networking and Cloud Security Concepts (21.3%)
+* Domain 5 - Security Operations and Incident Response (17.3%)
+
+The chapter notes in this repo follow the earlier outline.
 
 
 ### Additional Resources
 
 * LinkedIn Learning - [ISC2 Certified in Cybersecurity (CC) Cert Prep](https://www.linkedin.com/learning/isc2-certified-in-cybersecurity-cc-cert-prep/)
+* ExamCrest - [CC free sample questions](https://examcrest.com/exam/isc2-cc/free-questions?utm_source=github&utm_campaign=np558565-cc) (free, no signup; full mock tests are paid)
 
 > In order to receive the digital badge, after passing the exam, you have to pay an AMF (Annual Maitenance Fee) worth $50 dollars and earn 45 CPEs in the next three years.
 
